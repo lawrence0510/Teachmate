@@ -3,12 +3,25 @@
  */
 package backend;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+//...
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
+    //...
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // Test MySQL database connection
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", "25352Riigdii")) {
+            
+            System.out.println("Connected to MySQL database!");
+        } catch (Exception e) {
+            System.err.println("Failed to connect to MySQL database.");
+            e.printStackTrace();
+        }
+
+        //...
     }
 }
