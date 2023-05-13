@@ -1,17 +1,18 @@
 <template>
-  <TestComponent msg="Welcome to Your Vue.js App"/>
+  <UserProfile msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import TestComponent from "./components/TestComponent.vue"
+import UserProfile from './components/UserProfile.vue'
 
 export default {
-  name: 'TestComponent',
+  name: 'App',
   components: {
-    TestComponent
+    UserProfile
   }
 }
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

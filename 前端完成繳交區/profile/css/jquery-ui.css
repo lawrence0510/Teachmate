@@ -1062,7 +1062,7 @@ a.ui-button:active,
 	width: 16px;
 	height: 16px;
 }
-/* .ui-icon,
+.ui-icon,
 .ui-widget-content .ui-icon {
 	background-image: url("images/ui-icons_444444_256x240.png");
 }
@@ -1089,7 +1089,7 @@ a.ui-button:active,
 }
 .ui-button .ui-icon {
 	background-image: url("images/ui-icons_777777_256x240.png");
-} */
+}
 
 /* positioning */
 .ui-icon-blank { background-position: 16px 16px; }
