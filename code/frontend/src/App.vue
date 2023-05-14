@@ -1,14 +1,14 @@
 <template>
-  <StudentProfile msg="Welcome to Your Vue.js App"/>
+  <TeacherSheet msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import StudentProfile from './components/StudentProfile.vue'
+import TeacherSheet from './components/TeacherSheet.vue'
 
 export default {
   name: 'App',
   components: {
-    StudentProfile
+    TeacherSheet
   }
 }
 </script>

@@ -11,7 +11,7 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
                         <li class="nav-item">
-                           <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                         </li>
                         <li class="nav-item active">
@@ -33,7 +33,7 @@
                            <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
                         </li>
 
                      </ul>
