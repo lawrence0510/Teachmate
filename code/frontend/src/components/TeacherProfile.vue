@@ -4,7 +4,7 @@
          <div class="row">
             <div class="col-sm-2 col-6">
 
-            </div>/
+            </div>
             <div class="col-sm-8 col-6">
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -28,6 +28,7 @@
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="sheet.html">SHEET</a>
+                           <!-- <router-link to="/teachersheet" class="button_set_head button_set2_head nav-link">SHEET</router-link> -->
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
