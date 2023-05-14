@@ -16,7 +16,16 @@
 @import url(nice-select.css);
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-
+#navbarNav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+  }
+  
 * {
 	box-sizing: border-box !important;
 	transition: ease all 0.5s;
@@ -216,7 +225,7 @@ button {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
-    height: auto;
+    height: 100px;
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 20px 0px;
@@ -287,6 +296,22 @@ button {
 
 .header_social_icon li a {
 	color: #ff405c;
+}
+
+.button_set_head{                            /* 按鈕設定 */                          
+    background-color: white; 
+    color:white;
+    font-weight:bold;
+    font-size: 25px;
+}
+
+.button_set2_head:hover{                         /* 藍色放大 */                 
+    color:black;
+    transform: scale(1.2);
+}
+
+.button_fixed_head{                          /* 藍色底線 */
+    border-bottom:2px solid gray;       
 }
 
 
@@ -868,7 +893,8 @@ textarea#comment::placeholder {
 	color: #ffffff;
 }
 
-.whole {                                         /* 改 */
+
+.whole {                                        
   width: 100%;
   height: 200%; 
   position: relative;
@@ -879,6 +905,7 @@ textarea#comment::placeholder {
     color:gray;
     font-weight:bold;
     font-size: 20px;
+    margin-right: 15px;
 }
 
 .button_set2:hover{                         /* 藍色放大 */                 
@@ -933,7 +960,7 @@ textarea#comment::placeholder {
 .personal_div_textr{
     font-weight: bold;
     position: absolute;
-    top: 0;
+    top: 1%;
     right:-37%;
     font-size: 25px;
     text-align: right;
@@ -959,7 +986,7 @@ textarea#comment::placeholder {
 .personal_div_textr_sex{
     font-weight: bold;
     position: absolute;
-    top: 11.5%;
+    top: 9.1%;
     right:-37%;
     font-size: 25px;
     text-align: right;
@@ -985,7 +1012,7 @@ textarea#comment::placeholder {
 .personal_div_textr_old{
     font-weight: bold;
     position: absolute;
-    top: 22.5%;
+    top: 17.3%;
     right:-37%;
     font-size: 25px;
     text-align: right;
@@ -1011,10 +1038,35 @@ textarea#comment::placeholder {
 .personal_div_textr_school{
     font-weight: bold;
     position: absolute;
-    top: 33.7%;
+    top: 26%;
     right:-37%;
     font-size: 25px;
     text-align: right;
+}
+
+.personal_div_textr_school:hover{	/*停留時有底線*/
+	text-decoration: underline;
+}
+
+.pop_content_school{               /*彈出的視窗*/
+    position: absolute;
+    top: 27%;
+    right:-80%;
+    visibility: hidden;
+    opacity: 0;
+    height: 19%;
+    width: 40%;
+    transition: visibility 0s, opacity 0.1s;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.stop_here_school:hover+.pop_content_school{      /*彈出動作*/
+    visibility: visible;
+    opacity: 1;
 }
 
 .personal_png_MBTI{
@@ -1037,10 +1089,56 @@ textarea#comment::placeholder {
 .personal_div_textr_MBTI{
     font-weight: bold;
     position: absolute;
-    top: 44.8%;
+    top: 34.1%;
     right:-37%;
     font-size: 25px;
     text-align: right;
+}
+
+.personal_png_cert{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top:0%;
+    right: 27.5%;
+    font-size: 25px;
+}
+
+.personal_div_textl_cert{
+    font-weight: bold;
+    position: absolute;
+    top:42.5%;
+    right: 32%;
+    font-size: 25px;
+}
+
+.select_cert{
+	position: relative;
+	    left: 25.4%;
+	    font-size: 23px;
+}
+
+.personal_png_exper{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top:0%;
+    right: 22%;
+    font-size: 25px;
+}
+
+.personal_div_textl_exper{
+    font-weight: bold;
+    position: absolute;
+    top:51%;
+    right: 25.5%;
+    font-size: 25px;
+}
+
+.select_exper{
+	position: relative;
+	    left: 20%;
+	    font-size: 23px;
 }
 
 .personal_png_contact{
@@ -1064,11 +1162,90 @@ textarea#comment::placeholder {
 .personal_div_textr_contact{
     font-weight: bold;
     position: absolute;
-    top: 56%;
+    top: 59%;
     right:-37%;
     font-size: 25px;
     text-align: right;
 }
+
+.personal_div_textr_contact:hover{	/*停留時有底線*/
+	text-decoration: underline;
+}
+
+
+.pop_content_contact{               /*彈出的視窗*/
+    position: absolute;
+    top: 60%;
+    right:-90%;
+    visibility: hidden;
+    opacity: 0;
+    height: %;
+    width: 50%;
+    transition: visibility 0s, opacity 0.1s;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.stop_here_contact:hover+.pop_content_contact{      /*彈出動作*/
+    visibility: visible;
+    opacity: 1;
+}
+
+.personal_png_score{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top:0%;
+    right: 36.8%;
+    font-size: 25px;
+}
+
+.personal_div_textl_score{
+    font-weight: bold;
+    position: absolute;
+    top:%;
+    right: 25%;
+    font-size: 25px;
+}
+
+
+.personal_div_textr_score{
+    font-weight: bold;
+    position: absolute;
+    top: 67.5%;
+    right:-37%;
+    font-size: 25px;
+    text-align: right;
+}
+
+
+.pop_content_score{               /*彈出的視窗*/
+    position: absolute;
+    top: 69%;
+    right:-80%;
+    visibility: hidden;
+    opacity: 0;
+    width: 40%;
+    transition: visibility 0s, opacity 0.1s;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.stop_here_score:hover+.pop_content_score{      /*彈出動作*/
+    visibility: visible;
+    opacity: 1;
+}
+
+.personal_div_textr_score:hover{	/*停留時有底線*/
+	text-decoration: underline;
+}
+
 
 .personal_div_comment{
     background-color: lightgray;
@@ -1094,7 +1271,7 @@ textarea#comment::placeholder {
     width: 30px;
     height: 30px;
     position: absolute;
-    top:68%;
+    top:76.1%;
     right: 39%;
     font-size: 25px;
 }
@@ -1102,7 +1279,7 @@ textarea#comment::placeholder {
 .personal_div_textl_comment{
     font-weight: bold;
     position: absolute;
-    top:67%;
+    top:76.1%;
     right: 31.8%;
     font-size: 25px;
 
@@ -1111,149 +1288,20 @@ textarea#comment::placeholder {
 .personal_div_textr_comment{
     font-weight: bold;
     position: absolute;
-    top:75%;
+    top:81%;
     right: -33%;
     width: 75%;
     height: 23%;
     font-size: 25px;
     text-align: left;
-    
 }
 
 /* contact section end */
 
-
-
-
-
-/* footer section start */
-
-.footer_section {
-	width: 100%;
-	float: left;
-	background-color: #171717;
-	height: auto;
-	padding: 90px 0px;
+personal_png_NCCU{
+	width: 30px;
+    height: 30px;
 }
-
-.lorem_text {
-	width: 65%;
-	float: left;
-	font-size: 16px;
-	color: #ffffff;
-	margin: 0px;
-	padding-top: 10px;
-	font-family: 'Roboto', sans-serif;
-}
-
-.useful_text {
-	width: 100%;
-	font-size: 24px;
-	color: #ffffff;
-	font-family: 'Orbitron', sans-serif;
-	margin-bottom: 15px;
-	font-weight: bold;
-}
-
-.dummy_text {
-	width: 38%;
-	font-size: 16px;
-	color: #ffffff;
-	font-family: 'Orbitron', sans-serif;
-	margin-bottom: 15px;
-	margin-left: 0px;
-}
-
-.location_text {
-	width: 70%;
-	float: left;
-	font-size: 16px;
-	color: #fffcfc;
-	font-family: 'Orbitron', sans-serif;
-}
-
-.location_text a {
-	color: #fffcfc;
-}
-
-.location_text a:hover {
-	color: #ff405c;
-}
-
-.padding_left_10 {
-	padding-left: 10px;
-}
-
-.social_icon {
-	width: 100%;
-	float: left;
-	padding-top: 20px;
-}
-
-.social_icon ul {
-	margin: 0px;
-	padding: 0px;
-}
-
-.social_icon li {
-	float: left;
-	padding-right: 15px;
-}
-
-.Enter_text {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #9e9c9c;
-    background-color: #ffffff;
-    padding: 8px 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 0px;
-}
-.subscribe_bt {
-    width: 170px;
-    float: left;
-    margin-top: 20px;
-}
-.subscribe_bt a {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #e81d42;
-    text-align: center;
-    padding: 10px 0px;
-    text-transform: uppercase;
-    border-radius: 5px;
-}
-.subscribe_bt a:hover{
-    color: #9e9c9c;
-    background-color: #ffffff;
-}
-
-.footer_menu {
-    width: 100%;
-    float: left;
-}
-.footer_menu ul {
-    margin: 0px;
-    padding: 0px;
-}
-.footer_menu li {
-    padding-top: 5px;
-    font-size: 16px;
-    color: #ffffff;
-}
-.footer_menu li a {
-    color: #ffffff;
-}
-.footer_menu li a:hover {
-    color: #e81d42;
-}
-
-/* footer section end */
-
 
 /* copyright section start */
 
@@ -1261,32 +1309,22 @@ textarea#comment::placeholder {
 	width: 100%;
 	float: left;
 	background-color: #171717;
-	height: auto;
 }
 
 .copyright_text {
 	width: 100%;
-	float: left;
-	font-size: 16px;
+	font-size: 18px;
 	color: #ffffff;
 	text-align: center;
 	margin-left: 0px;
-}
 
-.copyright_text a {
-	color: #ffffff;
-}
-
-.copyright_text a:hover {
-	color: #e81d42;
 }
 
 
 /* copyright section end */
 
-.margin_top_90 {
-	margin-top: 90px;
-}
 .margin_bottom90{
-	margin-bottom: 90px;
+	margin-bottom: 50px;
 }
+
+

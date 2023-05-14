@@ -1,14 +1,14 @@
 <template>
-  <UserProfile msg="Welcome to Your Vue.js App"/>
+  <StudentProfile msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import UserProfile from './components/UserProfile.vue'
+import StudentProfile from './components/StudentProfile.vue'
 
 export default {
   name: 'App',
   components: {
-    UserProfile
+    StudentProfile
   }
 }
 </script>
