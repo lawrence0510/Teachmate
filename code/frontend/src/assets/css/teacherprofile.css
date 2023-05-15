@@ -224,7 +224,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg-1.png);
+    background-image: url(../images/banner-bg.png);
     height: 100px;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -944,15 +944,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 32%;
+    right: 29.5%;
     font-size: 25px;
     
 }
@@ -971,15 +970,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_sex{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 32%;
+    right: 29.5%;
     font-size: 25px;
 }
 
@@ -997,15 +995,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_old{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 32%;
+    right: 29.2%;
     font-size: 25px;
 }
 
@@ -1023,15 +1020,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_school{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 32%;
+    right: 29.5%;
     font-size: 25px;
 }
 
@@ -1074,15 +1070,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_MBTI{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 30.5%;
+    right: 27.8%;
     font-size: 25px;
 }
 
@@ -1100,7 +1095,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 27.5%;
+    right: 26.5%;
     font-size: 25px;
 }
 
@@ -1108,7 +1103,7 @@ textarea#comment::placeholder {
     font-weight: bold;
     position: absolute;
     top:42.5%;
-    right: 32%;
+    right: 29.5%;
     font-size: 25px;
 }
 
@@ -1123,7 +1118,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 22%;
+    right: 21%;
     font-size: 25px;
 }
 
@@ -1131,7 +1126,7 @@ textarea#comment::placeholder {
     font-weight: bold;
     position: absolute;
     top:51%;
-    right: 25.5%;
+    right: 22.5%;
     font-size: 25px;
 }
 
@@ -1146,15 +1141,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_contact{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 25.3%;
+    right: 22.5%;
     font-size: 25px;
 
 }
@@ -1199,15 +1193,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 36.8%;
+    right: 36%;
     font-size: 25px;
 }
 
 .personal_div_textl_score{
     font-weight: bold;
     position: absolute;
-    top:%;
-    right: 25%;
+    right: 22.6%;
     font-size: 25px;
 }
 
@@ -1254,14 +1247,14 @@ textarea#comment::placeholder {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    margin-left:45%;
+    margin-left:47%;
     margin-top: 30px;
 }
 
 .personal_div_comment_line{
     position: absolute;
     margin-top: -18.5%;
-    left: 53%;
+    left: %;
     width: 90%;
     height: 1px;
     background-color: black;
@@ -1272,7 +1265,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: absolute;
     top:76.1%;
-    right: 39%;
+    right: 35.8%;
     font-size: 25px;
 }
 
@@ -1280,7 +1273,7 @@ textarea#comment::placeholder {
     font-weight: bold;
     position: absolute;
     top:76.1%;
-    right: 31.8%;
+    right: 29%;
     font-size: 25px;
 
 }
@@ -1289,7 +1282,7 @@ textarea#comment::placeholder {
     font-weight: bold;
     position: absolute;
     top:81%;
-    right: -33%;
+    right: -35%;
     width: 75%;
     height: 23%;
     font-size: 25px;
