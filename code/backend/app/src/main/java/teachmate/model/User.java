@@ -1,11 +1,12 @@
 package teachmate.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
-
+@Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +37,10 @@ public class User {
     @Column(nullable = false)
     private String Email;
 
+    @Column(nullable = false)
     private String MBTI;
 
-    User() {
+    public User() {
     }
 
     User(Long UserID, String Password, int Age, String Gender, String School, String Region, String Major,
