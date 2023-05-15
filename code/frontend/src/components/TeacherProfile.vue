@@ -4,14 +4,14 @@
          <div class="row">
             <div class="col-sm-2 col-6">
 
-            </div>/
+            </div>
             <div class="col-sm-8 col-6">
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
                         <li class="nav-item">
-                           <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                         </li>
                         <li class="nav-item active">
@@ -28,12 +28,13 @@
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="sheet.html">SHEET</a>
+                           <!-- <router-link to="/teachersheet" class="button_set_head button_set2_head nav-link">SHEET</router-link> -->
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
                         </li>
 
                      </ul>
