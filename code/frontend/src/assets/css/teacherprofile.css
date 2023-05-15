@@ -224,7 +224,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../images/banner-bg-1.png);
     height: 100px;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -925,7 +925,7 @@ textarea#comment::placeholder {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    margin-left:45%;
+    margin-left:47%;
 }
 
 .personal_div_n2{
@@ -935,7 +935,7 @@ textarea#comment::placeholder {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    margin-left:45%;
+    margin-left:47%;
     margin-top: 30px;
 }
 
