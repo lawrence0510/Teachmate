@@ -1,19 +1,19 @@
 <template>
-  <TeacherProfile msg="Welcome to Your Vue.js App"/>
+  <SigninPage msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import TeacherProfile from './components/TeacherProfile.vue'
+import SigninPage from './components/SigninPage.vue'
 
 export default {
   name: 'App',
   components: {
-    TeacherProfile
+    SigninPage
   }
 }
 </script>
 
-<!-- <style>
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@ export default {
   margin-top: 60px;
 }
 </style>
-
+<!-- 
 <template>
   <div id="app">
     <router-view />

@@ -1,0 +1,84 @@
+<template>
+    <!--header section start -->
+    <div class="header_section">HIHIHI
+    </div>
+    <!-- header section end -->
+    <div class="container" id="container" ref="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <br>
+                <div class="enroll">
+                    <select>
+                        <option value="" disabled selected>Account Type</option>
+                        <option value="0">I'm a Teacher</option>
+                        <option value="1">I'm a Student</option>
+                    </select>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <input type="number" placeholder="Phone Number" />
+                    <select>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <input type="age" placeholder="Age" />
+                    <input type="mbti" placeholder="MBTI (ex: ENFJ)" onkeyup="this.value = this.value.toUpperCase();" />
+                    <input type="region" placeholder="Region" />
+                    <input type="school" placeholder="School" onkeyup="this.value = this.value.toUpperCase();" />
+                    <input type="major" placeholder="Major" onkeyup="this.value = this.value.toUpperCase();" />
+                </div>
+                <br>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Log in</h1>
+                <br>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <br>
+                <button>Log In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" ref="signInButton" id="signIn">Log In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Howdy!</h1>
+                    <p>Enter your personal details and embark on your turoring/learning journey with us.</p>
+                    <button class="ghost" ref="signUpButton" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+@import url("../assets/css/signinpage.css");
+</style>
+<script>
+
+export default {
+  mounted() {
+    const signUpButton = this.$refs.signUpButton;
+    const signInButton = this.$refs.signInButton;
+    const container = this.$refs.container;
+
+    signUpButton.addEventListener('click', () => {
+      container.classList.add('right-panel-active');
+    });
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove('right-panel-active');
+    });
+  },
+};
+</script>
