@@ -1,7 +1,7 @@
 <template>
     <!--header section start -->
-    <div class="header_section">HIHIHI
-    </div>
+    <!-- <div class="header_section">HIHIHI
+    </div> -->
     <!-- header section end -->
     <div class="container" id="container" ref="container">
         <div class="form-container sign-up-container">
@@ -10,7 +10,6 @@
                 <br>
                 <div class="enroll">
                     <select>
-                        <option value="" disabled selected>Account Type</option>
                         <option value="0">I'm a Teacher</option>
                         <option value="1">I'm a Student</option>
                     </select>
