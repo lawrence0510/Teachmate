@@ -12,4 +12,16 @@ public class UserService {
     public User registerUser(User user) {
         return userRepository.save(user);
     }
+
+	public User signinUser(User user) throws UserNotFoundException {
+        String email = user.getEmail();
+        String password = user.getPassword();
+    
+        User existingUser = userRepository.findByEmailAndPassword(email, password);
+    
+        if (existingUser == null) {
+            throw new UserNotFoundException("User not found");
+        }
+        return existingUser;
+	}
 }
