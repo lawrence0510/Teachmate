@@ -68,6 +68,7 @@
 </style>
 
 <script>
+/* eslint-disable */ 
 import backend from '@/api/backend.js';
 
 export default {
