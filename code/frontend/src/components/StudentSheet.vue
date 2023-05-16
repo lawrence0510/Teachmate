@@ -4,7 +4,7 @@
          <div class="row">
             <div class="col-sm-2 col-6">
 
-            </div>/
+            </div>
             <div class="col-sm-8 col-6">
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -109,7 +109,9 @@
 
                </div>
 
-               <a href="sheetBuild.html"><button class="button_set button_set2 button_fixed">開始建立</button></a>
+               <a href="sheetBuild.html"><button class="button_set1 button_set1-2 " style="border: 2px solid black;">be teacher</button></a>
+
+               <a href="sheetBuild.html"><button class="button_set button_set2 " style="border: 2px solid black;">my evaluation</button></a>
 
             </div>
          </div>
@@ -140,7 +142,7 @@
 </script>
 
 <style>
-@import url("../assets/css/teachersheet.css");
+@import url("../assets/css/studentsheet.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
