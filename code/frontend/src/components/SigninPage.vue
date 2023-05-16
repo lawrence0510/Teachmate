@@ -10,7 +10,8 @@
                 <br>
                 <div class="enroll">
                     <select v-model="userType">
-                        <option value="0">I'm a Teacher</option>
+                        <option value="" disabled selected>Account Type</option>
+                        <option value="0" selected>I'm a Teacher</option>
                         <option value="1">I'm a Student</option>
                     </select>
                     <input type="text" placeholder="Name" v-model="name" />
