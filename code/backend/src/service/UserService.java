@@ -35,7 +35,7 @@ public class UserService {
     
 
     public void saveUser(User user, MySQLRepository repo) {
-        String sql = "INSERT INTO User (UserID, Username, Password, Age, Gender, School, Region, Major, PhoneNum, Email, MBTI) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO User (UserID, Username, Password, Age, Gender, School, Region, Major, PhoneNum, Gmail, MBTI) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setLong(1, user.getUserID());
@@ -58,6 +58,23 @@ public class UserService {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public boolean isUserIDExists(int userID, MySQLRepository repo) {
+        try (Connection connection = repo.getConnection()) {
+            String query = "SELECT COUNT(*) FROM User WHERE UserID = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setInt(1, userID);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    resultSet.next();
+                    int count = resultSet.getInt(1);
+                    return count > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }

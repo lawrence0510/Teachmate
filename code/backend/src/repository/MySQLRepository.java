@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MySQLRepository {
-    private String url = "jdbc:mysql://localhost:3306/Teachmate";
+    private String url = "jdbc:mysql://localhost:3306/Teachmate?useSSL=false";
     private String username = "root";
     private String password = "25352Riigdii";
     private Connection connection;

@@ -16,6 +16,7 @@ public class Main {
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8000), 0);
 
         server.createContext("/register", new RegisterController());
+        // server.createContext("/login", new LoginRegister());
         server.start();
 
         System.out.println("Server started on port 8000");

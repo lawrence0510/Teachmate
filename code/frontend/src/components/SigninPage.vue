@@ -117,7 +117,8 @@ export default {
                 region: this.region,
                 school: this.school,
                 major: this.major,
-            };
+            }
+            console.log(formData)
 
             backend.signUp(formData)
                 .then(response => {

@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import model.User;
@@ -16,6 +17,7 @@ import java.util.Random;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mysql.jdbc.PreparedStatement;
 
 
 public class RegisterController implements HttpHandler {
@@ -29,13 +31,16 @@ public class RegisterController implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-        if ("POST".equals(exchange.getRequestMethod())) {
+        if ("OPTIONS".equals(exchange.getRequestMethod())) {
+            handleOptionsRequest(exchange);
+        }
+        else if ("POST".equals(exchange.getRequestMethod())) {
             String requestBody = getRequestData(exchange);
 
             User user = parseUserFromRequest(requestBody);
 
             userService.saveUser(user, repository);
-
+            
             String response = "User saved";
             sendResponse(exchange, response, 200);
         } else {
@@ -93,8 +98,25 @@ public class RegisterController implements HttpHandler {
         outputStream.close();
     }
     
-    private long generateUserID() {
-        return Math.abs(new Random().nextLong());
+    private int generateUserID() {
+        int min = 1; // 最小值
+        int max = Integer.MAX_VALUE; // 最大值
+        int userID;
+    
+        // 生成隨機數，如果重複則重新生成直到不重複
+        do {
+            userID = (int) (min + Math.random() * (max - min + 1));
+        } while (userService.isUserIDExists(userID, repository));
+    
+        return userID;
+    } 
+
+    private void handleOptionsRequest(HttpExchange exchange) throws IOException {
+        Headers headers = exchange.getResponseHeaders();
+        headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
+        headers.add("Access-Control-Allow-Methods", "POST");
+        headers.add("Access-Control-Allow-Headers", "Content-Type");
+        sendResponse(exchange, "", 200);
     }
 }
 
