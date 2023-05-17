@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public class UserA {
     private Long UserID;
 
     private String Username;
