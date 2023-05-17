@@ -5,18 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.User;
-
 public class MySQLRepository {
     private String url = "jdbc:mysql://localhost:3306/Teachmate";
     private String username = "root";
     private String password = "25352Riigdii";
+    private Connection connection;
 
     public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(url, username, password);
+        connection = DriverManager.getConnection(url, username, password);
+        return connection;
     }
 
-    public void closeConnection(Connection connection) throws SQLException {
+    public void closeConnection() throws SQLException {
         if (connection != null) {
             connection.close();
         }
@@ -33,38 +33,4 @@ public class MySQLRepository {
             statement.close();
         }
     }
-
-    public void saveUser(User user) {
-        String sql = "INSERT INTO users (UserID, Username, Password, Age, Gender, School, Region, Major, PhoneNum, Email, MBTI) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        Connection connection = null;
-        PreparedStatement statement = null;
-        try {
-            connection = getConnection();
-            statement = connection.prepareStatement(sql);
-            statement.setLong(1, user.getUserID());
-            statement.setString(2, user.getUsername());
-            statement.setString(3, user.getPassword());
-            statement.setInt(4, user.getAge());
-            statement.setString(5, user.getGender());
-            statement.setString(6, user.getSchool());
-            statement.setString(7, user.getRegion());
-            statement.setString(8, user.getMajor());
-            statement.setString(9, user.getPhoneNum());
-            statement.setString(10, user.getEmail());
-            statement.setString(11, user.getMBTI());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                closeStatement(statement);
-                closeConnection(connection);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    
-
-
 }

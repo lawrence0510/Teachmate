@@ -1,14 +1,14 @@
 <template>
-  <StudentSheetComment msg="Welcome to Your Vue.js App"/>
+  <SigninPage msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import StudentSheetComment from './components/StudentSheetComment.vue'
+import SigninPage from './components/SigninPage.vue'
 
 export default {
   name: 'App',
   components: {
-    StudentSheetComment
+    SigninPage
   }
 }
 </script>
