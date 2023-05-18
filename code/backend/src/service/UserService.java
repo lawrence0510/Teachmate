@@ -10,8 +10,8 @@ import repository.MySQLRepository;
 
 public class UserService {
 
-    public void loginUser(User user, MySQLRepository repo) {
-        String sql = "SELECT * FROM User WHERE Gmail = ? AND Password = ?";
+    public boolean loginUser(User user, MySQLRepository repo) {
+        String sql = "SELECT * FROM TeachMate.User WHERE Gmail = ? AND Password = ?";
         try (Connection connection = repo.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, user.getEmail());
@@ -19,11 +19,14 @@ public class UserService {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 System.out.println("Login successful");
+                return true; // User authenticated
             } else {
                 System.out.println("Login failed");
+                return false; // Authentication failed
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false; // Exception occurred, authentication failed
         } finally {
             try {
                 repo.closeConnection();
@@ -31,7 +34,7 @@ public class UserService {
                 e.printStackTrace();
             }
         }
-    }
+    }    
     
 
     public void saveUser(User user, MySQLRepository repo) {

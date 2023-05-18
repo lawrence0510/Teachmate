@@ -11,13 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
-import java.util.Random;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.mysql.jdbc.PreparedStatement;
 
 
 public class RegisterController implements HttpHandler {
