@@ -69,7 +69,7 @@
 </style>
 
 <script>
-/* eslint-disable */ 
+/* eslint-disable */
 import backend from '@/api/backend.js';
 
 export default {
@@ -136,16 +136,19 @@ export default {
                 email: this.loginEmail,
                 password: this.loginPassword,
             };
+            const headers = {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:8000'
+            };
 
-            backend.signIn(formData)
+            backend.signIn(formData, headers)
                 .then(response => {
                     console.log('Logged in successfully!')
-                    // 處理成功回應
                 })
                 .catch(error => {
                     console.log('Unsuccessful log in!')
-                    // 處理錯誤
                 });
+
         }
     }
 };

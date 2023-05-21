@@ -31,6 +31,10 @@ public class LoginController implements HttpHandler {
             handleOptionsRequest(exchange);
         } else if (exchange.getRequestMethod().equalsIgnoreCase("POST")) {
             try {
+                Headers headers = exchange.getResponseHeaders();
+                headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
+                headers.add("Access-Control-Allow-Methods", "POST");
+                headers.add("Access-Control-Allow-Headers", "Content-Type");
                 // Read the request body
                 InputStream requestBody = exchange.getRequestBody();
                 byte[] requestBodyBytes = requestBody.readAllBytes();
