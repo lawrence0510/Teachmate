@@ -912,14 +912,36 @@ textarea#comment::placeholder {
     color:black;
     font-weight:bold;
     font-size: 18px;
-    width: 80px;
+    width: 20%;
+    white-space: nowrap;
     position: absolute;
     top: 104%;
-    left:95.5%;
+    left:105%;
     border: black;
 }
 
 .button_set2:hover{                       /* 藍色放大 */                 
+    background-color: white;
+    color:darkblue;
+    transform: scale(1.2);
+    border: 1px solid black;
+}
+
+.button_set1{  
+                         /* 按鈕設定 */                          
+    background-color: white; 
+    color:black;
+    font-weight:bold;
+    font-size: 18px;
+    width: 18%;
+    white-space: nowrap;
+    position: absolute;
+    top: 104%;
+    left:83%;
+    border: black;
+}
+
+.button_set1-2:hover{                       /* 藍色放大 */                 
     background-color: white;
     color:darkblue;
     transform: scale(1.2);

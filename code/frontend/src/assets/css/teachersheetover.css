@@ -610,7 +610,7 @@ textarea#comment::placeholder {
     font-size: 15px;
     width: 60px;
     position: absolute;
-    top: 88%;
+    top: 93%;
     left:95.5%;
     border: 1px solid black;
 }
@@ -637,7 +637,7 @@ textarea#comment::placeholder {
 .sheet_div{             
     background-color:rgba(192, 192, 192, 0.2);
     width: 70%;
-    height: 500px;
+    height: 700px;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -649,14 +649,14 @@ textarea#comment::placeholder {
 .sheet_content_title{
 	font-size: 30px;
 	position: absolute; 
-	margin-bottom: 57%;
+	margin-bottom: 77%;
     font-weight: bold;
 }
 
 .sheet_content_sheet{
 	font-size: 18px; 
 	position:absolute; 
-	margin-bottom: 47%;
+	margin-bottom: 67%;
     font-weight: bold;
     white-space: nowrap;
 }
@@ -664,7 +664,7 @@ textarea#comment::placeholder {
 .sheet_content_t{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: 30%;
+	margin-bottom: 50%;
 	margin-left: -15%;
 	white-space: nowrap;
 }
@@ -672,7 +672,7 @@ textarea#comment::placeholder {
 .sheet_content_tname{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: 30%;
+	margin-bottom: 50%;
 	margin-left: 10%;
 	white-space: nowrap;
 }
@@ -680,65 +680,112 @@ textarea#comment::placeholder {
 .sheet_content_s{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: 10%;
+	margin-bottom: 30%;
 	margin-left: -15%;
 	white-space: nowrap;
 }
 
 .sheet_content_sid{
-	
+	font-size: 20px;
 	position: absolute; 
-	margin-bottom: 10%;
-	margin-left: 15%;
-	width: 140px;
+	margin-bottom: 30%;
+	margin-left: 10%;
+	white-space: nowrap;
 }
 
 .sheet_content_sub{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -10%;
+	margin-bottom: 10%;
 	margin-left: -15%;
 	white-space: nowrap;
 }
 
 .sheet_content_subname{
-	
+	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -10%;
-	margin-left: 15%;
-	width: 140px;	
+	margin-bottom: 10%;
+	margin-left: 10%;
+	white-space: nowrap;	
 }
 
 .sheet_content_time{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -30%;
+	margin-bottom: -10%;
 	margin-left: -30%;
 	white-space: nowrap;	
 }
 
 .sheet_content_time_s{
+	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -30%;
-	margin-left: %;
-	
+	margin-bottom: -10%;
+	margin-left: -5%;
+	white-space: nowrap;
 }
 
 .sheet_content_time_to{
 	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -30%;
-	margin-left: 20%;
+	margin-bottom: -10%;
+	margin-left: 11%;
 	white-space: nowrap;
 	font-weight: bold;	
 }
 
 .sheet_content_time_e{
+	font-size: 20px;
 	position: absolute; 
-	margin-bottom: -30%;
-	margin-left: 40%;
+	margin-bottom: -10%;
+	margin-left: 27%;
+	white-space: nowrap;
 }
 
+.sheet_content_comment{
+	font-size: 20px;
+	position: absolute; 
+	margin-bottom: -30%;
+	margin-left: -20%;
+	white-space: nowrap;
+}
+
+.star-container {
+  display: inline-block;
+  font-size: 30px;
+  position: absolute; 
+	margin-bottom: -29.8%;
+	margin-left: 25%;
+  white-space: nowrap;
+}
+
+.star-container:before {
+  content: "\2605\2605\2605\2605\2605";
+  color: #ccc;
+}
+
+.star-container:after {
+  content: "\2605\2605\2605\2605\2605";
+  color: #f8ca00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 60%;
+}
+
+.sheet_content_div{
+	height: 20%;
+	width: 44%;
+	position: absolute; 
+	margin-bottom: -57%;
+	margin-left: 0%;
+	border: 1px solid black;
+	background-color: white;
+	font-size: 17px;
+	text-align: left;
+
+}
 
 
 .button_set_head{                            /* 按鈕設定 */                          
@@ -769,6 +816,7 @@ textarea#comment::placeholder {
 .button_ok{
 	width: 30px;
 	border: 1px solid black;
+
 }
 
 /* contact section end */

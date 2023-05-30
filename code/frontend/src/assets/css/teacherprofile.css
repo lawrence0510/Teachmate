@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -1320,9 +1321,10 @@ personal_png_NCCU{
 .margin_bottom90{
 	margin-bottom: 50px;
 }
-
 
 =======
+>>>>>>> Stashed changes
+
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -2230,7 +2232,7 @@ textarea#comment::placeholder {
     color:gray;
     font-weight:bold;
     font-size: 20px;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .button_set2:hover{                         /* 藍色放大 */                 
@@ -2643,6 +2645,9 @@ personal_png_NCCU{
 
 .margin_bottom90{
 	margin-bottom: 50px;
+<<<<<<< Updated upstream
+}
+=======
 }
 
 

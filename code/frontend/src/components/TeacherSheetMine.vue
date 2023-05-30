@@ -51,74 +51,71 @@
 
          <div class="contact_section_2 layout_padding">
             <div class="sheet_div_title">
-                  <div class="sheet_div_title2">BUILD EVALUATION SHEET
+                  <div class="sheet_div_title2">MY EVALUATION SHEET
                </div>
                </div>
 
-            
+            <a href="#"><button class="button_set button_set2 ">Ongoing</button></a><!--按下按鈕跳到原本這頁(不變)-->
+               <a href="post.html"><button class="button_set button_set2 button_fixed" style="margin-left: 2px;">Established</button></a><!--按下按鈕跳到TeacherSheetMine-->
+               <hr size="8" align="center" noshade width="40%" color="000000" >
 
             <div class="col-md-6">
-               <div class="sheet_div">
+               <div class="personal_div">
+                   <div class="personal_div_textl " >① 多益：李小包</div>
+                   <a href="#" class="personal_div_textr">已建立</a>
                   
-                  <div class="sheet_content_title">
-                     TEACHMATE
-                  </div>
-                  <div class="sheet_content_sheet">
-                     evaluation sheet
-                  </div>
-                  <div class="sheet_content_t">
-                     Teacher：
-                  </div>
-                  <div class="sheet_content_tname">
-                     吳堃豪
-                  </div>
-                  <div class="sheet_content_s">
-                     Student：
-                  </div>
-                  <div class="sheet_content_sid">
-                     李筱貞
-                  </div>
-                  <div class="sheet_content_sub">
-                     Subject：
-                  </div>
-                  <div class="sheet_content_subname">
-                     多益
-                  </div>
-                  <div class="sheet_content_time">
-                     Time：
-                  </div>
-                 <div class="sheet_content_time_s">
-                     2022/2/10
-                  </div><div class="sheet_content_time_to">~</div><div class="sheet_content_time_e">
-                     2023/4/10
-                  </div>
-                  <div class="sheet_content_comment">
-                     Student Comments：
-                  </div>
-                  <div class="star-rating">
-                 <input type="radio" name="rating" id="star1" value="1">
-                 <label for="star1"></label>
-                 <input type="radio" name="rating" id="star2" value="2">
-                 <label for="star2"></label>
-                 <input type="radio" name="rating" id="star3" value="3">
-                 <label for="star3"></label>
-                 <input type="radio" name="rating" id="star4" value="4">
-                 <label for="star4"></label>
-                 <input type="radio" name="rating" id="star5" value="5">
-                 <label for="star5"></label></div>
-
-                  <textarea class="sheet_content_div " placeholder="Please share your thoughts and opinions."></textarea>
-                  <button id="show" class="button_set" >Build</button>
-                  <dialog id="infoModal" >
-                  <p>Successfully created.<br>The sheet has been sent to the student.</p>
-                   <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a></dialog>
-                 
-
                </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">② 資料庫管理：學生姓名</div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">③ 健身：王柏翔</div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">④ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑤ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑥ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑦ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑧ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑨ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑩ </div>
+                   <a href="#" class="personal_div_textr">已建立</a>
+               </div>
+
+            </div>
          </div>
       </div>
    </div>
-</div>
+
 
 
    <div class="contact_section_2 layout_padding">
@@ -140,38 +137,14 @@
 
 <script>
 
-export default {
-  mounted() {
-
-   let btn = document.querySelector("#show");
-  let infoModal = document.querySelector("#infoModal");
-  let close = document.querySelector("#close");
-
-  // 初始隐藏 dialog 元素
-  infoModal.style.display = "none";
-
-  btn.addEventListener("click", function() {
-    infoModal.style.display = "block"; // 显示 dialog 元素
-    infoModal.showModal(); // 打开模态对话框
-  });
-
-  close.addEventListener("click", function() {
-    infoModal.close();
-    infoModal.style.display = "none"; // 隐藏 dialog 元素
-  });
-
-  }
-};
 </script>
 
-
 <style>
-@import url("../assets/css/studentsheetcomment.css");
+@import url("../assets/css/teachersheetmine.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
-
 </style>

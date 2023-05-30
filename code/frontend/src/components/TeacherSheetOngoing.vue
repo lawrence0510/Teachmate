@@ -51,74 +51,76 @@
 
          <div class="contact_section_2 layout_padding">
             <div class="sheet_div_title">
-                  <div class="sheet_div_title2">BUILD EVALUATION SHEET
+                  <div class="sheet_div_title2">MY EVALUATION SHEET
                </div>
                </div>
 
-            
+            <a href="personal.html"><button class="button_set1 button_set1-2 button_fixed">Ongoing</button></a>
+               <a href="post.html"><button class="button_set1 button_set1-2 " style="margin-left: 2px;">Established</button></a>
+               <hr size="8" align="center" noshade width="40%" color="000000">
+
 
             <div class="col-md-6">
-               <div class="sheet_div">
+               <div class="personal_div">
+                   <div class="personal_div_textl " >① 研究所：邱郁宸</div>
+                   <a class="personal_div_textr" style="color: gray;">已傳送</a>
                   
-                  <div class="sheet_content_title">
-                     TEACHMATE
-                  </div>
-                  <div class="sheet_content_sheet">
-                     evaluation sheet
-                  </div>
-                  <div class="sheet_content_t">
-                     Teacher：
-                  </div>
-                  <div class="sheet_content_tname">
-                     吳堃豪
-                  </div>
-                  <div class="sheet_content_s">
-                     Student：
-                  </div>
-                  <div class="sheet_content_sid">
-                     李筱貞
-                  </div>
-                  <div class="sheet_content_sub">
-                     Subject：
-                  </div>
-                  <div class="sheet_content_subname">
-                     多益
-                  </div>
-                  <div class="sheet_content_time">
-                     Time：
-                  </div>
-                 <div class="sheet_content_time_s">
-                     2022/2/10
-                  </div><div class="sheet_content_time_to">~</div><div class="sheet_content_time_e">
-                     2023/4/10
-                  </div>
-                  <div class="sheet_content_comment">
-                     Student Comments：
-                  </div>
-                  <div class="star-rating">
-                 <input type="radio" name="rating" id="star1" value="1">
-                 <label for="star1"></label>
-                 <input type="radio" name="rating" id="star2" value="2">
-                 <label for="star2"></label>
-                 <input type="radio" name="rating" id="star3" value="3">
-                 <label for="star3"></label>
-                 <input type="radio" name="rating" id="star4" value="4">
-                 <label for="star4"></label>
-                 <input type="radio" name="rating" id="star5" value="5">
-                 <label for="star5"></label></div>
+               </div>
 
-                  <textarea class="sheet_content_div " placeholder="Please share your thoughts and opinions."></textarea>
-                  <button id="show" class="button_set" >Build</button>
-                  <dialog id="infoModal" >
-                  <p>Successfully created.<br>The sheet has been sent to the student.</p>
-                   <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a></dialog>
-                 
+               <div class="personal_div2">
+                   <div class="personal_div_textl">② 供應鏈：李曉慧</div>
+                   <button onclick="window.location.href = 'https://www.example.com';" class="button_check">確認評論</button> <!--跳轉到老師確認契約的頁面-->
 
                </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">③ 程式設計：010</div>
+                   <button id="show" class="button_set" >完成繳費</button>
+                  <dialog id="infoModal" class="button_window" ><p>若您已完成繳費，請輸入匯款帳號後五碼以利後續確認：</p>
+                  <input type="text" name="username" >
+                   <a href="#"><button id="close" class="button_ok">OK</button></a></dialog><!--按下OK後要跳回TeacherSheetOngoing(保持原頁面)但完成繳費按鈕會改為顯示核對中-->
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">④ 鋼琴：學生姓名</div>
+                   <a class="personal_div_textr" style="color: gray;">核對中</a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑤ </div>
+                   <a  class="personal_div_textr"></a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑥ </div>
+                   <a  class="personal_div_textr"></a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑦ </div>
+                   <a href="#" class="personal_div_textr"></a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑧ </div>
+                   <a href="#" class="personal_div_textr"></a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑨ </div>
+                   <a href="#" class="personal_div_textr"></a>
+               </div>
+
+               <div class="personal_div2">
+                   <div class="personal_div_textl">⑩ </div>
+                   <a href="#" class="personal_div_textr"></a>
+               </div>
+
+            </div>
          </div>
       </div>
    </div>
-</div>
+
 
 
    <div class="contact_section_2 layout_padding">
@@ -139,7 +141,6 @@
 </template>
 
 <script>
-
 export default {
   mounted() {
 
@@ -164,14 +165,12 @@ export default {
 };
 </script>
 
-
 <style>
-@import url("../assets/css/studentsheetcomment.css");
+@import url("../assets/css/teachersheetongoing.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
-
 </style>

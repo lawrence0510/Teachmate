@@ -95,24 +95,12 @@
                   <div class="sheet_content_comment">
                      Student Comments：
                   </div>
-                  <div class="star-rating">
-                 <input type="radio" name="rating" id="star1" value="1">
-                 <label for="star1"></label>
-                 <input type="radio" name="rating" id="star2" value="2">
-                 <label for="star2"></label>
-                 <input type="radio" name="rating" id="star3" value="3">
-                 <label for="star3"></label>
-                 <input type="radio" name="rating" id="star4" value="4">
-                 <label for="star4"></label>
-                 <input type="radio" name="rating" id="star5" value="5">
-                 <label for="star5"></label></div>
 
-                  <textarea class="sheet_content_div " placeholder="Please share your thoughts and opinions."></textarea>
-                  <button id="show" class="button_set" >Build</button>
-                  <dialog id="infoModal" >
-                  <p>Successfully created.<br>The sheet has been sent to the student.</p>
-                   <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a></dialog>
-                 
+                  <div class="star-container"></div>
+
+                  <div class="sheet_content_div ">老師ㄍㄟˋ婚。</div>
+                 <div class="button_set"><a href="#" style="color: black;">OK</a></div>  <!-- 跳轉到契約選單-->
+                  
 
                </div>
          </div>
@@ -166,7 +154,7 @@ export default {
 
 
 <style>
-@import url("../assets/css/studentsheetcomment.css");
+@import url("../assets/css/evaluationsheet.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");

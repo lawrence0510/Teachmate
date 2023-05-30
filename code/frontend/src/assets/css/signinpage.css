@@ -2,225 +2,225 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
-	box-sizing: border-box;
+	box-sizing: border-box!important;
 }
 
 body {
-	background: #f6f5f7;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+	background: #f6f5f7!important;
+	display: flex!important;
+	justify-content: center!important;
+	align-items: center!important;
+	flex-direction: column!important;
+	font-family: 'Montserrat', sans-serif!important;
+	height: 100vh!important;
+	margin: -20px 0 50px!important;
 }
 
 h1 {
-	font-weight: bold;
-	margin: 0;
+	font-weight: bold!important;
+	margin: 0!important;
 }
 
 h2 {
-	text-align: center;
+	text-align: center!important;
 }
 
 p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
+	font-size: 14px!important;
+	font-weight: 100!important;
+	line-height: 20px!important;
+	letter-spacing: 0.5px!important;
+	margin: 20px 0 30px!important;
 }
 
 span {
-	font-size: 12px;
+	font-size: 12px!important;
 }
 
 a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
+	color: #333!important;
+	font-size: 14px!important;
+	text-decoration: none!important;
+	margin: 15px 0!important;
 }
 
 button {
-	border-radius: 20px;
-	border: 1px solid #F6BE00;
-	background-color: #F6BE00;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	border-radius: 20px!important;
+	border: 1px solid #F6BE00!important;
+	background-color: #F6BE00!important;
+	color: #FFFFFF!important;
+	font-size: 12px!important;
+	font-weight: bold!important;
+	padding: 12px 45px!important;
+	letter-spacing: 1px!important;
+	text-transform: uppercase!important;
+	transition: transform 80ms ease-in!important;
 }
 
 button:active {
-	transform: scale(0.95);
+	transform: scale(0.95)!important;
 }
 
 button:focus {
-	outline: none;
+	outline: none!important;
 }
 
 button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+	background-color: transparent!important;
+	border-color: #FFFFFF!important;
 }
 
 form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
+	background-color: #FFFFFF!important;
+	display: flex!important;
+	align-items: center!important;
+	justify-content: center!important;
+	flex-direction: column!important;
+	padding: 0 50px!important;
+	height: 100%!important;
+	text-align: center!important;
 }
 
 input, select {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 230px;
+	background-color: #eee!important;
+	border: none!important;
+	padding: 12px 15px!important;
+	margin: 8px 0!important;
+	width: 230px!important;
 }
 
 .container {
-	background-color: #fff;
-	border-radius: 10px;
+	background-color: #fff!important;
+	border-radius: 10px!important;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
+			0 10px 10px rgba(0,0,0,0.22)!important;
+	position: relative!important;
+	overflow: hidden!important;
+	width: 768px!important;
+	max-width: 100%!important;
+	min-height: 480px!important;
 }
 
 .form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
+	position: absolute!important;
+	top: 0!important;
+	height: 100%!important;
+	transition: all 0.6s ease-in-out!important;
 }
 
 .sign-in-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
+	left: 0!important;
+	width: 50%!important;
+	z-index: 2!important;
 }
 
 .container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
+	transform: translateX(100%)!important;
 }
 
 .sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
+	left: 0!important;
+	width: 50%!important;
+	opacity: 0!important;
+	z-index: 1!important;
 }
 
 .container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
+	transform: translateX(100%)!important;
+	opacity: 1!important;
+	z-index: 5!important;
+	animation: show 0.6s!important;
 }
 
 @keyframes show {
 	0%, 49.99% {
-		opacity: 0;
-		z-index: 1;
+		opacity: 0!important;
+		z-index: 1!important;
 	}
 	
 	50%, 100% {
-		opacity: 1;
-		z-index: 5;
+		opacity: 1!important;
+		z-index: 5!important;
 	}
 }
 
 .overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
+	position: absolute!important;
+	top: 0!important;
+	left: 50%!important;
+	width: 50%!important;
+	height: 100%!important;
+	overflow: hidden!important;
+	transition: transform 0.6s ease-in-out!important;
+	z-index: 100!important;
 }
 
 .container.right-panel-active .overlay-container{
-	transform: translateX(-100%);
+	transform: translateX(-100%)!important;
 }
 
 .overlay {
-	background: #F6BE00;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+	background: #F6BE00!important;
+	background-repeat: no-repeat!important;
+	background-size: cover!important;
+	background-position: 0 0!important;
+	color: #FFFFFF!important;
+	position: relative!important;
+	left: -100%!important;
+	height: 100%!important;
+	width: 200%!important;
+  	transform: translateX(0)!important;
+	transition: transform 0.6s ease-in-out!important;
 }
 
 .container.right-panel-active .overlay {
-  	transform: translateX(50%);
+  	transform: translateX(50%)!important;
 }
 
 .overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 40px;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+	position: absolute!important;
+	display: flex!important;
+	align-items: center!important;
+	justify-content: center!important;
+	flex-direction: column!important;
+	padding: 0 40px!important;
+	text-align: center!important;
+	top: 0!important;
+	height: 100%!important;
+	width: 50%!important;
+	transform: translateX(0)!important;
+	transition: transform 0.6s ease-in-out!important;
 }
 
 .overlay-left {
-	transform: translateX(-20%);
+	transform: translateX(-20%)!important;
 }
 
 .container.right-panel-active .overlay-left {
-	transform: translateX(0);
+	transform: translateX(0)!important;
 }
 
 .overlay-right {
-	right: 0;
-	transform: translateX(0);
+	right: 0!important;
+	transform: translateX(0)!important;
 }
 
 .container.right-panel-active .overlay-right {
-	transform: translateX(20%);
+	transform: translateX(20%)!important;
 }
 
 .enroll {
-	max-height: 319px;
-	overflow-y: overlay;
+	max-height: 319px!important;
+	overflow-y: overlay!important;
 }
 
 /*下面是原本模板的CSS, 我只放了最上面那個黃色扛棒的部分*/
 .header_section {
-    width: 100%;
-    float: left;
-    background-image: url(../images/banner-bg.png);
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px 0px;
+    width: 100%!important;
+    float: left!important;
+    background-image: url(../images/banner-bg.png)!important;
+    height: auto!important;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    padding: 20px 0px!important;
 }
