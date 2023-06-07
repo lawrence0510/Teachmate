@@ -270,14 +270,14 @@ button {
 	color: #ff405c;
 }
 
-.button_set_head{                            /* 按鈕設定 */                          
+.studentprofilebutton_set_head{                            /* 按鈕設定 */                          
     background-color: white; 
     color:white;
     font-weight:bold;
     font-size: 25px;
 }
 
-.button_set2_head:hover{                         /* 藍色放大 */                 
+.studentprofilebutton_set2_head:hover{                         /* 藍色放大 */                 
     color:black;
     transform: scale(1.2);
 }
@@ -880,7 +880,7 @@ textarea#comment::placeholder {
   position: relative;
 }
 
-.button_set{                            /* 按鈕設定 */                          
+.studentprofilebutton_set{                            /* 按鈕設定 */                          
     background-color: white; 
     color:gray;
     font-weight:bold;
@@ -888,7 +888,7 @@ textarea#comment::placeholder {
      margin-right: 15px;
 }
 
-.button_set2:hover{                         /* 藍色放大 */                 
+.studentprofilebutton_set2:hover{                         /* 藍色放大 */                 
     background-color: white;
     color:blue;
     transform: scale(1.2);
@@ -898,7 +898,7 @@ textarea#comment::placeholder {
     border-bottom:2px solid blue;       
 }
 
-.personal_div{             
+.studentprofilepersonal_div{             
     background-color: lightgray;
     width: 110%;
     height: 53px;
@@ -928,7 +928,7 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl{
+.studentprofilepersonal_div_textl{
     font-weight: bold;
     position: absolute;
     right: 29%;
@@ -936,7 +936,7 @@ textarea#comment::placeholder {
     
 }
 
-.personal_div_textr{
+.studentprofilepersonal_div_textr{
     font-weight: bold;
     position: absolute;
     top: 1%;

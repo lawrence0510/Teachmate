@@ -66,9 +66,9 @@
 
 
                <div class="col-md-6">
-                  <div class="personal_div">
+                  <div class="teacherprofilepersonal_div">
                      <img src="../assets/images/identity.png" alt="身分" class="personal_png">
-                     <div class="personal_div_textl">身分</div>
+                     <div class="teacherprofilepersonal_div_textl">身分</div>
                      <div class="teacherprofilepersonal_div_textr">老師
                      </div>
 

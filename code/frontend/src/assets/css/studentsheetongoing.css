@@ -1,15 +1,7 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-/* @import url(font-awesome.min.css); */
 @import url(meanmenu.css);
-/* @import url(owl.carousel.min.css); */
-/* @import url(swiper.min.css); */
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -17,15 +9,15 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 #navbarNav {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-  }
-  
+	display: flex;
+	justify-content: center;
+}
+
+.navbar-nav {
+	display: flex;
+	justify-content: center;
+}
+
 * {
 	box-sizing: border-box !important;
 	transition: ease all 0.5s;
@@ -35,16 +27,16 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+body.studentsheetongoing {
 	color: #666666;
 	font-size: 14px;
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	line-height: 1.80857;
 	font-weight: normal;
 	overflow-x: hidden;
 }
 
-a {
+a.studentsheetongoing {
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -55,12 +47,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.studentsheetongoing,
+h2.studentsheetongoing,
+h3.studentsheetongoing,
+h4.studentsheetongoing,
+h5.studentsheetongoing,
+h6.studentsheetongoing {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -71,27 +63,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.studentsheetongoing {
 	font-size: 24px
 }
 
-h2 {
+h2.studentsheetongoing {
 	font-size: 22px
 }
 
-h3 {
+h3.studentsheetongoing {
 	font-size: 18px
 }
 
-h4 {
+h4.studentsheetongoing {
 	font-size: 16px
 }
 
-h5 {
+h5.studentsheetongoing {
 	font-size: 14px
 }
 
-h6 {
+h6.studentsheetongoing {
 	font-size: 13px
 }
 
@@ -103,43 +95,32 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
-
-button:focus {
+button.studentsheetongoing:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.studentsheetongoing,
+li.studentsheetongoing,
+ol.studentsheetongoing {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.studentsheetongoing {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.studentsheetongoing {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.studentsheetongoing,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -150,12 +131,12 @@ a,
 	transition: all .3s ease-in-out;
 }
 
-img {
+img.studentsheetongoing {
 	max-width: 100%;
 	height: auto;
 }
 
- :focus {
+:focus {
 	outline: 0;
 }
 
@@ -197,7 +178,7 @@ blockquote {
 	padding: 30px;
 }
 
-button {
+button.studentsheetongoing {
 	border: 0;
 	margin: 0;
 	padding: 0;
@@ -210,7 +191,8 @@ button {
 }
 
 .layout_padding {
-	padding-top: 40px; /*改*/
+	padding-top: 40px;
+	/*改*/
 	padding-bottom: 0px;
 }
 
@@ -221,47 +203,46 @@ button {
 
 /* header section start */
 
-.header_section {
-    width: 100%;
-    float: left;
-    background-image: url(../images/banner-bg.png);
-    height: 100px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    padding: 20px 0px;
+.teacherprofileheader_section {
+	width: 100%;
+	float: left;
+	background-image: url(../images/banner-bg.png);
+	height: 100px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 20px 0px;
 }
 
-.bg-light {
-	background-color: #363636 !important;
+.teacherprofilebg-light {
+	background-color: #f7f8fa !important;
 	border-radius: 50px;
 }
 
 .logo {
-    width: 60%;
-    float: left;
-    padding-top: 10px;
+	width: 60%;
+	float: left;
+	padding-top: 10px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
+	color: #000000;
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 
 .nav-link {
@@ -275,7 +256,7 @@ button {
 	padding-left: 15px;
 }
 
-.navbar {
+.teacherprofilenavbar {
 	padding: 0px 20px;
 }
 
@@ -298,20 +279,23 @@ button {
 	color: #ff405c;
 }
 
-.button_set_head{                            /* 按鈕設定 */                          
-    background-color: white; 
-    color:white;
-    font-weight:bold;
-    font-size: 25px;
+.button_set_head {
+	/* 按鈕設定 */
+	background-color: white;
+	color: white;
+	font-weight: bold;
+	font-size: 25px;
 }
 
-.button_set2_head:hover{                         /* 藍色放大 */                 
-    color:black;
-    transform: scale(1.2);
+.button_set2_head:hover {
+	/* 藍色放大 */
+	color: black;
+	transform: scale(1.2);
 }
 
-.button_fixed_head{                          /* 藍色底線 */
-    border-bottom:2px solid gray;       
+.button_fixed_head {
+	/* 藍色底線 */
+	border-bottom: 2px solid gray;
 }
 
 
@@ -321,10 +305,10 @@ button {
 /* banner section start */
 
 .banner_section {
-    width: 100%;
-    float: left;
-    padding-bottom: 200px;
-    padding-top: 120px;
+	width: 100%;
+	float: left;
+	padding-bottom: 200px;
+	padding-top: 120px;
 }
 
 .banner_taital {
@@ -333,7 +317,7 @@ button {
 	font-size: 60px;
 	color: #1c1c1c;
 	text-align: center;
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 .banner_text {
@@ -342,7 +326,7 @@ button {
 	color: #2a2929;
 	text-align: center;
 	margin: 0 auto;
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 .read_bt {
@@ -350,7 +334,8 @@ button {
 	margin: 0 auto;
 	text-align: center;
 }
-.read_bt a{
+
+.read_bt a {
 	width: 100%;
 	float: left;
 	text-align: center;
@@ -362,35 +347,39 @@ button {
 	margin-top: 40px;
 	text-transform: uppercase;
 }
-.read_bt a:hover{
+
+.read_bt a:hover {
 	color: #2a2a2a;
 	background-color: #ffffff;
 }
+
 .number_main {
-    width: 100%;
-    float: left;
-    margin-top: 40px;
+	width: 100%;
+	float: left;
+	margin-top: 40px;
 }
+
 .number_text {
-    width: 70px;
-    font-size: 20px;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 100px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px 0px;
+	width: 70px;
+	font-size: 20px;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	border-radius: 100px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 15px 0px;
 }
+
 .number_text::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 1px;
-    background-color: #fff;
-    margin: 0 auto;
-    left: 0px;
-    right: 0px;
-    margin-top: 17px;
+	content: '';
+	position: absolute;
+	width: 300px;
+	height: 1px;
+	background-color: #fff;
+	margin: 0 auto;
+	left: 0px;
+	right: 0px;
+	margin-top: 17px;
 }
 
 #main_slider a.carousel-control-next {
@@ -400,9 +389,9 @@ button {
 }
 
 #main_slider a.carousel-control-prev {
-    position: absolute;
-    left: -145px;
-    top: 60%;
+	position: absolute;
+	left: -145px;
+	top: 60%;
 }
 
 #main_slider .carousel-control-prev,
@@ -434,9 +423,9 @@ button {
 }
 
 .about_taital_main {
-    width: 100%;
-    float: left;
-    padding-top: 210px;
+	width: 100%;
+	float: left;
+	padding-top: 210px;
 }
 
 .about_taital {
@@ -477,33 +466,35 @@ button {
 }
 
 .about_box {
-    width: 100%;
-    background: linear-gradient(to bottom, transparent 20%, #fff 20%);
-    padding: 25px;
-    height: auto;
-    filter: drop-shadow(0px 4px 15px #dedede);
+	width: 100%;
+	background: linear-gradient(to bottom, transparent 20%, #fff 20%);
+	padding: 25px;
+	height: auto;
+	filter: drop-shadow(0px 4px 15px #dedede);
 }
+
 .about_box_2 {
-    width: 100%;
-    background: linear-gradient(to bottom, transparent 20%, #fff 20%);
-    padding: 25px;
-    height: auto;
-    filter: drop-shadow(0px 4px 15px #dedede);
-    position: relative;
-    left: -230px;
+	width: 100%;
+	background: linear-gradient(to bottom, transparent 20%, #fff 20%);
+	padding: 25px;
+	height: auto;
+	filter: drop-shadow(0px 4px 15px #dedede);
+	position: relative;
+	left: -230px;
 }
 
 .image_1 {
-    top: -40px;
-    width: 100%;
+	top: -40px;
+	width: 100%;
 }
+
 .making_text {
-    width: 100%;
-    color: #242424;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 20px;
+	width: 100%;
+	color: #242424;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 20px;
 }
 
 /* about section end */
@@ -511,7 +502,7 @@ button {
 
 /* improve section start */
 
-.sheet_div_intro{
+.sheet_div_intro {
 	font-weight: bold;
 	font-size: 30px;
 }
@@ -537,6 +528,7 @@ button {
 	text-transform: uppercase;
 	text-align: center;
 }
+
 .improve_text {
 	width: 82%;
 	font-size: 16px;
@@ -544,6 +536,7 @@ button {
 	text-align: center;
 	margin: 0 auto;
 }
+
 .improve_section_2 {
 	width: 100%;
 	float: left;
@@ -554,54 +547,59 @@ button {
 	padding: 100px 0px;
 	margin-bottom: 90px;
 }
+
 .image_bg {
-    width: 100%;
-    /* background-image: url(../images/img-4.png); */
-    height: auto;
-    padding: 212px 0px;
-    background-size: 100%;
-    text-align: center;
+	width: 100%;
+	/* background-image: url(../images/img-4.png); */
+	height: auto;
+	padding: 212px 0px;
+	background-size: 100%;
+	text-align: center;
 }
+
 .play_icon {
-    width: 200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
+	width: 200px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 5;
 }
 
 .play_icon::before {
-    content: '';
-    position: absolute;
-    top: 74px;
-    left: 100px;
-    width: 155px;
-    height: 155px;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 100%;
-    animation: fadeEffect 1.3s infinite ease;
-    box-shadow: 0px 0px 10px 0px;
-    right: 0px;
-    margin: 0 auto;
-    z-index: -1;
+	content: '';
+	position: absolute;
+	top: 74px;
+	left: 100px;
+	width: 155px;
+	height: 155px;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	border-radius: 100%;
+	animation: fadeEffect 1.3s infinite ease;
+	box-shadow: 0px 0px 10px 0px;
+	right: 0px;
+	margin: 0 auto;
+	z-index: -1;
 }
 
 @keyframes fadeEffect {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-    }
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(1.2);
+		opacity: 0;
+	}
 }
-.video_bt{
+
+.video_bt {
 	width: 200px;
 	margin: 0 auto;
 	text-align: center;
 }
-.video_bt a{
+
+.video_bt a {
 	width: 100%;
 	float: left;
 	font-size: 18px;
@@ -613,7 +611,8 @@ button {
 	border-radius: 8px;
 	margin-top: 70px;
 }
-.video_bt a:hover{
+
+.video_bt a:hover {
 	background-color: #ffffff;
 	color: #2a2a2a;
 }
@@ -638,6 +637,7 @@ button {
 	text-transform: uppercase;
 	text-align: center;
 }
+
 .gallery_text {
 	width: 82%;
 	font-size: 16px;
@@ -645,53 +645,55 @@ button {
 	text-align: center;
 	margin: 0 auto;
 }
-.story_section_2{
+
+.story_section_2 {
 	width: 100%;
 	float: left;
 	margin-top: 40px;
 }
 
 .images_6 {
-    width: 100%;
-    text-align: center;
-    min-height: 110px;
-    margin-top: 30px;
+	width: 100%;
+	text-align: center;
+	min-height: 110px;
+	margin-top: 30px;
 }
+
 .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .ram {
-    position: relative;
-    width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .ram:hover .image {
-  opacity: 0.3;
+	opacity: 0.3;
 }
 
 .ram:hover .middle {
-  opacity: 1;
+	opacity: 1;
 }
 
 
 .image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
 }
 
-.text{
+.text {
 	width: 100%;
 	font-size: 20px;
 	color: #000;
@@ -702,9 +704,9 @@ button {
 /* gallery section end */
 /* testimonial section start */
 .testimonial_section {
-    width: 100%;
-    float: left;
-    padding-bottom: 90px;
+	width: 100%;
+	float: left;
+	padding-bottom: 90px;
 }
 
 .client_section {
@@ -714,25 +716,28 @@ button {
 }
 
 .client_taital {
-    width: 100%;
-    font-size: 40px;
-    color: #1a1919;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-top: 80px;
+	width: 100%;
+	font-size: 40px;
+	color: #1a1919;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 80px;
 }
+
 .client_text_main {
-    width: 90%;
-    float: right;
-    padding-top: 30px;
+	width: 90%;
+	float: right;
+	padding-top: 30px;
 }
-.client_name{
-    width: 100%;
-    font-size: 20px;
-    color: #161515;
-    font-weight: bold;
+
+.client_name {
+	width: 100%;
+	font-size: 20px;
+	color: #161515;
+	font-weight: bold;
 }
+
 .client_text {
 	width: 60%;
 	float: left;
@@ -745,6 +750,7 @@ button {
 	width: 100%;
 	display: flex;
 }
+
 .client_img {
 	width: 100%;
 }
@@ -798,10 +804,12 @@ button {
 	width: 100%;
 	float: left;
 }
+
 .contact_section_2 {
 	width: 100%;
 	float: left;
 }
+
 .mail_section_1 {
 	width: 70%;
 	margin: 0 auto;
@@ -862,69 +870,78 @@ textarea#comment::placeholder {
 }
 
 
-.whole {                                        
-  width: 100%;
-  height: 200%; 
-  position: relative;
+.whole {
+	width: 100%;
+	height: 200%;
+	position: relative;
 }
 
-.button_set1{                            /* 按鈕設定 */                          
-    background-color: white; 
-    color:gray;
-    font-weight:bold;
-    font-size: 20px;
-    margin-right: 20px;
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.button_set1-2:hover{                         /* 藍色放大 */                 
-    background-color: white;
-    color:blue;
-    transform: scale(1.2);
-}
-
-.button_fixed{                          /* 藍色底線 */
-    border-bottom:2px solid blue;       
-}
-
-.sheet_div_title{
-    width: 110%;
-    height: 53px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    margin-left:-5%;
-    margin-top: -3%;
-}
-
-.sheet_div_title2{
+.studentsheetongoingbutton_set1 {
+	/* 按鈕設定 */
+	background-color: white;
+	color: gray;
 	font-weight: bold;
-	font-size: 40px; 
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.studentsheetongoingbutton_set1-2:hover {
+	/* 藍色放大 */
+	background-color: white;
+	color: blue;
+	transform: scale(1.2);
+}
+
+.button_fixed {
+	/* 藍色底線 */
+	border-bottom: 2px solid blue;
+}
+
+.sheet_div_title {
+	width: 110%;
+	height: 53px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: -5%;
+	margin-top: -3%;
+}
+
+.sheet_div_title2 {
+	font-weight: bold;
+	font-size: 40px;
 	display: flex;
 	margin-top: -2%;
 	align-items: center;
 }
 
-.personal_div{             
-    background-color:rgba(192, 192, 192, 0.2);
-    width: 80%;
-    height: 70px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    margin-left:62.5%;
-    font-family: '標楷體', sans-serif;
+.personal_div {
+	background-color: rgba(192, 192, 192, 0.2);
+	width: 80%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 62.5%;
+	font-family: '標楷體', sans-serif;
 }
 
-.personal_div_textl{
+.personal_div_textl {
 	font-size: 20px;
 	position: absolute;
 	margin-right: 17%;
 	text-align: left;
 	width: 50%;
-	
+
 }
 
-.personal_div_textr{
+.personal_div_textr {
 	font-size: 20px;
 	text-align: right;
 	position: absolute;
@@ -933,7 +950,7 @@ textarea#comment::placeholder {
 
 }
 
-.button_check{
+.button_check {
 	background: none;
 	padding: 0;
 	color: blue;
@@ -946,7 +963,7 @@ textarea#comment::placeholder {
 	white-space: nowrap;
 }
 
-.button_ok{
+.button_ok {
 	width: 100px;
 	border: 1px solid black;
 	position: absolute;
@@ -954,55 +971,58 @@ textarea#comment::placeholder {
 	margin-top: 10%;
 }
 
-.button_set{
-	background-color:transparent;
-    color:black;
-    font-size: 20px;
-    width: 82px;
-    position: absolute;
-    left:116%;
-    white-space: nowrap;
-    border: 1px solid black;
+.button_set {
+	background-color: transparent;
+	color: black;
+	font-size: 20px;
+	width: 82px;
+	position: absolute;
+	left: 116%;
+	white-space: nowrap;
+	border: 1px solid black;
 }
 
-.button_window{
+.button_window {
 	width: 30.9%;
 	height: 20%;
 }
 
-.personal_div2{             
-    background-color:rgba(192, 192, 192, 0.2);
-    width: 80%;
-    height: 70px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    margin-left:62.5%;
-    margin-top: 5%;
-    font-family: '標楷體', sans-serif;
+.personal_div2 {
+	background-color: rgba(192, 192, 192, 0.2);
+	width: 80%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 62.5%;
+	margin-top: 5%;
+	font-family: '標楷體', sans-serif;
 }
 
-.button_set_head{                            /* 按鈕設定 */                          
-    background-color: white; 
-    color:white;
-    font-weight:bold;
-    font-size: 25px;
+.button_set_head {
+	/* 按鈕設定 */
+	background-color: white;
+	color: white;
+	font-weight: bold;
+	font-size: 25px;
 }
 
-.button_set2_head:hover{                         /* 藍色放大 */                 
-    color:black;
-    transform: scale(1.2);
+.button_set2_head:hover {
+	/* 藍色放大 */
+	color: black;
+	transform: scale(1.2);
 }
 
-.button_fixed_head{                          /* 藍色底線 */
-    border-bottom:2px solid gray;       
+.button_fixed_head {
+	/* 藍色底線 */
+	border-bottom: 2px solid gray;
 }
 
 /* contact section end */
 
-.personal_png_NCCU{
+.personal_png_NCCU {
 	width: 30px;
-    height: 30px;
+	height: 30px;
 }
 
 /* copyright section start */
@@ -1025,19 +1045,18 @@ textarea#comment::placeholder {
 
 /* copyright section end */
 
-.margin_bottom90{
+.margin_bottom90 {
 	margin-bottom: 50px;
 }
 
-.button-style {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f2f2f2;
-  color: #333;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
+.buttonstudentsheetongoing-style {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #f2f2f2;
+	color: #333;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
 }
-

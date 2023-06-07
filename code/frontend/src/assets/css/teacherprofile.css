@@ -898,7 +898,7 @@ textarea#comment::placeholder {
     border-bottom:2px solid blue;       
 }
 
-.personal_div{             
+.teacherprofilepersonal_div{             
     background-color: lightgray;
     width: 110%;
     height: 53px;
@@ -928,7 +928,7 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl{
+.teacherprofilepersonal_div_textl{
     font-weight: bold;
     position: absolute;
     right: 29.5%;
@@ -939,7 +939,7 @@ textarea#comment::placeholder {
 .teacherprofilepersonal_div_textr{
     font-weight: bold;
     position: absolute;
-    top: 1%;
+    top: 0.5%;
     right:-37%;
     font-size: 25px;
     text-align: right;

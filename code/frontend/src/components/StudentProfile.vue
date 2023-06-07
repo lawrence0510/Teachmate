@@ -16,27 +16,34 @@
 
                         <ul class="navbar-nav studentprofile">
                            <li class="nav-item studentprofile">
-                              <a class="nav-link studentprofile" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                              <a class="nav-link studentprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                            </li>
                            <li class="nav-item active studentprofile">
 
                               <a href="post.html" class="studentprofile"><button
-                                    class="button_set_head button_set2_head nav-link button_fixed_head">Post</button></a>
+                                    class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link button_fixed_head">Post</button></a>
 
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
+                                 href="add.html">ADD</a>
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
+                                 href="personal.html">ABOUT</a>
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link" href="sheet.html">SHEET</a>
+                              <router-link to="/studentsheet"
+                                 class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link">
+                                 SHEET
+                              </router-link>
+
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
+                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
+                                 href="more.html">MORE</a>
                            </li>
                            <li class="nav-item studentprofiles">
                               <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
@@ -59,8 +66,9 @@
                <h1 class="contact_taital">Lawrence<!--改start-->
                   <hr size="10" align="center" noshade width="50%" color="000000">
 
-                  <a href="personal.html"><button class="button_set button_set2 button_fixed">關於</button></a>
-                  <a href="post.html"><button class="button_set button_set2">貼文</button></a>
+                  <a href="personal.html"><button
+                        class="studentprofilebutton_set studentprofilebutton_set2 button_fixed">關於</button></a>
+                  <a href="post.html"><button class="studentprofilebutton_set studentprofilebutton_set2">貼文</button></a>
                </h1>
             </div>
 
@@ -70,10 +78,10 @@
 
 
                <div class="col-md-6">
-                  <div class="personal_div">
+                  <div class="studentprofilepersonal_div">
                      <img src="../assets/images/identity.png" alt="身分" class="personal_png">
-                     <div class="personal_div_textl">身分</div>
-                     <div class="personal_div_textr">學生
+                     <div class="studentprofilepersonal_div_textl">身分</div>
+                     <div class="studentprofilepersonal_div_textr">學生
                      </div>
 
                   </div>

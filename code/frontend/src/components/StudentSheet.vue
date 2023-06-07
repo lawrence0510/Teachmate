@@ -18,7 +18,6 @@
 
                               <a href="post.html"><button
                                     class="button_set_head button_set2_head nav-link ">Post</button></a>
-
                            </li>
                            <li class="nav-item">
                               <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
@@ -125,11 +124,12 @@
 
                   </div>
 
-                  <a href="sheetBuild.html"><button class="button_set1 button_set1-2 " style="border: 2px solid black;">be
-                        a teacher</button></a>
+                  <router-link to="/" class="button_set1 button_set1-2" style="border: 2px solid black;">
+                     be a teacher
+                  </router-link>
 
-                  <a href="sheetBuild.html"><button class="button_set button_set2 " style="border: 2px solid black;">my
-                        evaluation</button></a>
+
+                  <router-link to="/studentsheetongoing" class="studentsheetbutton_set button_set2 " style="border: 2px solid black;">my evaluation</router-link>
 
                </div>
             </div>
@@ -152,14 +152,16 @@
          <div class="container">
             <p class="copyright_text">NCCU MIS 111-2 DBMS<br>G9：TEACHMATE</p><!-- 改 -->
          </div>
-   </div>
-</body></template>
+      </div>
+   </body>
+</template>
 
 <script>
 
 </script>
 
-<style>@import url("../assets/css/studentsheet.css");
+<style>
+@import url("../assets/css/studentsheet.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");

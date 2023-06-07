@@ -887,7 +887,7 @@ textarea#comment::placeholder {
   position: relative;
 }
 
-.button_set{  
+.studentsheetbutton_set{  
                          /* 按鈕設定 */                          
     background-color: white; 
     color:black;
@@ -1059,7 +1059,7 @@ textarea#comment::placeholder {
 }
 
 .button_set2_head:hover{                         /* 藍色放大 */                 
-    color:black;
+    /* color:black; */
     transform: scale(1.2);
 }
 

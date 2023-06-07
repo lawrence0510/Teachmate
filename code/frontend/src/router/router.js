@@ -11,7 +11,7 @@ import TeacherSheet from '@/components/TeacherSheet';
 // import TeacherSheetBuild from '@/components/TeacherSheetBuild';
 // import StudentSheetMine from '@/components/StudentSheetMine';
 // import TeacherSheetMine from '@/components/TeacherSheetMine';
-// import StudentSheetOngoing from '@/components/StudentSheetOngoing';
+import StudentSheetOngoing from '@/components/StudentSheetOngoing';
 // import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
 
 const routes = [
@@ -75,11 +75,11 @@ const routes = [
   //   name: 'TeacherSheetMine',
   //   component: TeacherSheetMine
   // },
-  // {
-  //   path: '/studentsheetongoing',
-  //   name: 'StudentSheetOngoing',
-  //   component: StudentSheetOngoing
-  // },
+  {
+    path: '/studentsheetongoing',
+    name: 'StudentSheetOngoing',
+    component: StudentSheetOngoing
+  },
   // {
   //   path: '/teachersheetongoing',
   //   name: 'TeacherSheetOngoing',
