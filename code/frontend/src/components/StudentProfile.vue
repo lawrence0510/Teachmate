@@ -149,9 +149,4 @@
 <style>
 @import url("../assets/css/studentprofile.css");
 @import url("../assets/css/bootstrap.min.css");
-@import url("../assets/css/responsive.css");
-@import url("../assets/css/jquery.mCustomScrollbar.min.css");
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
 </style>

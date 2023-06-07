@@ -1,12 +1,12 @@
 <template>
-   <div class="header_section">
-      <div class="container-fluid ">
+   <div class="teacherprofileheader_section">
+      <div class="container-fluid">
          <div class="row">
             <div class="col-sm-2 col-6">
 
             </div>
             <div class="col-sm-8 col-6">
-               <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <nav class="teacherprofilenavbar navbar-expand-lg navbar-light bg-light">
 
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
@@ -120,7 +120,7 @@
                </div>
 
                <div class="personal_div_n2">
-                  <img src="../assets/images/exper.png" alt="exper" class="personal_png_exper">
+                  <img src="../assets/images/exper.png" alt="教學經驗" class="personal_png_exper">
                   <div class="personal_div_textl_exper">教學經驗</div>
                   <select class="select_exper">
                      <option value="option1">All</option>
@@ -192,9 +192,4 @@
 <style>
 @import url("../assets/css/teacherprofile.css");
 @import url("../assets/css/bootstrap.min.css");
-@import url("../assets/css/responsive.css");
-@import url("../assets/css/jquery.mCustomScrollbar.min.css");
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
 </style>

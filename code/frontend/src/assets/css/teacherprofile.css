@@ -1,16 +1,7 @@
-
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-/* @import url(font-awesome.min.css); */
 @import url(meanmenu.css);
-/* @import url(owl.carousel.min.css); */
-/* @import url(swiper.min.css); */
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -222,7 +213,7 @@ button {
 
 /* header section start */
 
-.header_section {
+.teacherprofileheader_section {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
@@ -276,7 +267,7 @@ button {
 	padding-left: 15px;
 }
 
-.navbar {
+.teacherprofilenavbar {
 	padding: 0px 20px;
 }
 
@@ -1096,7 +1087,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 26.5%;
+    right: 31%;
     font-size: 25px;
 }
 
@@ -1110,7 +1101,7 @@ textarea#comment::placeholder {
 
 .select_cert{
 	position: relative;
-	    left: 25.4%;
+	    left: 28%;
 	    font-size: 23px;
 }
 
@@ -1119,7 +1110,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 21%;
+    right: 28%;
     font-size: 25px;
 }
 
@@ -1133,7 +1124,7 @@ textarea#comment::placeholder {
 
 .select_exper{
 	position: relative;
-	    left: 20%;
+	    left: 26%;
 	    font-size: 23px;
 }
 
@@ -1254,7 +1245,7 @@ textarea#comment::placeholder {
 
 .personal_div_comment_line{
     position: absolute;
-    margin-top: -18.5%;
+    margin-top: -17%;
     left: %;
     width: 90%;
     height: 1px;
@@ -1266,15 +1257,15 @@ textarea#comment::placeholder {
     height: 30px;
     position: absolute;
     top:76.1%;
-    right: 35.8%;
+    right: 36.5%;
     font-size: 25px;
 }
 
 .personal_div_textl_comment{
     font-weight: bold;
     position: absolute;
-    top:76.1%;
-    right: 29%;
+    top:75.7%;
+    right: 28%;
     font-size: 25px;
 
 }
