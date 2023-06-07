@@ -30,7 +30,7 @@
                            </li>
                            <li class="nav-item teacherprofile">
                               <a class="button_set_head button_set2_head nav-link teacherprofile" href="sheet.html">SHEET</a>
-                              <!-- <router-link to="/teachersheet" class="button_set_head button_set2_head nav-link">SHEET</router-link> -->
+                              <!-- <router-link to="/teachersheetover" class="button_set_head button_set2_head nav-link">SHEET</router-link> -->
                            </li>
                            <li class="nav-item teacherprofile">
                               <a class="button_set_head button_set2_head nav-link teacherprofile" href="more.html">MORE</a>
@@ -55,8 +55,8 @@
                <h1 class="contact_taital teacherprofile">Lawrence<!--改start-->
                   <hr size="10" align="center" noshade width="50%" color="000000">
 
-                  <a href="personal.html" class="teacherprofile"><button class="button_set button_set2 button_fixed teacherprofile">關於</button></a>
-                  <a href="post.html" class="teacherprofile"><button class="button_set button_set2 teacherprofile">貼文</button></a>
+                  <a href="personal.html" class="teacherprofile"><button class="teacherprofilebutton_set button_set2 button_fixed teacherprofile">關於</button></a>
+                  <a href="post.html" class="teacherprofile"><button class="teacherprofilebutton_set button_set2 teacherprofile">貼文</button></a>
                </h1>
             </div>
 

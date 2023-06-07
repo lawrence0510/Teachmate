@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import SigninPage from '@/components/SigninPage'
 import TeacherProfile from '@/components/TeacherProfile'
 import StudentProfile from '@/components/StudentProfile'
+import TeacherSheetOver from '@/components/TeacherSheetOver'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/studentprofile',
     name: 'StudentProfile',
     component: StudentProfile
+  },
+  {
+    path: '/teachersheetOver',
+    name: 'TeacherSheetOver',
+    component: TeacherSheetOver
   }
 ];
 

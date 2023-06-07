@@ -99,7 +99,7 @@
                   <div class="star-container"></div>
 
                   <div class="sheet_content_div ">老師ㄍㄟˋ婚。</div>
-                  <button id="show" class="button_set" >Next</button>
+                  <button id="show" class="teachersheetoverbutton_set" >Next</button>
                   <dialog id="infoModal" >
                   <p>
 Please transfer the establishment fee to the following account:</p><p>中華郵政(700)<br>1234567 1234567</p><p>After completing the payment, please report by clicking "Payment Completed".</p>

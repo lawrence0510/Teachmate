@@ -880,7 +880,7 @@ textarea#comment::placeholder {
   position: relative;
 }
 
-.button_set{                            /* 按鈕設定 */                          
+.teacherprofilebutton_set{                            /* 按鈕設定 */                          
     background-color: white; 
     color:gray;
     font-weight:bold;
