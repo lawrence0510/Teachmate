@@ -19,7 +19,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+body.studentprofile{
 	color: #666666;
 	font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -28,7 +28,7 @@ body {
 	overflow-x: hidden;
 }
 
-a {
+a.studentprofile{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -39,12 +39,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.studentprofile,
+h2.studentprofile,
+h3.studentprofile,
+h4.studentprofile,
+h5.studentprofile,
+h6.studentprofile {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -55,27 +55,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.studentprofile {
 	font-size: 24px
 }
 
-h2 {
+h2.studentprofile {
 	font-size: 22px
 }
 
-h3 {
+h3.studentprofile {
 	font-size: 18px
 }
 
-h4 {
+h4.studentprofile {
 	font-size: 16px
 }
 
-h5 {
+h5.studentprofile {
 	font-size: 14px
 }
 
-h6 {
+h6.studentprofile {
 	font-size: 13px
 }
 
@@ -87,43 +87,33 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
 
-button:focus {
+button.studentprofile:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.studentprofile,
+li.studentprofile,
+ol.studentprofile {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.studentprofile {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.studentprofile {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.studentprofile,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
