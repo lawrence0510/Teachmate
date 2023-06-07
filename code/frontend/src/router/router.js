@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import SigninPage from '@/components/SigninPage'
 import TeacherProfile from '@/components/TeacherProfile'
-// import StudentProfile from '@/components/StudentProfile'
+import StudentProfile from '@/components/StudentProfile'
 
 const routes = [
   {
@@ -14,11 +14,11 @@ const routes = [
     name: 'TeacherProfile',
     component: TeacherProfile
   },
-  // {
-  //   path: '/studentprofile',
-  //   name: 'StudentProfile',
-  //   component: StudentProfile
-  // }
+  {
+    path: '/studentprofile',
+    name: 'StudentProfile',
+    component: StudentProfile
+  }
 ];
 
 const router = createRouter({

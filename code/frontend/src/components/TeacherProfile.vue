@@ -6,7 +6,7 @@
 
             </div>
             <div class="col-sm-8 col-6">
-               <nav class="teacherprofilenavbar navbar-expand-lg navbar-light bg-light">
+               <nav class="navbar navbar-expand-lg navbar-light teacherprofilebg-light">
 
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
@@ -66,15 +66,15 @@
                <div class="personal_div">
                   <img src="../assets/images/identity.png" alt="身分" class="personal_png">
                   <div class="personal_div_textl">身分</div>
-                  <div class="personal_div_textr">老師
+                  <div class="teacherprofilepersonal_div_textr">老師
                   </div>
 
                </div>
 
                <div class="personal_div_n2">
                   <img src="../assets/images/sex.png" alt="性別" class="personal_png_sex">
-                  <div class="personal_div_textl_sex">性別</div>
-                  <div class="personal_div_textr_sex">男生
+                  <div class="teacherprofilepersonal_div_textl_sex">性別</div>
+                  <div class="teacherprofilepersonal_div_textr_sex">男生
                   </div>
 
                </div>
@@ -82,7 +82,7 @@
                <div class="personal_div_n2">
                   <img src="../assets/images/age.png" alt="年齡" class="personal_png_old">
                   <div class="personal_div_textl_old">年齡</div>
-                  <div class="personal_div_textr_old">20
+                  <div class="teacherprofilepersonal_div_textr_old">20
                   </div>
 
                </div>
@@ -90,17 +90,17 @@
                <div class="personal_div_n2">
                   <img src="../assets/images/school.png" alt="學歷" class="personal_png_school">
                   <div class="personal_div_textl_school">學歷</div>
-                  <div class="personal_div_textr_school stop_here_school">國小、國中、高中
+                  <div class="teacherprofilepersonal_div_textr_school stop_here_school">國小、國中、高中
                   </div>
-                  <div class="pop_content_school">• 國小：麗湖國小<br>• 國中：介壽國中<br>• 高中：建國中學<br>• 大學：(無)<br>• 研究所：(無)
+                  <div class="teacherprofilepop_content_school">• 國小：麗湖國小<br>• 國中：介壽國中<br>• 高中：建國中學<br>• 大學：(無)<br>• 研究所：(無)
                   </div>
 
                </div>
 
                <div class="personal_div_n2">
                   <img src="../assets/images/MBTI.png" alt="MBTI" class="personal_png_MBTI">
-                  <div class="personal_div_textl_MBTI">MBTI</div>
-                  <div class="personal_div_textr_MBTI">ENFP
+                  <div class="teacherprofilepersonal_div_textl_MBTI">MBTI</div>
+                  <div class="teacherprofilepersonal_div_textr_MBTI">ENFP
                   </div>
 
                </div>
@@ -121,7 +121,7 @@
 
                <div class="personal_div_n2">
                   <img src="../assets/images/exper.png" alt="教學經驗" class="personal_png_exper">
-                  <div class="personal_div_textl_exper">教學經驗</div>
+                  <div class="teacherprofilepersonal_div_textl_exper">教學經驗</div>
                   <select class="select_exper">
                      <option value="option1">All</option>
                      <option value="option2">• 國小：齁</option>
@@ -134,8 +134,8 @@
 
                <div class="personal_div_n2">
                   <img src="../assets/images/contact.png" alt="聯絡方式" class="personal_png_contact">
-                  <div class="personal_div_textl_contact">聯絡方式</div>
-                  <div class="personal_div_textr_contact stop_here_contact">Phone、Email
+                  <div class="teacherprofilepersonal_div_textl_contact">聯絡方式</div>
+                  <div class="teacherprofilepersonal_div_textr_contact stop_here_contact">Phone、Email
                   </div>
                   <div class="pop_content_contact">• Phone：<br>• Email：
                   </div>
@@ -143,9 +143,9 @@
 
                <div class="personal_div_n2">
                   <img src="../assets/images/score.png" alt="exper" class="personal_png_score">
-                  <div class="personal_div_textl_score">平均評分</div>
+                  <div class="teacherprofilepersonal_div_textl_score">平均評分</div>
 
-                  <div class="personal_div_textr_score stop_here_score">4.5/5(10)
+                  <div class="teacherprofilepersonal_div_textr_score stop_here_score">4.5/5(10)
                   </div>
 
                   <div class="pop_content_score">• 表一(網頁連結)<br>• 表二(網頁連結)
@@ -153,11 +153,11 @@
                </div>
 
                <div class="personal_div_comment">
-                  <img src="../assets/images/comment.png" alt="備註" class="personal_png_comment">
-                  <div class="personal_div_textl_comment">備註</div>
-                  <div class="personal_div_textr_comment">我是勞倫斯
+                  <img src="../assets/images/comment.png" alt="備註" class="teacherprofilepersonal_png_comment">
+                  <div class="teacherprofilepersonal_div_textl_comment">備註</div>
+                  <div class="teacherprofilepersonal_div_textr_comment">我是勞倫斯
                   </div>
-                  <div class="personal_div_comment_line"></div>
+                  <div class="teacherprofilepersonal_div_comment_line"></div>
                </div>
 
 

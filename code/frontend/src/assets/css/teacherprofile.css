@@ -223,8 +223,8 @@ button {
     padding: 20px 0px;
 }
 
-.bg-light {
-	background-color: #363636 !important;
+.teacherprofilebg-light {
+	background-color: #f7f8fa !important;
 	border-radius: 50px;
 }
 
@@ -238,7 +238,6 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
@@ -246,14 +245,14 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
+	color: #000000;
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 
 .nav-link {
@@ -881,7 +880,7 @@ textarea#comment::placeholder {
 }
 
 .send_bt a:hover {
-	background-color: #363636;
+	background-color: #f7f8fa;
 	color: #ffffff;
 }
 
@@ -948,7 +947,7 @@ textarea#comment::placeholder {
     
 }
 
-.personal_div_textr{
+.teacherprofilepersonal_div_textr{
     font-weight: bold;
     position: absolute;
     top: 1%;
@@ -966,14 +965,14 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl_sex{
+.teacherprofilepersonal_div_textl_sex{
     font-weight: bold;
     position: absolute;
     right: 29.5%;
     font-size: 25px;
 }
 
-.personal_div_textr_sex{
+.teacherprofilepersonal_div_textr_sex{
     font-weight: bold;
     position: absolute;
     top: 9.1%;
@@ -998,7 +997,7 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textr_old{
+.teacherprofilepersonal_div_textr_old{
     font-weight: bold;
     position: absolute;
     top: 17.3%;
@@ -1023,26 +1022,26 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textr_school{
+.teacherprofilepersonal_div_textr_school{
     font-weight: bold;
     position: absolute;
-    top: 26%;
+    top: 25.5%;
     right:-37%;
     font-size: 25px;
     text-align: right;
 }
 
-.personal_div_textr_school:hover{	/*停留時有底線*/
+.teacherprofilepersonal_div_textr_school:hover{	/*停留時有底線*/
 	text-decoration: underline;
 }
 
-.pop_content_school{               /*彈出的視窗*/
+.teacherprofilepop_content_school{               /*彈出的視窗*/
     position: absolute;
     top: 27%;
     right:-80%;
     visibility: hidden;
     opacity: 0;
-    height: 19%;
+    height: 25%;
     width: 40%;
     transition: visibility 0s, opacity 0.1s;
     font-weight: bold;
@@ -1052,7 +1051,7 @@ textarea#comment::placeholder {
     border: 1px solid black;
 }
 
-.stop_here_school:hover+.pop_content_school{      /*彈出動作*/
+.stop_here_school:hover+.teacherprofilepop_content_school{      /*彈出動作*/
     visibility: visible;
     opacity: 1;
 }
@@ -1066,14 +1065,14 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl_MBTI{
+.teacherprofilepersonal_div_textl_MBTI{
     font-weight: bold;
     position: absolute;
-    right: 27.8%;
+    right: 27.5%;
     font-size: 25px;
 }
 
-.personal_div_textr_MBTI{
+.teacherprofilepersonal_div_textr_MBTI{
     font-weight: bold;
     position: absolute;
     top: 34.1%;
@@ -1087,15 +1086,15 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 31%;
+    right: 30%;
     font-size: 25px;
 }
 
 .personal_div_textl_cert{
     font-weight: bold;
     position: absolute;
-    top:42.5%;
-    right: 29.5%;
+    top:42%;
+    right: 28.5%;
     font-size: 25px;
 }
 
@@ -1110,14 +1109,14 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 28%;
+    right: 27%;
     font-size: 25px;
 }
 
-.personal_div_textl_exper{
+.teacherprofilepersonal_div_textl_exper{
     font-weight: bold;
     position: absolute;
-    top:51%;
+    top:50.5%;
     right: 22.5%;
     font-size: 25px;
 }
@@ -1137,7 +1136,7 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl_contact{
+.teacherprofilepersonal_div_textl_contact{
     font-weight: bold;
     position: absolute;
     right: 22.5%;
@@ -1145,7 +1144,7 @@ textarea#comment::placeholder {
 
 }
 
-.personal_div_textr_contact{
+.teacherprofilepersonal_div_textr_contact{
     font-weight: bold;
     position: absolute;
     top: 59%;
@@ -1154,7 +1153,7 @@ textarea#comment::placeholder {
     text-align: right;
 }
 
-.personal_div_textr_contact:hover{	/*停留時有底線*/
+.teacherprofilepersonal_div_textr_contact:hover{	/*停留時有底線*/
 	text-decoration: underline;
 }
 
@@ -1165,7 +1164,6 @@ textarea#comment::placeholder {
     right:-90%;
     visibility: hidden;
     opacity: 0;
-    height: %;
     width: 50%;
     transition: visibility 0s, opacity 0.1s;
     font-weight: bold;
@@ -1189,18 +1187,18 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl_score{
+.teacherprofilepersonal_div_textl_score{
     font-weight: bold;
     position: absolute;
-    right: 22.6%;
+    right: 22.5%;
     font-size: 25px;
 }
 
 
-.personal_div_textr_score{
+.teacherprofilepersonal_div_textr_score{
     font-weight: bold;
     position: absolute;
-    top: 67.5%;
+    top: 67%;
     right:-37%;
     font-size: 25px;
     text-align: right;
@@ -1227,7 +1225,7 @@ textarea#comment::placeholder {
     opacity: 1;
 }
 
-.personal_div_textr_score:hover{	/*停留時有底線*/
+.teacherprofilepersonal_div_textr_score:hover{	/*停留時有底線*/
 	text-decoration: underline;
 }
 
@@ -1243,16 +1241,15 @@ textarea#comment::placeholder {
     margin-top: 30px;
 }
 
-.personal_div_comment_line{
+.teacherprofilepersonal_div_comment_line{
     position: absolute;
-    margin-top: -17%;
-    left: %;
+    margin-top: -18%;
     width: 90%;
     height: 1px;
     background-color: black;
 }
 
-.personal_png_comment{
+.teacherprofilepersonal_png_comment{
     width: 30px;
     height: 30px;
     position: absolute;
@@ -1261,7 +1258,7 @@ textarea#comment::placeholder {
     font-size: 25px;
 }
 
-.personal_div_textl_comment{
+.teacherprofilepersonal_div_textl_comment{
     font-weight: bold;
     position: absolute;
     top:75.7%;
@@ -1270,7 +1267,7 @@ textarea#comment::placeholder {
 
 }
 
-.personal_div_textr_comment{
+.teacherprofilepersonal_div_textr_comment{
     font-weight: bold;
     position: absolute;
     top:81%;

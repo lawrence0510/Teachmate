@@ -230,7 +230,6 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
@@ -238,14 +237,14 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
+	color: #000000;
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 
 .nav-link {
@@ -951,7 +950,7 @@ textarea#comment::placeholder {
 .personal_div_textr{
     font-weight: bold;
     position: absolute;
-    top: 1;
+    top: 1%;
     right:-37%;
     font-size: 25px;
     text-align: right;
@@ -969,7 +968,6 @@ textarea#comment::placeholder {
 .personal_div_textl_sex{
     font-weight: bold;
     position: absolute;
-    top:%;
     right: 29%;
     font-size: 25px;
 }
@@ -1119,7 +1117,6 @@ textarea#comment::placeholder {
     right:-90%;
     visibility: hidden;
     opacity: 0;
-    height: %;
     width: 50%;
     transition: visibility 0s, opacity 0.1s;
     font-weight: bold;
@@ -1147,7 +1144,7 @@ textarea#comment::placeholder {
 
 .personal_div_comment_line{
     position: absolute;
-    margin-top: -18.5%;
+    margin-top: -18%;
     left: 53%;
     width: 90%;
     height: 1px;
