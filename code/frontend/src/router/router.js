@@ -8,11 +8,11 @@ import TeacherSheetOver from '@/components/TeacherSheetOver';
 import StudentSheet from '@/components/StudentSheet';
 import TeacherSheet from '@/components/TeacherSheet';
 // import StudentSheetComment from '@/components/StudentSheetComment';
-// import TeacherSheetBuild from '@/components/TeacherSheetBuild';
+import TeacherSheetBuild from '@/components/TeacherSheetBuild';
 // import StudentSheetMine from '@/components/StudentSheetMine';
 // import TeacherSheetMine from '@/components/TeacherSheetMine';
 import StudentSheetOngoing from '@/components/StudentSheetOngoing';
-// import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
+import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
 
 const routes = [
   {
@@ -60,11 +60,11 @@ const routes = [
   //   name: 'StudentSheetComment',
   //   component: StudentSheetComment
   // },
-  // {
-  //   path: '/teachersheetbuild',
-  //   name: 'TeacherSheetBuild',
-  //   component: TeacherSheetBuild
-  // },
+  {
+    path: '/teachersheetbuild',
+    name: 'TeacherSheetBuild',
+    component: TeacherSheetBuild
+  },
   // {
   //   path: '/studentsheetmine',
   //   name: 'StudentSheetMine',
@@ -80,11 +80,11 @@ const routes = [
     name: 'StudentSheetOngoing',
     component: StudentSheetOngoing
   },
-  // {
-  //   path: '/teachersheetongoing',
-  //   name: 'TeacherSheetOngoing',
-  //   component: TeacherSheetOngoing
-  // }
+  {
+    path: '/teachersheetongoing',
+    name: 'TeacherSheetOngoing',
+    component: TeacherSheetOngoing
+  }
 ];
 
 const router = createRouter({

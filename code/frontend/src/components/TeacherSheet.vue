@@ -25,7 +25,10 @@
                               <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
                            </li>
                            <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                              <router-link to="/teacherprofile" class="button_set_head button_set2_head nav-link">
+                                 ABOUT
+                              </router-link>
+
                            </li>
                            <li class="nav-item">
                               <a class="button_set_head button_set2_head nav-link button_fixed_head"
@@ -126,11 +129,15 @@
 
                   </div>
 
-                  <a href="sheetBuild.html"><button class="button_set1 button_set1-2 "
-                        style="border: 2px solid black;">start building</button></a>
+                  <router-link to="/teachersheetbuild" class="button_set1 button_set1-2" style="border: 2px solid black;">
+                     start building
+                  </router-link>
 
-                  <a href="sheetBuild.html"><button class="button_set button_set2 " style="border: 2px solid black;">my
-                        evaluation</button></a>
+
+                  <router-link to="/teachersheetongoing" class="teachersheetbutton_set button_set2"
+                     style="border: 2px solid black;">
+                     my evaluation
+                  </router-link>
 
                </div>
             </div>
@@ -153,17 +160,20 @@
          <div class="container">
             <p class="copyright_text">NCCU MIS 111-2 DBMS<br>G9：TEACHMATE</p><!-- 改 -->
          </div>
-   </div>
-</body></template>
+      </div>
+   </body>
+</template>
 
 <script>
 
 </script>
 
-<style>@import url("../assets/css/teachersheet.css");
+<style>
+@import url("../assets/css/teachersheet.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");</style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+</style>

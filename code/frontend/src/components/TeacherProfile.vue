@@ -16,21 +16,22 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active teacherprofile">
-
-                              <a class="teacherprofile" href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link button_fixed_head teacherprofile">Post</button></a>
-
+                           <li class="nav-item teacherprofile">
+                              <a class="button_set_head button_set2_head nav-link teacherprofile" href="personal.html">POST</a>
                            </li>
                            <li class="nav-item teacherprofile">
                               <a class="button_set_head button_set2_head nav-link teacherprofile" href="add.html">ADD</a>
                            </li>
-                           <li class="nav-item teacherprofile">
-                              <a class="button_set_head button_set2_head nav-link teacherprofile" href="personal.html">ABOUT</a>
+                           <li class="nav-item active teacherprofile">
+                              <a class="teacherprofile" href="post.html">
+                                 <button class="button_set_head button_set2_head nav-link button_fixed_head teacherprofile">ABOUT</button>
+                              </a>
                            </li>
                            <li class="nav-item teacherprofile">
-                              <a class="button_set_head button_set2_head nav-link teacherprofile" href="sheet.html">SHEET</a>
-                              <!-- <router-link to="/teachersheetover" class="button_set_head button_set2_head nav-link">SHEET</router-link> -->
+                              <router-link to="/teachersheet"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
                            <li class="nav-item teacherprofile">
                               <a class="button_set_head button_set2_head nav-link teacherprofile" href="more.html">MORE</a>

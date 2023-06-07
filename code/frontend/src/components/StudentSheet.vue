@@ -23,7 +23,10 @@
                               <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
                            </li>
                            <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                              <router-link to="/studentprofile" class="button_set_head button_set2_head nav-link">
+                                 ABOUT
+                              </router-link>
+
                            </li>
                            <li class="nav-item">
                               <a class="button_set_head button_set2_head nav-link button_fixed_head"
@@ -129,7 +132,8 @@
                   </router-link>
 
 
-                  <router-link to="/studentsheetongoing" class="studentsheetbutton_set button_set2 " style="border: 2px solid black;">my evaluation</router-link>
+                  <router-link to="/studentsheetongoing" class="studentsheetbutton_set button_set2 "
+                     style="border: 2px solid black;">my evaluation</router-link>
 
                </div>
             </div>
@@ -167,4 +171,5 @@
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");</style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+</style>

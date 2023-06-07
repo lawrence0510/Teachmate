@@ -1,15 +1,7 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-/* @import url(font-awesome.min.css); */
 @import url(meanmenu.css);
-/* @import url(owl.carousel.min.css); */
-/* @import url(swiper.min.css); */
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -35,7 +27,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+body.teachersheetbuild{
 	color: #666666;
 	font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -44,7 +36,7 @@ body {
 	overflow-x: hidden;
 }
 
-a {
+a.teachersheetbuild{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -55,12 +47,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.teachersheetbuild,
+h2.teachersheetbuild,
+h3.teachersheetbuild,
+h4.teachersheetbuild,
+h5.teachersheetbuild,
+h6.teachersheetbuild {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -71,27 +63,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.teachersheetbuild{
 	font-size: 24px
 }
 
-h2 {
+h2.teachersheetbuild{
 	font-size: 22px
 }
 
-h3 {
+h3.teachersheetbuild{
 	font-size: 18px
 }
 
-h4 {
+h4.teachersheetbuild{
 	font-size: 16px
 }
 
-h5 {
+h5.teachersheetbuild{
 	font-size: 14px
 }
 
-h6 {
+h6.teachersheetbuild{
 	font-size: 13px
 }
 
@@ -103,43 +95,32 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
-
-button:focus {
+button.teachersheetbuild:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.teachersheetbuild,
+li.teachersheetbuild,
+ol.teachersheetbuild {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.teachersheetbuild {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.teachersheetbuild {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.teachersheetbuild,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -150,7 +131,7 @@ a,
 	transition: all .3s ease-in-out;
 }
 
-img {
+img.teachersheetbuild {
 	max-width: 100%;
 	height: auto;
 }
@@ -221,7 +202,7 @@ button {
 
 /* header section start */
 
-.header_section {
+.teacherprofileheader_section {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
@@ -231,8 +212,8 @@ button {
     padding: 20px 0px;
 }
 
-.bg-light {
-	background-color: #363636 !important;
+.teacherprofilebg-light {
+	background-color: #f7f8fa !important;
 	border-radius: 50px;
 }
 
@@ -246,7 +227,6 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
@@ -254,14 +234,14 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
+	color: #000000;
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 
 .nav-link {
@@ -275,7 +255,7 @@ button {
 	padding-left: 15px;
 }
 
-.navbar {
+.teacherprofilenavbar {
 	padding: 0px 20px;
 }
 
@@ -310,9 +290,12 @@ button {
     transform: scale(1.2);
 }
 
+.button_fixed_head{                          /* 藍色底線 */
+    border-bottom:2px solid gray;       
+}
+
 
 /* header section end */
-
 
 /* banner section start */
 
@@ -604,7 +587,7 @@ textarea#comment::placeholder {
   position: relative;
 }
 
-.button_set{                        
+.teachersheetbuildbutton_set{                        
     background-color: white; 
     color:black;
     font-size: 15px;
@@ -626,7 +609,7 @@ textarea#comment::placeholder {
     margin-top: -3%;
 }
 
-.sheet_div_title2{
+.teachersheetbuildsheet_div_title2{
 	font-weight: bold;
 	font-size: 40px; 
 	display: flex;
@@ -634,10 +617,10 @@ textarea#comment::placeholder {
 	align-items: center;
 }
 
-.sheet_div{             
+.teachersheetbuildsheet_div{             
     background-color:rgba(192, 192, 192, 0.2);
     width: 70%;
-    height: 500px;
+    height: 550px;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -646,14 +629,14 @@ textarea#comment::placeholder {
     border: 1px solid black;
 }
 
-.sheet_content_title{
+.teachersheetbuildsheet_content_title{
 	font-size: 30px;
 	position: absolute; 
 	margin-bottom: 57%;
     font-weight: bold;
 }
 
-.sheet_content_sheet{
+.teachersheetbuildsheet_content_sheet{
 	font-size: 18px; 
 	position:absolute; 
 	margin-bottom: 47%;
@@ -661,7 +644,7 @@ textarea#comment::placeholder {
     white-space: nowrap;
 }
 
-.sheet_content_t{
+.teachersheetbuildsheet_content_t{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: 30%;
@@ -669,7 +652,7 @@ textarea#comment::placeholder {
 	white-space: nowrap;
 }
 
-.sheet_content_tname{
+.teachersheetbuildsheet_content_tname{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: 30%;
@@ -677,7 +660,7 @@ textarea#comment::placeholder {
 	white-space: nowrap;
 }
 
-.sheet_content_s{
+.teachersheetbuildsheet_content_s{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: 10%;
@@ -685,7 +668,7 @@ textarea#comment::placeholder {
 	white-space: nowrap;
 }
 
-.sheet_content_sid{
+.teachersheetbuildsheet_content_sid{
 	
 	position: absolute; 
 	margin-bottom: 10%;
@@ -693,7 +676,7 @@ textarea#comment::placeholder {
 	width: 140px;
 }
 
-.sheet_content_sub{
+.teachersheetbuildsheet_content_sub{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: -10%;
@@ -701,7 +684,7 @@ textarea#comment::placeholder {
 	white-space: nowrap;
 }
 
-.sheet_content_subname{
+.teachersheetbuildsheet_content_subname{
 	
 	position: absolute; 
 	margin-bottom: -10%;
@@ -709,7 +692,7 @@ textarea#comment::placeholder {
 	width: 140px;	
 }
 
-.sheet_content_time{
+.teachersheetbuildsheet_content_time{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: -30%;
@@ -717,14 +700,14 @@ textarea#comment::placeholder {
 	white-space: nowrap;	
 }
 
-.sheet_content_time_s{
+.teachersheetbuildsheet_content_time_s{
 	position: absolute; 
 	margin-bottom: -30%;
 	margin-left: %;
 	
 }
 
-.sheet_content_time_to{
+.teachersheetbuildsheet_content_time_to{
 	font-size: 20px;
 	position: absolute; 
 	margin-bottom: -30%;
@@ -733,7 +716,7 @@ textarea#comment::placeholder {
 	font-weight: bold;	
 }
 
-.sheet_content_time_e{
+.teachersheetbuildsheet_content_time_e{
 	position: absolute; 
 	margin-bottom: -30%;
 	margin-left: 40%;

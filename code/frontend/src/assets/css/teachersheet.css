@@ -887,7 +887,7 @@ textarea#comment::placeholder {
   position: relative;
 }
 
-.button_set{  
+.teachersheetbutton_set{  
                          /* 按鈕設定 */                          
     background-color: white; 
     color:black;

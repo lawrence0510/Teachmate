@@ -20,34 +20,32 @@
                                     src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                            </li>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link studentprofile"
+                                 href="personal.html">POST</a>
+                           </li>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link studentprofile" href="add.html">ADD</a>
+                           </li>
                            <li class="nav-item active studentprofile">
-
-                              <a href="post.html" class="studentprofile"><button
-                                    class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link button_fixed_head">Post</button></a>
-
-                           </li>
-                           <li class="nav-item studentprofile">
-                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
-                                 href="add.html">ADD</a>
-                           </li>
-                           <li class="nav-item studentprofile">
-                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
-                                 href="personal.html">ABOUT</a>
+                              <a class="studentprofile" href="post.html">
+                                 <button
+                                    class="button_set_head button_set2_head nav-link button_fixed_head studentprofile">ABOUT</button>
+                              </a>
                            </li>
                            <li class="nav-item studentprofile">
                               <router-link to="/studentsheet"
-                                 class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link">
+                                 class="button_set_head button_set2_head nav-link studentprofile">
                                  SHEET
                               </router-link>
 
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="studentprofilebutton_set_head studentprofilebutton_set2_head nav-link"
-                                 href="more.html">MORE</a>
+                              <a class="button_set_head button_set2_head nav-link studentprofile" href="more.html">MORE</a>
                            </li>
-                           <li class="nav-item studentprofiles">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item studentprofile">
+                              <a class="nav-link studentprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
                            </li>
 
                         </ul>
