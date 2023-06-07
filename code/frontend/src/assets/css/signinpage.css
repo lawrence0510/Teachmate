@@ -1,226 +1,212 @@
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
 * {
-	box-sizing: border-box!important;
+    box-sizing: border-box;
 }
 
-body {
-	background: #f6f5f7!important;
-	display: flex!important;
-	justify-content: center!important;
-	align-items: center!important;
-	flex-direction: column!important;
-	font-family: 'Montserrat', sans-serif!important;
-	height: 100vh!important;
-	margin: -20px 0 50px!important;
+body.signinpage{
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
 }
 
-h1 {
-	font-weight: bold!important;
-	margin: 0!important;
+h1.signinpage{
+    font-weight: bold;
+    margin: 0;
 }
 
-h2 {
-	text-align: center!important;
+h2.signinpage{
+    text-align: center;
 }
 
-p {
-	font-size: 14px!important;
-	font-weight: 100!important;
-	line-height: 20px!important;
-	letter-spacing: 0.5px!important;
-	margin: 20px 0 30px!important;
+p.signinpage{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
 }
 
-span {
-	font-size: 12px!important;
+span.signinpage{
+    font-size: 12px;
 }
 
-a {
-	color: #333!important;
-	font-size: 14px!important;
-	text-decoration: none!important;
-	margin: 15px 0!important;
+a.signinpage{
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
 }
 
-button {
-	border-radius: 20px!important;
-	border: 1px solid #F6BE00!important;
-	background-color: #F6BE00!important;
-	color: #FFFFFF!important;
-	font-size: 12px!important;
-	font-weight: bold!important;
-	padding: 12px 45px!important;
-	letter-spacing: 1px!important;
-	text-transform: uppercase!important;
-	transition: transform 80ms ease-in!important;
+button.signinpage{
+    border-radius: 20px;
+    border: 1px solid #F6BE00;
+    background-color: #F6BE00;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
 }
 
-button:active {
-	transform: scale(0.95)!important;
+button.signinpage:active {
+    transform: scale(0.95);
 }
 
-button:focus {
-	outline: none!important;
+button.signinpage:focus {
+    outline: none;
 }
 
 button.ghost {
-	background-color: transparent!important;
-	border-color: #FFFFFF!important;
+    background-color: transparent;
+    border-color: #FFFFFF;
 }
 
-form {
-	background-color: #FFFFFF!important;
-	display: flex!important;
-	align-items: center!important;
-	justify-content: center!important;
-	flex-direction: column!important;
-	padding: 0 50px!important;
-	height: 100%!important;
-	text-align: center!important;
+form.signinpage{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
 }
 
-input, select {
-	background-color: #eee!important;
-	border: none!important;
-	padding: 12px 15px!important;
-	margin: 8px 0!important;
-	width: 230px!important;
+input.signinpage, select.signinpage {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 230px;
 }
 
-.container {
-	background-color: #fff!important;
-	border-radius: 10px!important;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22)!important;
-	position: relative!important;
-	overflow: hidden!important;
-	width: 768px!important;
-	max-width: 100%!important;
-	min-height: 480px!important;
+.signinpagecontainer{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+            0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
 }
 
-.form-container {
-	position: absolute!important;
-	top: 0!important;
-	height: 100%!important;
-	transition: all 0.6s ease-in-out!important;
+.signinpageform-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
 }
 
-.sign-in-container {
-	left: 0!important;
-	width: 50%!important;
-	z-index: 2!important;
+.signinpagesign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
 }
 
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%)!important;
+.signinpagecontainer.signinpageright-panel-active .signinpagesign-in-container {
+    transform: translateX(100%);
 }
 
-.sign-up-container {
-	left: 0!important;
-	width: 50%!important;
-	opacity: 0!important;
-	z-index: 1!important;
+.signinpagesign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
 }
 
-.container.right-panel-active .sign-up-container {
-	transform: translateX(100%)!important;
-	opacity: 1!important;
-	z-index: 5!important;
-	animation: show 0.6s!important;
+.signinpagecontainer.signinpageright-panel-active .signinpagesign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
 }
 
 @keyframes show {
-	0%, 49.99% {
-		opacity: 0!important;
-		z-index: 1!important;
-	}
-	
-	50%, 100% {
-		opacity: 1!important;
-		z-index: 5!important;
-	}
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
 }
 
-.overlay-container {
-	position: absolute!important;
-	top: 0!important;
-	left: 50%!important;
-	width: 50%!important;
-	height: 100%!important;
-	overflow: hidden!important;
-	transition: transform 0.6s ease-in-out!important;
-	z-index: 100!important;
+.signinpageoverlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
 }
 
-.container.right-panel-active .overlay-container{
-	transform: translateX(-100%)!important;
+.signinpagecontainer.signinpageright-panel-active .signinpageoverlay-container{
+    transform: translateX(-100%);
 }
 
-.overlay {
-	background: #F6BE00!important;
-	background-repeat: no-repeat!important;
-	background-size: cover!important;
-	background-position: 0 0!important;
-	color: #FFFFFF!important;
-	position: relative!important;
-	left: -100%!important;
-	height: 100%!important;
-	width: 200%!important;
-  	transform: translateX(0)!important;
-	transition: transform 0.6s ease-in-out!important;
+.signinpageoverlay {
+    background: #F6BE00;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
 }
 
-.container.right-panel-active .overlay {
-  	transform: translateX(50%)!important;
+.signinpagecontainer.signinpageright-panel-active .signinpageoverlay {
+    transform: translateX(50%);
 }
 
-.overlay-panel {
-	position: absolute!important;
-	display: flex!important;
-	align-items: center!important;
-	justify-content: center!important;
-	flex-direction: column!important;
-	padding: 0 40px!important;
-	text-align: center!important;
-	top: 0!important;
-	height: 100%!important;
-	width: 50%!important;
-	transform: translateX(0)!important;
-	transition: transform 0.6s ease-in-out!important;
+.signinpageoverlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
 }
 
-.overlay-left {
-	transform: translateX(-20%)!important;
+.signinpageoverlay-left {
+    transform: translateX(-20%);
 }
 
-.container.right-panel-active .overlay-left {
-	transform: translateX(0)!important;
+.signinpagecontainer.signinpageright-panel-active .signinpageoverlay-left {
+    transform: translateX(0);
 }
 
-.overlay-right {
-	right: 0!important;
-	transform: translateX(0)!important;
+.signinpageoverlay-right {
+    right: 0;
+    transform: translateX(0);
 }
 
-.container.right-panel-active .overlay-right {
-	transform: translateX(20%)!important;
+.signinpagecontainer.signinpageright-panel-active .signinpageoverlay-right {
+    transform: translateX(20%);
 }
 
-.enroll {
-	max-height: 319px!important;
-	overflow-y: overlay!important;
-}
-
-/*下面是原本模板的CSS, 我只放了最上面那個黃色扛棒的部分*/
-.header_section {
-    width: 100%!important;
-    float: left!important;
-    background-image: url(../images/banner-bg.png)!important;
-    height: auto!important;
-    background-size: cover!important;
-    background-repeat: no-repeat!important;
-    padding: 20px 0px!important;
+.signinpageenroll {
+    max-height: 319px;
+    overflow-y: overlay;
 }
