@@ -9,8 +9,8 @@ import StudentSheet from '@/components/StudentSheet';
 import TeacherSheet from '@/components/TeacherSheet';
 // import StudentSheetComment from '@/components/StudentSheetComment';
 import TeacherSheetBuild from '@/components/TeacherSheetBuild';
-// import StudentSheetMine from '@/components/StudentSheetMine';
-// import TeacherSheetMine from '@/components/TeacherSheetMine';
+import StudentSheetMine from '@/components/StudentSheetMine';
+import TeacherSheetMine from '@/components/TeacherSheetMine';
 import StudentSheetOngoing from '@/components/StudentSheetOngoing';
 import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
 
@@ -29,11 +29,6 @@ const routes = [
     path: '/studentprofile',
     name: 'StudentProfile',
     component: StudentProfile
-  },
-  {
-    path: '/teachersheetover',
-    name: 'TeacherSheetOver',
-    component: TeacherSheetOver
   },
   // {
   //   path: '/evaluationsheet',
@@ -55,6 +50,11 @@ const routes = [
     name: 'TeacherSheet',
     component: TeacherSheet
   },
+  {
+    path: '/teachersheetover',
+    name: '/TeacherSheetOver',
+    component: TeacherSheetOver
+  },
   // {
   //   path: '/studentsheetcomment',
   //   name: 'StudentSheetComment',
@@ -65,16 +65,16 @@ const routes = [
     name: 'TeacherSheetBuild',
     component: TeacherSheetBuild
   },
-  // {
-  //   path: '/studentsheetmine',
-  //   name: 'StudentSheetMine',
-  //   component: StudentSheetMine
-  // },
-  // {
-  //   path: '/teachersheetmine',
-  //   name: 'TeacherSheetMine',
-  //   component: TeacherSheetMine
-  // },
+  {
+    path: '/studentsheetmine',
+    name: 'StudentSheetMine',
+    component: StudentSheetMine
+  },
+  {
+    path: '/teachersheetmine',
+    name: 'TeacherSheetMine',
+    component: TeacherSheetMine
+  },
   {
     path: '/studentsheetongoing',
     name: 'StudentSheetOngoing',

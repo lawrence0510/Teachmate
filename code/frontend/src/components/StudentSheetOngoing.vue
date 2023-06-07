@@ -63,10 +63,10 @@
                   <a href="personal.html">
                      <button class="studentsheetongoingbutton_set1 button_set1-2 button_fixed">Ongoing</button>
                   </a>
-                  <a href="post.html">
-                     <button class="studentsheetongoingbutton_set1 button_set1-2"
-                        style="margin-left: 2px;">Established</button>
-                  </a>
+                  <router-link to="/studentsheetmine" class="studentsheetongoingbutton_set1 button_set1-2"
+                        style="margin-left: 2px;">
+                        Established
+                     </router-link>
                </div>
 
                <hr size="8" align="center" noshade width="40%" color="000000">

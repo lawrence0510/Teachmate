@@ -64,8 +64,11 @@
                      <button class="teachersheetongoingbutton_set1 button_set1-2 button_fixed">Ongoing</button>
                   </a>
                   <a href="post.html">
-                     <button class="teachersheetongoingbutton_set1 button_set1-2"
-                        style="margin-left: 2px;">Established</button>
+                     <router-link to="/teachersheetmine" class="teachersheetongoingbutton_set1 button_set1-2"
+                        style="margin-left: 2px;">
+                        Established
+                     </router-link>
+
                   </a>
                </div>
                <hr size="8" align="center" noshade width="40%" color="000000">
@@ -80,7 +83,10 @@
 
                   <div class="personal_div2">
                      <div class="personal_div_textl">② 供應鏈：李曉慧</div>
-                     <button onclick="window.location.href = 'https://www.example.com';" class="teachersheetongoingbutton_check">確認評論</button>
+                     <router-link to="/teachersheetover" class="teachersheetongoingbutton_check">
+                        確認評論
+                     </router-link>
+
                      <!--跳轉到老師確認契約的頁面-->
 
                   </div>
@@ -187,4 +193,5 @@ export default {
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");</style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+</style>

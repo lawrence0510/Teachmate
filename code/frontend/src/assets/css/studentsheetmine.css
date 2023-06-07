@@ -1,8 +1,3 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
@@ -15,17 +10,6 @@
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-#navbarNav {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-  }
-  
 * {
 	box-sizing: border-box !important;
 	transition: ease all 0.5s;
@@ -35,7 +19,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+body.studentsheetmine{
 	color: #666666;
 	font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -44,7 +28,7 @@ body {
 	overflow-x: hidden;
 }
 
-a {
+a.studentsheetmine{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -55,12 +39,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.studentsheetmine,
+h2.studentsheetmine,
+h3.studentsheetmine,
+h4.studentsheetmine,
+h5.studentsheetmine,
+h6.studentsheetmine {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -71,27 +55,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.studentsheetmine {
 	font-size: 24px
 }
 
-h2 {
+h2.studentsheetmine {
 	font-size: 22px
 }
 
-h3 {
+h3.studentsheetmine {
 	font-size: 18px
 }
 
-h4 {
+h4.studentsheetmine {
 	font-size: 16px
 }
 
-h5 {
+h5.studentsheetmine {
 	font-size: 14px
 }
 
-h6 {
+h6.studentsheetmine {
 	font-size: 13px
 }
 
@@ -103,43 +87,33 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
 
-button:focus {
+button.studentsheetmine:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.studentsheetmine,
+li.studentsheetmine,
+ol.studentsheetmine {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.studentsheetmine {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.studentsheetmine {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.studentsheetmine,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -225,14 +199,13 @@ button {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
-    height: 100px;
+    height: auto;
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 20px 0px;
 }
 
 .bg-light {
-	background-color: #363636 !important;
 	border-radius: 50px;
 }
 
@@ -246,7 +219,6 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
@@ -254,14 +226,14 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
+	color: #000000;
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 
 .nav-link {
@@ -298,22 +270,31 @@ button {
 	color: #ff405c;
 }
 
-.button_set_head{                            /* 按鈕設定 */                          
+.studentsheetminebutton_set_head{                            /* 按鈕設定 */                          
     background-color: white; 
     color:white;
     font-weight:bold;
     font-size: 25px;
 }
 
-.button_set2_head:hover{                         /* 藍色放大 */                 
+.studentsheetminebutton_set2_head:hover{                         /* 藍色放大 */                 
     color:black;
     transform: scale(1.2);
 }
 
-.button_fixed_head{                          /* 藍色底線 */
+.studentsheetminebutton_fixed_head{                          /* 藍色底線 */
     border-bottom:2px solid gray;       
 }
 
+#navbarNav {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+}
 
 /* header section end */
 
@@ -868,6 +849,12 @@ textarea#comment::placeholder {
   position: relative;
 }
 
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .button_set{                            /* 按鈕設定 */                          
     background-color: white; 
     color:gray;
@@ -882,7 +869,7 @@ textarea#comment::placeholder {
     transform: scale(1.2);
 }
 
-.button_fixed{                          /* 藍色底線 */
+.studentsheetmine{                          /* 藍色底線 */
     border-bottom:2px solid blue;       
 }
 
@@ -896,7 +883,7 @@ textarea#comment::placeholder {
     margin-top: -3%;
 }
 
-.sheet_div_title2{
+.studentsheetminesheet_div_title2{
 	font-weight: bold;
 	font-size: 40px; 
 	display: flex;
@@ -904,7 +891,7 @@ textarea#comment::placeholder {
 	align-items: center;
 }
 
-.personal_div{             
+.studentsheetminepersonal_div{             
     background-color:rgba(192, 192, 192, 0.2);
     width: 80%;
     height: 70px;
@@ -916,7 +903,7 @@ textarea#comment::placeholder {
     font-family: '標楷體', sans-serif;
 }
 
-.personal_div_textl{
+.studentsheetminepersonal_div_textl{
 	font-size: 20px;
 	position: absolute;
 	margin-right: 17%;
@@ -925,7 +912,7 @@ textarea#comment::placeholder {
 	
 }
 
-.personal_div_textr{
+.studentsheetminepersonal_div_textr{
 	font-size: 20px;
 	text-align: right;
 	position: absolute;
@@ -958,7 +945,7 @@ textarea#comment::placeholder {
     transform: scale(1.2);
 }
 
-.button_fixed_head{                          /* 藍色底線 */
+.studentsheetminebutton_fixed_head{                          /* 藍色底線 */
     border-bottom:2px solid gray;       
 }
 
