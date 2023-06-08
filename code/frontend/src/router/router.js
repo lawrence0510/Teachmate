@@ -7,7 +7,7 @@ import StudentSheetOver from '@/components/StudentSheetOver';
 // import StudentProfilePost from '@/components/StudentProfilePost';
 import StudentSheet from '@/components/StudentSheet';
 import TeacherSheet from '@/components/TeacherSheet';
-// import StudentSheetComment from '@/components/StudentSheetComment';
+import StudentSheetComment from '@/components/StudentSheetComment';
 import TeacherSheetBuild from '@/components/TeacherSheetBuild';
 import StudentSheetMine from '@/components/StudentSheetMine';
 import TeacherSheetMine from '@/components/TeacherSheetMine';
@@ -55,11 +55,11 @@ const routes = [
     name: '/TeacherSheetOver',
     component: TeacherSheetOver
   },
-  // {
-  //   path: '/studentsheetcomment',
-  //   name: 'StudentSheetComment',
-  //   component: StudentSheetComment
-  // },
+  {
+    path: '/studentsheetcomment',
+    name: 'StudentSheetComment',
+    component: StudentSheetComment
+  },
   {
     path: '/teachersheetbuild',
     name: 'TeacherSheetBuild',
