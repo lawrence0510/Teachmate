@@ -3,7 +3,7 @@ import SigninPage from '@/components/SigninPage';
 import TeacherProfile from '@/components/TeacherProfile';
 import StudentProfile from '@/components/StudentProfile';
 import TeacherSheetOver from '@/components/TeacherSheetOver';
-// import EvaluationSheet from '@/components/EvaluationSheet';
+import StudentSheetOver from '@/components/StudentSheetOver';
 // import StudentProfilePost from '@/components/StudentProfilePost';
 import StudentSheet from '@/components/StudentSheet';
 import TeacherSheet from '@/components/TeacherSheet';
@@ -30,11 +30,11 @@ const routes = [
     name: 'StudentProfile',
     component: StudentProfile
   },
-  // {
-  //   path: '/evaluationsheet',
-  //   name: 'EvaluationSheet',
-  //   component: EvaluationSheet
-  // },
+  {
+    path: '/studentsheetover',
+    name: 'StudentSheetOver',
+    component: StudentSheetOver
+  },
   // {
   //   path: '/studentprofilepost',
   //   name: 'StudentProfilePost',

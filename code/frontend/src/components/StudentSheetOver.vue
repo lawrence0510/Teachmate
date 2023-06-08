@@ -11,13 +11,13 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                      <ul class="navbar-nav">
                         <li class="nav-item">
-                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
+                                 width="35" height="35"></a>
 
                         </li>
                         <li class="nav-item active">
 
-                           <a href="post.html"><button
-                                 class="button_set_head button_set2_head nav-link ">Post</button></a>
+                           <a href="post.html"><button class="button_set_head button_set2_head nav-link ">Post</button></a>
 
                         </li>
                         <li class="nav-item">
@@ -27,13 +27,15 @@
                            <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link button_fixed_head" href="sheetAbout.html">SHEET</a>
+                           <a class="button_set_head button_set2_head nav-link button_fixed_head"
+                              href="sheetAbout.html">SHEET</a>
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
+                                 width="35" height="35"></a>
                         </li>
 
                      </ul>
@@ -47,19 +49,19 @@
    <!-- contact section start -->
    <div class="whole">
       <div class="contact_section layout_padding margin_bottom90">
-        
+
 
          <div class="contact_section_2 layout_padding">
             <div class="sheet_div_title">
-                  <div class="sheet_div_title2">BUILD EVALUATION SHEET
+               <div class="sheet_div_title2">BUILD EVALUATION SHEET
                </div>
-               </div>
+            </div>
 
-            
+
 
             <div class="col-md-6">
                <div class="sheet_div">
-                  
+
                   <div class="sheet_content_title">
                      TEACHMATE
                   </div>
@@ -87,9 +89,11 @@
                   <div class="sheet_content_time">
                      Time：
                   </div>
-                 <div class="sheet_content_time_s">
+                  <div class="sheet_content_time_s">
                      2022/2/10
-                  </div><div class="sheet_content_time_to">~</div><div class="sheet_content_time_e">
+                  </div>
+                  <div class="sheet_content_time_to">~</div>
+                  <div class="sheet_content_time_e">
                      2023/4/10
                   </div>
                   <div class="sheet_content_comment">
@@ -99,14 +103,14 @@
                   <div class="star-container"></div>
 
                   <div class="sheet_content_div ">老師ㄍㄟˋ婚。</div>
-                 <div class="button_set"><a href="#" style="color: black;">OK</a></div>  <!-- 跳轉到契約選單-->
-                  
-
+                  <div>
+                  <router-link to="/studentsheetongoing" class="studentsheetoverbutton_set">Back</router-link>
                </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>
-</div>
 
 
    <div class="contact_section_2 layout_padding">
@@ -129,37 +133,17 @@
 <script>
 
 export default {
-  mounted() {
 
-   let btn = document.querySelector("#show");
-  let infoModal = document.querySelector("#infoModal");
-  let close = document.querySelector("#close");
-
-  // 初始隐藏 dialog 元素
-  infoModal.style.display = "none";
-
-  btn.addEventListener("click", function() {
-    infoModal.style.display = "block"; // 显示 dialog 元素
-    infoModal.showModal(); // 打开模态对话框
-  });
-
-  close.addEventListener("click", function() {
-    infoModal.close();
-    infoModal.style.display = "none"; // 隐藏 dialog 元素
-  });
-
-  }
 };
 </script>
 
 
 <style>
-@import url("../assets/css/evaluationsheet.css");
+@import url("../assets/css/studentsheetover.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
-
 </style>

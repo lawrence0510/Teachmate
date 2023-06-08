@@ -958,6 +958,10 @@ textarea#comment::placeholder {
 .button_window{
 	width: 30.9%;
 	height: 20%;
+	position: absolute;
+	top: 30.7%;
+	left: 154.5%;
+	transform: translate(-50%, -50%);
 }
 
 .personal_div2{             

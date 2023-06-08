@@ -75,8 +75,7 @@
                <div class="col-md-6">
                   <div class="personal_div">
                      <div class="personal_div_textl ">① 吳堃豪/多益</div>
-                     <a href="#" class="personal_div_textr">已建立</a>
-
+                     <router-link to="/studentsheetover" class="personal_div_textr">已建立</router-link>
                   </div>
 
                   <div class="personal_div2">

@@ -27,7 +27,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body.teacherprofile{
+body.teachersheetover{
 	color: #666666;
 	font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -36,7 +36,7 @@ body.teacherprofile{
 	overflow-x: hidden;
 }
 
-a.teacherprofile{
+a.teachersheetover{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -47,12 +47,12 @@ a.teacherprofile{
 	transition: all .3s ease-in-out;
 }
 
-h1.teacherprofile,
-h2.teacherprofile,
-h3.teacherprofile,
-h4.teacherprofile,
-h5.teacherprofile,
-h6.teacherprofile {
+h1.teachersheetover,
+h2.teachersheetover,
+h3.teachersheetover,
+h4.teachersheetover,
+h5.teachersheetover,
+h6.teachersheetover {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -63,27 +63,27 @@ h6.teacherprofile {
 	margin: 0
 }
 
-h1.teacherprofile{
+h1.teachersheetover{
 	font-size: 24px
 }
 
-h2.teacherprofile{
+h2.teachersheetover{
 	font-size: 22px
 }
 
-h3.teacherprofile{
+h3.teachersheetover{
 	font-size: 18px
 }
 
-h4.teacherprofile{
+h4.teachersheetover{
 	font-size: 16px
 }
 
-h5.teacherprofile{
+h5.teachersheetover{
 	font-size: 14px
 }
 
-h6.teacherprofile{
+h6.teachersheetover{
 	font-size: 13px
 }
 
@@ -95,32 +95,32 @@ h6.teacherprofile{
 	box-sizing: border-box;
 }
 
-button.teacherprofile:focus {
+button.teachersheetover:focus {
 	outline: none;
 }
 
-ul.teacherprofile,
-li.teacherprofile,
-ol.teacherprofile {
+ul.teachersheetover,
+li.teachersheetover,
+ol.teachersheetover {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p.teacherprofile {
+p.teachersheetover {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a.teacherprofile {
+a.teachersheetover {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a.teacherprofile,
+a.teachersheetover,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -131,7 +131,7 @@ a.teacherprofile,
 	transition: all .3s ease-in-out;
 }
 
-img.teacherprofile {
+img.teachersheetover {
 	max-width: 100%;
 	height: auto;
 }
@@ -178,11 +178,15 @@ blockquote {
 	padding: 30px;
 }
 
-button {
+button.teachersheetover {
 	border: 0;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
+}
+
+.close{
+	margin-top: 20px;
 }
 
 .full {
@@ -594,9 +598,10 @@ textarea#comment::placeholder {
     font-size: 15px;
     width: 60px;
     position: absolute;
-    top: 93%;
+    top: 95%;
     left:95.5%;
     border: 1px solid black;
+	text-align: center;
 }
 
 

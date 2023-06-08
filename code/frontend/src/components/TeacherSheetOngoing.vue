@@ -93,12 +93,12 @@
 
                   <div class="personal_div2">
                      <div class="personal_div_textl">③ 程式設計：010</div>
-                     <button id="show" class="teachersheetongoingbutton_set">完成繳費</button>
-                     <dialog id="infoModal" class="button_window">
+                     <button id="show" class="button_set" @click="openDialog">完成繳費</button>
+                     <dialog class="button_window" v-if="showDialog">
                         <p>若您已完成繳費，請輸入匯款帳號後五碼以利後續確認：</p>
-                        <input type="text" name="username">
-                        <a href="#"><button id="close" class="button_ok">OK</button></a>
-                     </dialog><!--按下OK後要跳回TeacherSheetOngoing(保持原頁面)但完成繳費按鈕會改為顯示核對中-->
+                        <input type="text" v-model="accountNumber" placeholder="請輸入後五碼" />
+                        <button @click="submitDialog">提交</button>
+                     </dialog>
                   </div>
 
                   <div class="personal_div2">
@@ -163,25 +163,22 @@
 
 <script>
 export default {
-   mounted() {
-
-      let btn = document.querySelector("#show");
-      let infoModal = document.querySelector("#infoModal");
-      let close = document.querySelector("#close");
-
-      // 初始隐藏 dialog 元素
-      infoModal.style.display = "none";
-
-      btn.addEventListener("click", function () {
-         infoModal.style.display = "block"; // 显示 dialog 元素
-         infoModal.showModal(); // 打开模态对话框
-      });
-
-      close.addEventListener("click", function () {
-         infoModal.close();
-         infoModal.style.display = "none"; // 隐藏 dialog 元素
-      });
-
+   data() {
+      return {
+         showDialog: false,
+         accountNumber: ''
+      };
+   },
+   methods: {
+      openDialog() {
+         this.showDialog = true;
+      },
+      submitDialog() {
+         this.showDialog = false;
+         setTimeout(() => {
+            this.$router.push('/teachersheetongoing');
+         }, 2000);
+      }
    }
 };
 </script>

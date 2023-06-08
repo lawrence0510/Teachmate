@@ -109,7 +109,9 @@
                         Please transfer the establishment fee to the following account:</p>
                      <p>中華郵政(700)<br>1234567 1234567</p>
                      <p>After completing the payment, please report by clicking "Payment Completed".</p>
-                     <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a>
+                     <button id="close" class="close">
+                        <router-link to="/teachersheetongoing">Payment Completed</router-link>
+                     </button>
                   </dialog>
 
 
@@ -171,4 +173,5 @@ export default {
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");</style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+</style>
