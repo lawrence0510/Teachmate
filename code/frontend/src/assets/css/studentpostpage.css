@@ -529,7 +529,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 350px;
-    top: 340px;
+    top: 200px;
 
     }
 
@@ -539,7 +539,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 439px;
-    top: 343px;
+    top: 203px;
 }
 
 .gender_css{
@@ -548,7 +548,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 550px;
-    top: 340px;
+    top: 200px;
     }
 
 .gender_content{
@@ -556,7 +556,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 638px;
-    top: 343px;
+    top: 203px;
 }
 
 .mbti_css{
@@ -565,7 +565,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 750px;
-    top: 340px;
+    top: 200px;
     }
 
 .mbti_content{
@@ -573,7 +573,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 820px;
-    top: 343px;
+    top: 203px;
 }
 
 .region_css{
@@ -582,7 +582,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 915px;
-    top: 340px;
+    top: 200px;
     }
 
 .region_content{
@@ -590,7 +590,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 1000px;
-    top: 343px;
+    top: 203px;
 }
 
 .filter_button{
@@ -600,7 +600,7 @@ button {
     border: 1px solid black;
     background-color: white;
     left: 1160px;
-    top: 343px;
+    top: 203px;
 }
 /* filter */
 
@@ -883,35 +883,6 @@ personal_png_NCCU{
 	margin-bottom: 50px;
 }
 
-
-.spp_contact_taital {
-	width: 100%;
-	float: left;
-	color: #1a1919;
-	font-size: 30px;
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.spp_button_set{                            /* 按鈕設定 */                          
-    background-color: white; 
-    color:gray;
-    font-weight:bold;
-    font-size: 20px;
-     margin-right: 15px;
-}
-
-.spp_button_set2:hover{                         /* 藍色放大 */                 
-    background-color: white;
-    color:blue;
-    transform: scale(1.2);
-}
-
-.spp_button_fixed{                          /* 藍色底線 */
-    border-bottom:2px solid blue;       
-}
-
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 /* 新增的css */
@@ -919,8 +890,7 @@ personal_png_NCCU{
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 10px;
-  margin-bottom: 0px;
-  margin-top: 50px;
+  margin-bottom: 10px;
   width: 200%; /* Adjust the width as desired */
 }
 

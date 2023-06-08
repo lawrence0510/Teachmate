@@ -389,7 +389,7 @@ export default {
 
 
 <style>
-@import url("../assets/css/studentprofilepost.css");
+@import url("../assets/css/teaherprofilepost.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");

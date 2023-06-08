@@ -50,14 +50,6 @@
    <!-- contact section start -->
    <div class="whole">
       <div class="contact_section layout_padding margin_bottom90">
-        <div class="container">
-            <h1 class="spp_contact_taital">Lawrence<!--改start-->
-             <hr size="10" align="center" noshade width="50%" color="000000">
-                
-                <a href="personal.html"><button class="spp_button_set spp_button_set2 " >關於</button></a>
-                <a href="post.html"><button class="spp_button_set spp_button_set2 spp_button_fixed">貼文</button></a>
-                </h1>
-         </div>
         
 
          <div class="contact_section_2 layout_padding">
@@ -389,7 +381,7 @@ export default {
 
 
 <style>
-@import url("../assets/css/studentprofilepost.css");
+@import url("../assets/css/studentpostpage.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
