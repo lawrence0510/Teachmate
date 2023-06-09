@@ -277,58 +277,58 @@ export default {
     generatePostHTML(post) {
   var postHTML = `
     <div class="pp_post_column">
-    <div class="pp_post" >
-        <div class="pp_post_item" >
+    <div class="studentpostpagepp_post" >
+        <div class="studentpostpagepp_post_item" >
           <div class="pp_label">Subject:</div>
           <div class="pp_data">${post.subject}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Name:</div>
           <div class="pp_data">${post.name}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Email:</div>
           <div class="pp_data">${post.email}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Phone:</div>
           <div class="pp_data">${post.phone}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Gender:</div>
           <div class="pp_data">${post.gender}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Age:</div>
           <div class="pp_data">${post.age}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">MBTI:</div>
           <div class="pp_data">${post.mbti}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Region:</div>
           <div class="pp_data">${post.region}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">School:</div>
           <div class="pp_data">${post.school}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Major:</div>
           <div class="pp_data">${post.major}</div>
         </div>
 
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Note:</div>
           <div class="pp_data">${post.note}</div>
         </div>

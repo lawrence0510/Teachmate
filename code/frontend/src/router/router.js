@@ -13,6 +13,8 @@ import StudentSheetMine from '@/components/StudentSheetMine';
 import TeacherSheetMine from '@/components/TeacherSheetMine';
 import StudentSheetOngoing from '@/components/StudentSheetOngoing';
 import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
+import StudentAddPost from '@/components/StudentAddPost';
+import StudentPostPage from '@/components/StudentPostPage';
 
 const routes = [
   {
@@ -40,6 +42,11 @@ const routes = [
   //   name: 'StudentProfilePost',
   //   component: StudentProfilePost
   // },
+  {
+    path: '/studentaddpost',
+    name: 'studentaddpost',
+    component: StudentAddPost
+  },
   {
     path: '/studentsheet',
     name: 'StudentSheet',
@@ -84,6 +91,11 @@ const routes = [
     path: '/teachersheetongoing',
     name: 'TeacherSheetOngoing',
     component: TeacherSheetOngoing
+  },
+  {
+    path: '/studentpostpage',
+    name: 'StudentPostPage',
+    component: StudentPostPage
   }
 ];
 
