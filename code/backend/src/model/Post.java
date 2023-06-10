@@ -4,21 +4,46 @@ import java.security.Timestamp;
 
 public class Post {
     private int P_ID;
-    private Timestamp P_Time;
+    private String P_Time;
     private int P_UserID;
     private int ReportCount;
     private String PostStatus;
     private String PostContent;
+    private String PostSubject;
+    private String PostRegion;
+    private String PostMajor;
+    private String PostName;
+    private String PostEmail;
+    private String PostPhoneNum;
+    private String PostGender;
+    private int PostAge;
+    private String PostMBTI;
+    private String PostSchool;
 
-    public Post(int P_ID,Timestamp P_Time,int P_UserID,int ReportCount,String PostStatus, String PostContent){
-        this.P_ID = P_ID;
-        this.P_Time = P_Time;
-        this.P_UserID = P_UserID;
-        this.ReportCount = ReportCount;
-        this.PostStatus = PostStatus;
-        this.PostContent = PostContent;
+    public Post(){
+
     }
-
+    
+    public Post(int pId, String pTime, int pUserId, int reportCount, String postStatus, String postContent, String postSubject, String postRegion, String postMajor, String postName, String postEmail, String postPhoneNum, String postGender, int postAge, String postMBTI, String postSchool) {
+        this.P_ID = pId;
+        this.P_Time = pTime;
+        this.P_UserID = pUserId;
+        this.ReportCount = reportCount;
+        this.PostStatus = postStatus;
+        this.PostContent = postContent;
+        this.PostMajor = postMajor;
+        this.PostRegion = postRegion;
+        this.PostSubject = postSubject;
+        this.PostName = postName;
+        this.PostEmail = postEmail;
+        this.PostPhoneNum = postPhoneNum;
+        this.PostGender = postGender;
+        this.PostAge = postAge;
+        this.PostMBTI = postMBTI;
+        this.PostSchool = postSchool;
+    }
+    
+    
     public int getP_ID() {
         return P_ID;
     }
@@ -27,11 +52,11 @@ public class Post {
         this.P_ID = P_ID;
     }
 
-    public Timestamp getP_Time() {
+    public String getP_Time() {
         return P_Time;
     }
 
-    public void setP_Time(Timestamp P_Time) {
+    public void setP_Time(String P_Time) {
         this.P_Time = P_Time;
     }
 
@@ -66,4 +91,85 @@ public class Post {
     public void setPostContent(String PostContent) {
         this.PostContent = PostContent;
     }
+
+    public String getPostSubject() {
+        return PostSubject;
+    }
+
+    public void setPostSubject(String PostSubject) {
+        this.PostSubject = PostSubject;
+    }
+
+    public String getPostRegion() {
+        return PostRegion;
+    }
+
+    public void setPostRegion(String PostRegion) {
+        this.PostRegion = PostRegion;
+    }
+
+    public String getPostGender() {
+        return PostGender;
+    }
+
+    public void setPostGender(String PostGender) {
+        this.PostGender = PostGender;
+    }
+
+    public String getPostMBTI() {
+        return PostMBTI;
+    }
+
+    public void setPostMBTI(String PostMBTI) {
+        this.PostMBTI = PostMBTI;
+    }
+
+    public String getPostMajor() {
+        return PostMajor;
+    }
+
+    public void setPostMajor(String PostMajor) {
+        this.PostMajor = PostMajor;
+    }
+
+    public String getPostName() {
+        return PostName;
+    }
+
+    public void setPostName(String PostName) {
+        this.PostName = PostName;
+    }
+
+    public String getPostEmail() {
+        return PostEmail;
+    }
+
+    public void setPostEmail(String PostEmail) {
+        this.PostEmail = PostEmail;
+    }
+
+    public String getPostPhoneNum() {
+        return PostPhoneNum;
+    }
+
+    public void setPostPhoneNum(String PostPhoneNum) {
+        this.PostPhoneNum = PostPhoneNum;
+    }
+
+    public int getPostAge() {
+        return PostAge;
+    }
+
+    public void setPostAge(int PostAge) {
+        this.PostAge = PostAge;
+    }
+
+    public String getPostSchool() {
+        return PostSchool;
+    }
+
+    public void setPostSchool(String PostSchool) {
+        this.PostSchool = PostSchool;
+    }
+    
 }

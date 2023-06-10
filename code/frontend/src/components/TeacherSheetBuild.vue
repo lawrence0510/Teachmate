@@ -79,18 +79,19 @@
                      <div class="teachersheetbuildsheet_content_s">
                         Student：
                      </div>
-                     <input type="text" placeholder="請輸入學生ID" class="teachersheetbuildsheet_content_sid">
+                     <input type="text" placeholder="請輸入學生ID" class="teachersheetbuildsheet_content_sid" v-model="studentID">
                      <div class="teachersheetbuildsheet_content_sub">
                         Subject：
                      </div>
-                     <input type="text" placeholder="請輸入教學科目" class="teachersheetbuildsheet_content_subname">
+
+                     <input type="text" placeholder="請輸入教學科目" class="teachersheetbuildsheet_content_subname" v-model="subject">
                      <div class="teachersheetbuildsheet_content_time">
                         Time：
                      </div>
-                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s">
+                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s" v-memo="time1" >
                      <div class="teachersheetbuildsheet_content_time_to">~</div>
-                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_e">
-                     <button id="show" class="teachersheetbuildbutton_set">Build</button>
+                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_e" v-model="time2">
+                     <button id="show" class="teachersheetbuildbutton_set" @click="buildContract">Build</button>
                      <dialog id="infoModal">
                         <p>Successfully created.<br>The sheet has been sent to the student.</p>
                         <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a>
@@ -123,8 +124,17 @@
 </template>
 
 <script>
-
+/* eslint-disable */
+import backend from '@/api/backend.js';
 export default {
+   data() {
+      return {
+         time1: '',
+         time2: '',
+         studentID: '',
+         subject: '',
+      };
+   },
    mounted() {
 
       let btn = document.querySelector("#show");
@@ -144,6 +154,28 @@ export default {
          infoModal.style.display = "none"; // 隐藏 dialog 元素
       });
 
+   },
+   methods: {
+      buildContract() {
+         //these properties correspond to user-entered data
+         const formData = {
+            time1: this.time1,
+            time2: this.time2,
+            studentID: this.studentID,
+            subject: this.subject,
+         }
+         console.log(formData)
+         //making a HTTP request to the backend
+         backend.buildContract(formData)
+            .then(response => {
+               // 處理成功回應
+               console.log('Build contract successfully!')
+            })
+            .catch(error => {
+               // 處理錯誤
+               console.log('Build contract error occured.')
+            });
+      },
    }
 };
 </script>

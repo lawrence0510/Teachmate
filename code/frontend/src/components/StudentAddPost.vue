@@ -62,7 +62,7 @@
     <div class="pp_post" >
         <div class="pp_post_item" >
           <div class="pp_label">Subject:</div>
-          <input type="text" placeholder="subject" class="pp_data" style="width: 100px;">
+          <input type="text" placeholder="subject" class="pp_data" style="width: 100px;" v-model="subject">
         </div>
 
         <div class="pp_post_item">
@@ -97,7 +97,7 @@
 
         <div class="pp_post_item">
           <div class="pp_label">Region:</div>
-          <input type="text" placeholder="region" class="pp_data" style="width: 100px;">
+          <input type="text" placeholder="region" class="pp_data" style="width: 100px;" v-model="region">
         </div>
 
         <div class="pp_post_item">
@@ -107,17 +107,17 @@
 
         <div class="pp_post_item">
           <div class="pp_label">Major:</div>
-          <input type="text" placeholder="major" class="pp_data" style="width: 100px;">
+          <input type="text" placeholder="major" class="pp_data" style="width: 100px;" v-model="major">
         </div>
 
         <div class="pp_post_item">
           <div class="pp_label">Note:</div>
-          <input type="text" placeholder="note" class="pp_data" style="width: 100px;">
+          <input type="text" placeholder="note" class="pp_data" style="width: 100px;" v-model="note">
         </div>
     </div>
     </div>
 
-    <button class="sap_addbutton">add</button>
+    <button class="sap_addbutton" @click="buildStudentPost">add</button>
 
               
 
@@ -153,6 +153,61 @@
 </template>
 
 <script>
+/* eslint-disable */
+import backend from '@/api/backend.js';
+//跟後端溝通
+
+export default {
+   data() {
+        return {
+            subject: '',
+            major: '',
+            region: '',
+            note: '',
+        };
+   },
+   mounted() {
+      let btn = document.querySelector("#show");
+      let infoModal = document.querySelector("#infoModal");
+      let close = document.querySelector("#close");
+
+      // 初始隐藏 dialog 元素
+      infoModal.style.display = "none";
+
+      btn.addEventListener("click", function() {
+      infoModal.style.display = "block"; // 显示 dialog 元素
+      infoModal.showModal(); // 打开模态对话框
+      });
+
+      close.addEventListener("click", function() {
+      infoModal.close();
+      infoModal.style.display = "none"; // 隐藏 dialog 元素
+      });
+   },
+
+   methods: {
+        buildStudentPost() {
+            //these properties correspond to user-entered data
+            const formData = {
+                subject: this.subject,
+                major: this.major,
+                region: this.region,
+                note: this.note,
+            }
+            console.log(formData)
+            //making a HTTP request to the backend
+            backend.buildStudentPost(formData)
+                .then(response => {
+                    // 處理成功回應
+                    console.log('Build Student Post successfully!')
+                })
+                .catch(error => {
+                    // 處理錯誤
+                    console.log('Build Student Post error occured.')
+                });
+        },
+    }
+};
 
 </script>
 

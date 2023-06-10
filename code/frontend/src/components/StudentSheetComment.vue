@@ -97,21 +97,21 @@
                         Student Comments：
                      </div>
                      <div class="star-rating">
-                        <input type="radio" name="rating" id="star1" value="1">
+                        <input type="radio" name="rating" id="star1" value="5" v-model = "teacherscore">
                         <label for="star1"></label>
-                        <input type="radio" name="rating" id="star2" value="2">
+                        <input type="radio" name="rating" id="star2" value="4" v-model = "teacherscore">
                         <label for="star2"></label>
-                        <input type="radio" name="rating" id="star3" value="3">
+                        <input type="radio" name="rating" id="star3" value="3" v-model = "teacherscore">
                         <label for="star3"></label>
-                        <input type="radio" name="rating" id="star4" value="4">
+                        <input type="radio" name="rating" id="star4" value="2" v-model = "teacherscore">
                         <label for="star4"></label>
-                        <input type="radio" name="rating" id="star5" value="5">
+                        <input type="radio" name="rating" id="star5" value="1" v-model = "teacherscore">
                         <label for="star5"></label>
                      </div>
 
                      <textarea class="studentsheetcommentsheet_content_div "
-                        placeholder="Please share your thoughts and opinions."></textarea>
-                     <button id="show" class="studentsheetcommentbutton_set">Build</button>
+                        placeholder="Please share your thoughts and opinions." v-model="c_content"></textarea>
+                     <button id="show" class="studentsheetcommentbutton_set" @click= "Contractgradecomment">Build</button>
                      <dialog id="infoModal">
                         <p>Successfully created.<br>The sheet has been sent to the student.</p>
                         <button id="close" class="studentsheetcommentbutton_ok">
@@ -146,8 +146,15 @@
 </template>
 
 <script>
-
+/* eslint-disable */
+import backend from '@/api/backend.js';
 export default {
+   data() {
+        return {
+            teacherscore: '',
+            c_content: '',
+        };
+    },
    mounted() {
 
       let btn = document.querySelector("#show");
@@ -167,6 +174,26 @@ export default {
          infoModal.style.display = "none"; // 隐藏 dialog 元素
       });
 
+   },
+   methods: {
+        Contractgradecomment() {
+            //these properties correspond to user-entered data
+            const formData = {
+               teacherscore : this.teacherscore,
+               c_content : this.c_content,
+            }
+            console.log(formData)
+            //making a HTTP request to the backend
+            backend.Contractgradecomment(formData)
+                .then(response => {
+                    // 處理成功回應
+                    console.log('Contract grade and comment successfully!')
+                })
+                .catch(error => {
+                    // 處理錯誤
+                    console.log('Contract grade and comment unsuccessfully')
+                });
+        },
    }
 };
 </script>

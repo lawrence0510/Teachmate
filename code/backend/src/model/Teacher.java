@@ -8,7 +8,7 @@ public class Teacher extends User{
     private String Certification;
     private Float TeachingRating;
 
-    public Teacher(Long UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
+    public Teacher(int UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
     String PhoneNum, String Email, String MBTI,int T_ID,String Profession, int Exp_Wage, String WorkExperience, String Certification, Float TeachingRating){
         super(UserID,Username,Password,Age,Gender,School,Region,Major,PhoneNum,Email,MBTI);
         this.T_ID = T_ID;

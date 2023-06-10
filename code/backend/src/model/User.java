@@ -1,7 +1,7 @@
 package model;
 
 public class User {
-    private Long UserID;
+    private int UserID;
 
     private String Username;
 
@@ -27,7 +27,7 @@ public class User {
     	
     }
 
-    public User(Long UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
+    public User(int UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
             String PhoneNum, String Email, String MBTI) {
         this.UserID = UserID;
         this.Username = Username;
@@ -42,11 +42,11 @@ public class User {
         this.MBTI = MBTI;
     }
 
-    public Long getUserID() {
+    public int getUserID() {
         return UserID;
     }
 
-    public void setUserID(Long UserID) {
+    public void setUserID(int UserID) {
         this.UserID = UserID;
     }
 

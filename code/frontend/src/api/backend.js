@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const backendApi = axios.create({
-  baseURL: 'http://localhost:8000', // 根據您的後端伺服器配置設定正確的 baseURL
+  baseURL: 'http://localhost:8000',
 });
 
 export default {
@@ -12,4 +12,21 @@ export default {
   signIn(formData) {
     return backendApi.post('/signin', formData);
   },
+
+  buildContract(formData){
+    return backendApi.post('/buildcontract', formData);
+  },
+
+  Contractgradecomment(formData){
+    return backendApi.post('/contractgradecomment', formData);
+  },
+
+  buildTeacherPost(formData){
+    return backendApi.post('/buildteacherpost', formData);
+  },
+
+  buildStudentPost(formData){
+    return backendApi.post('/buildstudentpost', formData);
+  },
+
 };
