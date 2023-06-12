@@ -1109,6 +1109,39 @@ textarea#comment::placeholder {
     right: 36%;
     font-size: 25px;
 }
+.teacherprofilepersonal_button_edit1{
+	position: absolute;
+	margin-left: 90%;
+	border: 1px black solid;
+	background-color: lightgray;
+	font-size: 18px;
+}
+.teacherprofilepersonal_button_edit2{
+	position: absolute;
+	margin-left: 90%;
+	border: 1px black solid;
+	background-color: lightgray;
+	font-size: 18px;
+}
+
+.teacherprofilepersonal_edit_window1{
+	position: absolute;
+	left: 153%;
+	top: 42%;
+}
+
+.teacherprofilepersonal_edit_window2{
+	position: absolute;
+	left: 153%;
+	top: 50%;
+}
+
+.teacherprofilepersonal_button_submit{
+	border: 1px black solid;
+	position: relative;
+	left: 10px;
+	top: 0px;
+}
 
 .teacherprofilepersonal_div_textl_exper{
     font-weight: bold;

@@ -111,14 +111,24 @@
                      <img src="../assets/images/cert.png" alt="cert" class="personal_png_cert">
                      <div class="personal_div_textl_cert">專長</div>
                      <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_cer">{{ teacherinfo[0].Profession }}</div>
-
+                     <button class="teacherprofilepersonal_button_edit1"  @click="openDialog">edit</button>
+                     <dialog class="teacherprofilepersonal_edit_window1" v-if="showDialog">
+                        <p>請輸入新增的專長：</p>
+                        <input type="text" v-model="accountNumber" placeholder="例：很會跳繩" />
+                        <button @click="submitDialog" class="teacherprofilepersonal_button_submit">提交</button>
+                     </dialog>
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/exper.png" alt="教學經驗" class="personal_png_exper">
                      <div class="teacherprofilepersonal_div_textl_exper">教學經驗</div>
                      <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_exper">{{teacherinfo[0].WorkExperience}}</div>
-
+                     <button class="teacherprofilepersonal_button_edit2" @click="openDialog1">edit</button>
+                     <dialog class="teacherprofilepersonal_edit_window2" v-if="showDialog1">
+                        <p>請輸入新增的教學經驗：</p>
+                        <input type="text" v-model="accountNumber" placeholder="例：鋼琴3年" />
+                        <button @click="submitDialog1" class="teacherprofilepersonal_button_submit">提交</button>
+                     </dialog>
                   </div>
 
                   <div class="personal_div_n2">
@@ -180,7 +190,9 @@ export default{
    },
    data(){
       return{
-         teacherinfo: []
+         teacherinfo: [],
+         showDialog: false,
+         showDialog1: false,
       }
    },
    mounted(){
@@ -197,6 +209,18 @@ export default{
         .catch(error => {
           console.error(error);
         });
+    },
+    openDialog() {
+      this.showDialog = true;
+    },
+    openDialog1() {
+      this.showDialog1 = true;
+    },
+    submitDialog() {
+      this.showDialog = false;
+    },
+    submitDialog1() {
+      this.showDialog1 = false;
     }  
    }
 }
