@@ -8,8 +8,8 @@
                     <div class="signinpageenroll">
                         <select class="signinpage" v-model="userType">
                             <option value="" disabled selected>Account Type</option>
-                            <option value="0" selected>I'm a Teacher</option>
-                            <option value="1">I'm a Student</option>
+                            <option value="teacher" selected>I'm a Teacher</option>
+                            <option value="student">I'm a Student</option>
                         </select>
                         <input class="signinpage" type="text" placeholder="Name" v-model="name" />
                         <input class="signinpage" type="email" placeholder="Email" v-model="email" />
@@ -74,7 +74,7 @@ import backend from '@/api/backend.js';
 export default {
     data() {
         return {
-            userType: '',
+            userType: 'Teacher',
             name: '',
             email: '',
             password: '',
@@ -105,7 +105,7 @@ export default {
     methods: {
         signUp() {
             const formData = {
-                userType: this.userType,
+                userType: this.userType === 'Teacher' ? 'Teacher' : 'Student',
                 name: this.name,
                 email: this.email,
                 password: this.password,
@@ -127,6 +127,7 @@ export default {
                 .catch(error => {
                     // 處理錯誤
                     console.log('Sign up Error Occured...')
+                    console.error(error)
                 });
         },
 
@@ -142,12 +143,25 @@ export default {
 
             backend.signIn(formData, headers)
                 .then(response => {
+                    console.log(response.data.name)
+                    this.username = response.data.name
                     console.log('Logged in successfully!')
-                    this.$router.push('/teacherprofile')
+                    if(response.data.userType == 'Student'){
+                        this.$router.push({
+                            name: 'StudentProfile',
+                            params: {username: this.username}
+                        });
+                    }
+                    else if(response.data.userType == 'Teacher'){
+                        this.$router.push({
+                            name: 'TeacherProfile',
+                            params: {username: this.username}
+                        });
+                    }
                 })
                 .catch(error => {
-                    console.log('Unsuccessful log in!')
-                    this.$router.push('/teacherprofile')
+                    console.log(error)
+                    alert('登入失敗！請檢查您的帳號和密碼。');
                 });
 
         }

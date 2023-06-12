@@ -31,7 +31,7 @@
                               href="sheetAbout.html">SHEET</a>
                         </li>
                         <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
+                           <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"

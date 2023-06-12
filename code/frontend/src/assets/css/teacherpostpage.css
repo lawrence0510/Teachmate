@@ -1,15 +1,7 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-/* @import url(font-awesome.min.css); */
 @import url(meanmenu.css);
-/* @import url(owl.carousel.min.css); */
-/* @import url(swiper.min.css); */
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -35,34 +27,16 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+body.studentpostpage{
+	color: #666666;
+	font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+	line-height: 1.80857;
+	font-weight: normal;
+	overflow-x: hidden;
 }
 
-.content-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-footer {
-  flex-shrink: 0;
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-
-a {
+a.studentpostpage{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -73,12 +47,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.studentpostpage,
+h2.studentpostpage,
+h3.studentpostpage,
+h4.studentpostpage,
+h5.studentpostpage,
+h6.studentpostpage {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -89,27 +63,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.studentpostpage{
 	font-size: 24px
 }
 
-h2 {
+h2.studentpostpage{
 	font-size: 22px
 }
 
-h3 {
+h3.studentpostpage{
 	font-size: 18px
 }
 
-h4 {
+h4.studentpostpage{
 	font-size: 16px
 }
 
-h5 {
+h5.studentpostpage{
 	font-size: 14px
 }
 
-h6 {
+h6.studentpostpage{
 	font-size: 13px
 }
 
@@ -121,43 +95,32 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
-
-button:focus {
+button.studentpostpage:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.studentpostpage,
+li.studentpostpage,
+ol.studentpostpage {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.studentpostpage {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.studentpostpage {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.studentpostpage,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -168,7 +131,7 @@ a,
 	transition: all .3s ease-in-out;
 }
 
-img {
+img.studentpostpage {
 	max-width: 100%;
 	height: auto;
 }
@@ -239,7 +202,7 @@ button {
 
 /* header section start */
 
-.header_section {
+.teacherprofileheader_section {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
@@ -249,8 +212,8 @@ button {
     padding: 20px 0px;
 }
 
-.bg-light {
-	background-color: #363636 !important;
+.teacherprofilebg-light {
+	background-color: #f7f8fa !important;
 	border-radius: 50px;
 }
 
@@ -264,23 +227,12 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
 }
 
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
-}
 
-.navbar-light .navbar-nav .active>.nav-link,
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
-}
 
 .nav-link {
 	display: block;
@@ -293,7 +245,7 @@ button {
 	padding-left: 15px;
 }
 
-.navbar {
+.teacherprofilenavbar {
 	padding: 0px 20px;
 }
 
@@ -326,6 +278,10 @@ button {
 .button_set2_head:hover{                         /* 藍色放大 */                 
     color:black;
     transform: scale(1.2);
+}
+
+.button_fixed_head{                          /* 藍色底線 */
+    border-bottom:2px solid gray;       
 }
 
 
@@ -529,7 +485,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 350px;
-    top: 200px;
+    
 
     }
 
@@ -539,7 +495,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 439px;
-    top: 203px;
+    
 }
 
 .gender_css{
@@ -548,7 +504,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 550px;
-    top: 200px;
+    
     }
 
 .gender_content{
@@ -556,7 +512,16 @@ button {
     font-size: 20px;
     position: absolute;
     left: 638px;
-    top: 203px;
+    
+}
+
+.content-container{
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
 }
 
 .mbti_css{
@@ -565,7 +530,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 750px;
-    top: 200px;
+    
     }
 
 .mbti_content{
@@ -573,7 +538,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 820px;
-    top: 203px;
+    
 }
 
 .region_css{
@@ -582,7 +547,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 915px;
-    top: 200px;
+    
     }
 
 .region_content{
@@ -590,7 +555,7 @@ button {
     font-size: 20px;
     position: absolute;
     left: 1000px;
-    top: 203px;
+    
 }
 
 .filter_button{
@@ -600,7 +565,7 @@ button {
     border: 1px solid black;
     background-color: white;
     left: 1160px;
-    top: 203px;
+    
 }
 /* filter */
 
@@ -886,7 +851,7 @@ personal_png_NCCU{
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 /* 新增的css */
-.pp_post {
+.studentpostpagepp_post {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 10px;
@@ -894,7 +859,7 @@ personal_png_NCCU{
   width: 200%; /* Adjust the width as desired */
 }
 
-.pp_post_item {
+.studentpostpagepp_post_item {
   border-top: 1px solid #e0e0e0;
   padding: 5px 0;
 }

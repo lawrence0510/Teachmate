@@ -1,15 +1,7 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-/* @import url(font-awesome.min.css); */
 @import url(meanmenu.css);
-/* @import url(owl.carousel.min.css); */
-/* @import url(swiper.min.css); */
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -35,34 +27,16 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+body.teacherprofile{
+	color: #666666;
+	font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+	line-height: 1.80857;
+	font-weight: normal;
+	overflow-x: hidden;
 }
 
-.content-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-footer {
-  flex-shrink: 0;
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-
-a {
+a.teacherprofile{
 	color: #1f1f1f;
 	text-decoration: none !important;
 	outline: none !important;
@@ -73,12 +47,12 @@ a {
 	transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.teacherprofile,
+h2.teacherprofile,
+h3.teacherprofile,
+h4.teacherprofile,
+h5.teacherprofile,
+h6.teacherprofile {
 	letter-spacing: 0;
 	font-weight: normal;
 	position: relative;
@@ -89,27 +63,27 @@ h6 {
 	margin: 0
 }
 
-h1 {
+h1.teacherprofile{
 	font-size: 24px
 }
 
-h2 {
+h2.teacherprofile{
 	font-size: 22px
 }
 
-h3 {
+h3.teacherprofile{
 	font-size: 18px
 }
 
-h4 {
+h4.teacherprofile{
 	font-size: 16px
 }
 
-h5 {
+h5.teacherprofile{
 	font-size: 14px
 }
 
-h6 {
+h6.teacherprofile{
 	font-size: 13px
 }
 
@@ -121,43 +95,32 @@ h6 {
 	box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #212121;
-	text-decoration: none!important;
-	opacity: 1
-}
-
-button:focus {
+button.teacherprofile:focus {
 	outline: none;
 }
 
-ul,
-li,
-ol {
+ul.teacherprofile,
+li.teacherprofile,
+ol.teacherprofile {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-p {
+p.teacherprofile {
 	margin: 20px;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
-a {
+a.teacherprofile {
 	color: #222222;
 	text-decoration: none;
 	outline: none !important;
 }
 
-a,
+a.teacherprofile,
 .btn {
 	text-decoration: none !important;
 	outline: none !important;
@@ -168,7 +131,7 @@ a,
 	transition: all .3s ease-in-out;
 }
 
-img {
+img.teacherprofile {
 	max-width: 100%;
 	height: auto;
 }
@@ -239,7 +202,7 @@ button {
 
 /* header section start */
 
-.header_section {
+.teacherprofileheader_section {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
@@ -249,8 +212,8 @@ button {
     padding: 20px 0px;
 }
 
-.bg-light {
-	background-color: #363636 !important;
+.teacherprofilebg-light {
+	background-color: #f7f8fa !important;
 	border-radius: 50px;
 }
 
@@ -264,23 +227,12 @@ button {
 	padding-right: 17px;
 	padding-left: 17px;
 	font-size: 18px;
-	color: #ffffff;
 	margin-right: 10px;
 	text-transform: uppercase;
     font-family: 'Lato', sans-serif;
 }
 
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link:hover {
-	color: #ffffff;
-}
 
-.navbar-light .navbar-nav .active>.nav-link,
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .show>.nav-link {
-	color: #ffffff;
-}
 
 .nav-link {
 	display: block;
@@ -293,7 +245,7 @@ button {
 	padding-left: 15px;
 }
 
-.navbar {
+.teacherprofilenavbar {
 	padding: 0px 20px;
 }
 
@@ -326,6 +278,10 @@ button {
 .button_set2_head:hover{                         /* 藍色放大 */                 
     color:black;
     transform: scale(1.2);
+}
+
+.button_fixed_head{                          /* 藍色底線 */
+    border-bottom:2px solid gray;       
 }
 
 

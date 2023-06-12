@@ -9,6 +9,8 @@ public class User {
 
     private int Age;
 
+    private String UserType;
+
     private String Gender;
 
     private String School;
@@ -28,7 +30,7 @@ public class User {
     }
 
     public User(int UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
-            String PhoneNum, String Email, String MBTI) {
+            String PhoneNum, String Email, String MBTI, String UserType) {
         this.UserID = UserID;
         this.Username = Username;
         this.Password = Password;
@@ -40,6 +42,7 @@ public class User {
         this.PhoneNum = PhoneNum;
         this.Email = Email;
         this.MBTI = MBTI;
+        this.UserType = UserType;
     }
 
     public int getUserID() {
@@ -126,5 +129,13 @@ public class User {
 
     public void setMBTI(String MBTI) {
         this.MBTI = MBTI;
+    }
+
+    public void setUserType(String usertype) {
+        this.UserType = usertype;
+    }
+
+    public String getUserType(){
+        return UserType;
     }
 }

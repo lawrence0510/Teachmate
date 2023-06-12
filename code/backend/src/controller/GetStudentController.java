@@ -1,26 +1,24 @@
 package controller;
-
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import model.User;
-import model.UserDTO;
+import model.Post;
 import repository.MySQLRepository;
 import service.UserService;
-
+import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import java.util.Map;
 
-public class LoginController implements HttpHandler {
+public class GetStudentController implements HttpHandler {
     private UserService userService;
     private MySQLRepository repository;
 
-    public LoginController() {
+    public GetStudentController() {
         userService = new UserService();
         repository = new MySQLRepository();
     }
@@ -34,8 +32,9 @@ public class LoginController implements HttpHandler {
             try {
                 Headers headers = exchange.getResponseHeaders();
                 headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
-                headers.add("Access-Control-Allow-Methods", "POST");
+                headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
                 headers.add("Access-Control-Allow-Headers", "Content-Type");
+
                 // Read the request body
                 InputStream requestBody = exchange.getRequestBody();
                 byte[] requestBodyBytes = requestBody.readAllBytes();
@@ -44,53 +43,29 @@ public class LoginController implements HttpHandler {
                 // Parse the JSON request body
                 Gson gson = new Gson();
                 JsonObject jsonObject = gson.fromJson(requestBodyString, JsonObject.class);
-                String email = jsonObject.get("email").getAsString();
-                String password = jsonObject.get("password").getAsString();
+                String username = jsonObject.get("username").getAsString();
 
-                // Create a User object
-                User user = new User();
-                user.setEmail(email);
-                user.setPassword(password);
-
-                // Authenticate the user
-                boolean isAuthenticated = userService.loginUser(user, repository);
-
-                if (isAuthenticated) {
-                    UserDTO userDTO = getUserAccountInfo(user.getEmail());
-                    String userDTOJson = gson.toJson(userDTO);
-
-                    sendResponse(exchange, 200, userDTOJson);
+                // Call the UserService method to filter teachers by criteria
+                List<Map<String, Object>> StudentInfo = userService.getStudentInfo(username,repository);
+                if (StudentInfo != null) {
+                    // Convert the filtered posts to JSON and send as the response
+                    String jsonResponse = gson.toJson(StudentInfo);
+                    sendResponse(exchange, 200, jsonResponse);
                 } else {
-                    // User authentication failed
-                    String responseMessage = "Unsuccessful log in!";
-                    sendResponse(exchange, 401, responseMessage);
+                    String responseMessage = "Error occurred during getting student's information.";
+                    sendResponse(exchange, 500, responseMessage);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                String responseMessage = "Error occurred during login.";
+                String responseMessage = "Error occurred getting student's information.";
                 sendResponse(exchange, 500, responseMessage);
             }
         } else {
-            // Invalid HTTP method
             String responseMessage = "Invalid request method.";
             sendResponse(exchange, 405, responseMessage);
         }
     }
 
-    private UserDTO getUserAccountInfo(String email) {
-        String name = userService.getUserNameByEmail(email, repository);
-        String userType = userService.getUserTypeByEmail(email, repository);
-        UserDTO userDTO = new UserDTO(name, userType);
-        return userDTO;
-    }
-
-    private void handleOptionsRequest(HttpExchange exchange) throws IOException {
-        Headers headers = exchange.getResponseHeaders();
-        headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
-        headers.add("Access-Control-Allow-Methods", "POST");
-        headers.add("Access-Control-Allow-Headers", "Content-Type");
-        sendResponse(exchange, 200, "");
-    }
 
     private void sendResponse(HttpExchange exchange, int statusCode, String response) throws IOException {
         Headers headers = exchange.getResponseHeaders();
@@ -100,5 +75,13 @@ public class LoginController implements HttpHandler {
         outputStream.write(response.getBytes());
         outputStream.flush();
         outputStream.close();
+    }
+
+    private void handleOptionsRequest(HttpExchange exchange) throws IOException {
+        Headers headers = exchange.getResponseHeaders();
+        headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
+        headers.add("Access-Control-Allow-Methods", "POST");
+        headers.add("Access-Control-Allow-Headers", "Content-Type");
+        sendResponse(exchange, 200, "");
     }
 }

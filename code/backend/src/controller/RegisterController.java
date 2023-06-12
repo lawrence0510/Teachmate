@@ -15,7 +15,6 @@ import java.nio.charset.StandardCharsets;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-
 public class RegisterController implements HttpHandler {
     private UserService userService;
     private MySQLRepository repository;
@@ -27,34 +26,31 @@ public class RegisterController implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-        if ("OPTIONS".equals(exchange.getRequestMethod())) {
+        if (exchange.getRequestMethod().equalsIgnoreCase("OPTIONS")) {
             handleOptionsRequest(exchange);
-        }
-        else if ("POST".equals(exchange.getRequestMethod())) {
-            String requestBody = getRequestData(exchange);
+        } else if (exchange.getRequestMethod().equalsIgnoreCase("POST")) {
+            try {
+                Headers headers = exchange.getResponseHeaders();
+                headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
+                headers.add("Access-Control-Allow-Methods", "POST");
+                headers.add("Access-Control-Allow-Headers", "Content-Type");
+                // Read the request body
+                InputStream requestBody = exchange.getRequestBody();
+                byte[] requestBodyBytes = requestBody.readAllBytes();
+                String requestBodyString = new String(requestBodyBytes, StandardCharsets.UTF_8);
 
-            User user = parseUserFromRequest(requestBody);
+                User user = parseUserFromRequest(requestBodyString);
+                userService.saveUser(user, repository);
 
-            userService.saveUser(user, repository);
-            
-            String response = "User saved";
-            sendResponse(exchange, response, 200);
-        } else {
-            String response = "Not support";
-            sendResponse(exchange, response, 405);
+                String response = "User saved";
+                sendResponse(exchange, response, 200);
+            }
+            catch(Exception e){
+                 e.printStackTrace();
+                String responseMessage = "Error occurred during registering";
+                sendResponse(exchange, responseMessage, 500);
+            }
         }
-    }
-
-    private String getRequestData(HttpExchange exchange) throws IOException {
-        InputStream requestBody = exchange.getRequestBody();
-        byte[] buffer = new byte[1024];
-        int bytesRead;
-        StringBuilder requestData = new StringBuilder();
-        while ((bytesRead = requestBody.read(buffer)) != -1) {
-            requestData.append(new String(buffer, 0, bytesRead, StandardCharsets.UTF_8));
-        }
-        requestBody.close();
-        return requestData.toString();
     }
 
     private User parseUserFromRequest(String requestBody) {
@@ -65,12 +61,13 @@ public class RegisterController implements HttpHandler {
         String password = jsonObject.get("password").getAsString();
         int age = jsonObject.get("age").getAsInt();
         String gender = jsonObject.get("gender").getAsString();
+        String usertype = jsonObject.get("userType").getAsString();
         String school = jsonObject.get("school").getAsString();
         String region = jsonObject.get("region").getAsString();
         String major = jsonObject.get("major").getAsString();
         String phoneNumber = jsonObject.get("phoneNumber").getAsString();
         String mbti = jsonObject.get("mbti").getAsString();
-        long userID = generateUserID();
+        int userID = generateUserID();
 
         User user = new User();
         user.setUserID(userID);
@@ -84,35 +81,36 @@ public class RegisterController implements HttpHandler {
         user.setMajor(major);
         user.setPhoneNum(phoneNumber);
         user.setMBTI(mbti);
-        
+        user.setUserType(usertype);
         return user;
     }
+
     private void sendResponse(HttpExchange exchange, String response, int statusCode) throws IOException {
         exchange.sendResponseHeaders(statusCode, response.getBytes().length);
         OutputStream outputStream = exchange.getResponseBody();
         outputStream.write(response.getBytes());
         outputStream.close();
     }
-    
+
     private int generateUserID() {
         int min = 1; // 最小值
         int max = Integer.MAX_VALUE; // 最大值
         int userID;
-    
+
         // 生成隨機數，如果重複則重新生成直到不重複
         do {
             userID = (int) (min + Math.random() * (max - min + 1));
         } while (userService.isUserIDExists(userID, repository));
-    
+
         return userID;
-    } 
+    }
 
     private void handleOptionsRequest(HttpExchange exchange) throws IOException {
         Headers headers = exchange.getResponseHeaders();
         headers.add("Access-Control-Allow-Origin", "http://localhost:8080");
         headers.add("Access-Control-Allow-Methods", "POST");
         headers.add("Access-Control-Allow-Headers", "Content-Type");
-        sendResponse(exchange, "", 200);
+        exchange.sendResponseHeaders(200, -1);
+        exchange.close();
     }
 }
-

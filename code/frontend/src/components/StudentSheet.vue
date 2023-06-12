@@ -20,20 +20,21 @@
                                     class="button_set_head button_set2_head nav-link ">Post</button></a>
                            </li>
                            <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                              <router-link to="/studentaddpost" class="button_set_head button_set2_head nav-link">
+                                 ADD
+                              </router-link>
                            </li>
                            <li class="nav-item">
                               <router-link to="/studentprofile" class="button_set_head button_set2_head nav-link">
                                  ABOUT
                               </router-link>
-
                            </li>
                            <li class="nav-item">
                               <a class="button_set_head button_set2_head nav-link button_fixed_head"
                                  href="sheetAbout.html">SHEET</a>
                            </li>
                            <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
+                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>

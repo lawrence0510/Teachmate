@@ -4,7 +4,8 @@ import TeacherProfile from '@/components/TeacherProfile';
 import StudentProfile from '@/components/StudentProfile';
 import TeacherSheetOver from '@/components/TeacherSheetOver';
 import StudentSheetOver from '@/components/StudentSheetOver';
-// import StudentProfilePost from '@/components/StudentProfilePost';
+import StudentProfilePost from '@/components/StudentProfilePost';
+import TeacherProfilePost from '@/components/TeacherProfilePost';
 import StudentSheet from '@/components/StudentSheet';
 import TeacherSheet from '@/components/TeacherSheet';
 import StudentSheetComment from '@/components/StudentSheetComment';
@@ -15,6 +16,8 @@ import StudentSheetOngoing from '@/components/StudentSheetOngoing';
 import TeacherSheetOngoing from '@/components/TeacherSheetOngoing';
 import StudentAddPost from '@/components/StudentAddPost';
 import StudentPostPage from '@/components/StudentPostPage';
+import TeacherPostPage from '@/components/TeacherPostPage';
+import TeacherAddPost from '@/components/TeacherAddPost';
 
 const routes = [
   {
@@ -23,25 +26,32 @@ const routes = [
     component: SigninPage
   },
   {
-    path: '/teacherprofile',
+    path: '/teacherprofile/:username',
     name: 'TeacherProfile',
-    component: TeacherProfile
+    component: TeacherProfile,
+    props: true
   },
   {
-    path: '/studentprofile',
+    path: '/studentprofile/:username',
     name: 'StudentProfile',
-    component: StudentProfile
+    component: StudentProfile,
+    props: true
   },
   {
     path: '/studentsheetover',
     name: 'StudentSheetOver',
     component: StudentSheetOver
   },
-  // {
-  //   path: '/studentprofilepost',
-  //   name: 'StudentProfilePost',
-  //   component: StudentProfilePost
-  // },
+  {
+    path: '/studentprofilepost',
+    name: 'StudentProfilePost',
+    component: StudentProfilePost
+  },
+  {
+    path: '/teacherprofilepost',
+    name: 'TeacherProfilePost',
+    component: TeacherProfilePost
+  },
   {
     path: '/studentaddpost',
     name: 'studentaddpost',
@@ -96,6 +106,16 @@ const routes = [
     path: '/studentpostpage',
     name: 'StudentPostPage',
     component: StudentPostPage
+  },
+  {
+    path: '/teacherpostpage',
+    name: 'TeacherPostPage',
+    component: TeacherPostPage
+  },
+  {
+    path: '/teacheraddpost',
+    name: 'TeacherAddPost',
+    component: TeacherAddPost
   }
 ];
 

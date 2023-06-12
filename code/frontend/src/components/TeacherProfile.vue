@@ -53,7 +53,7 @@
       <div class="whole">
          <div class="contact_section layout_padding margin_bottom90">
             <div class="container teacherprofile">
-               <h1 class="contact_taital teacherprofile">Lawrence<!--改start-->
+               <h1 class="contact_taital teacherprofile">{{ username }}<!--改start-->
                   <hr size="10" align="center" noshade width="50%" color="000000">
 
                   <a href="personal.html" class="teacherprofile"><button class="teacherprofilebutton_set button_set2 button_fixed teacherprofile">關於</button></a>
@@ -192,7 +192,10 @@
 </template>
 
 <script>
-
+export default {
+  name: 'TeacherProfile',
+  props: ['username'],
+};
 </script>
 
 <style>

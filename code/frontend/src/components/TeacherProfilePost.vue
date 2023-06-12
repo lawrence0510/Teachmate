@@ -33,7 +33,7 @@
                            <a class="button_set_head button_set2_head nav-link" href="sheetAbout.html">SHEET</a>
                         </li>
                         <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y">MORE</a>
+                          <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
@@ -389,7 +389,7 @@ export default {
 
 
 <style>
-@import url("../assets/css/teaherprofilepost.css");
+@import url("../assets/css/teacherprofilepost.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");
