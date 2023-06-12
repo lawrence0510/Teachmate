@@ -4,6 +4,7 @@ import controller.BuildContractController;
 import controller.BuildStudentPostController;
 import controller.BuildTeacherPostController;
 import controller.ContractGradeCommentController;
+import controller.GetStudentController;
 import controller.LoginController;
 import controller.RegisterController;
 
@@ -20,6 +21,7 @@ public class Main {
         server.createContext("/contractgradecomment", new ContractGradeCommentController());
         server.createContext("/buildteacherpost", new BuildTeacherPostController());
         server.createContext("/buildstudentpost", new BuildStudentPostController());
+        server.createContext("/getstudentinfo", new GetStudentController());
         server.start();
 
         System.out.println("Server started on port 8000");

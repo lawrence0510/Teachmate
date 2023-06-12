@@ -80,15 +80,14 @@
                   <div class="studentprofilepersonal_div">
                      <img src="../assets/images/identity.png" alt="身分" class="personal_png">
                      <div class="studentprofilepersonal_div_textl">身分</div>
-                     <div class="studentprofilepersonal_div_textr">學生
-                     </div>
+                     <div v-if="studentinfo.length > 0" class="studentprofilepersonal_div_textr">{{ studentinfo[0].UserType }}</div>
 
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/sex.png" alt="性別" class="personal_png_sex">
                      <div class="personal_div_textl_sex">性別</div>
-                     <div class="personal_div_textr_sex">男生
+                     <div v-if="studentinfo.length > 0" class="personal_div_textr_sex">{{ studentinfo[0].Gender }}
                      </div>
 
                   </div>
@@ -96,7 +95,7 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/age.png" alt="年齡" class="personal_png_old">
                      <div class="personal_div_textl_old">年齡</div>
-                     <div class="personal_div_textr_old">20
+                     <div v-if="studentinfo.length > 0" class="personal_div_textr_old">{{ studentinfo[0].Age }}
                      </div>
 
                   </div>
@@ -104,17 +103,14 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/school.png" alt="學歷" class="personal_png_school">
                      <div class="personal_div_textl_school">學歷</div>
-                     <div class="personal_div_textr_school stop_here_school">國小、國中、高中
+                     <div v-if="studentinfo.length > 0" class="personal_div_textr_school stop_here_school">{{ studentinfo[0].School }}/{{ studentinfo[0].Major }}
                      </div>
-                     <div class="pop_content_school">• 國小：麗湖國小<br>• 國中：介壽國中<br>• 高中：建國中學<br>• 大學：(無)<br>• 研究所：(無)
-                     </div>
-
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/MBTI.png" alt="MBTI" class="personal_png_MBTI">
                      <div class="personal_div_textl_MBTI">MBTI</div>
-                     <div class="personal_div_textr_MBTI">ENFP
+                     <div v-if="studentinfo.length > 0" class="personal_div_textr_MBTI">{{ studentinfo[0].MBTI }}
                      </div>
 
                   </div>
@@ -122,16 +118,16 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/contact.png" alt="聯絡方式" class="personal_png_contact">
                      <div class="personal_div_textl_contact">聯絡方式</div>
-                     <div class="personal_div_textr_contact stop_here_contact">Line、FB、Gmail
+                     <div class="personal_div_textr_contact stop_here_contact">Click me for contacts
                      </div>
-                     <div class="pop_content_contact">• Line：<br>• Phone：<br>• Gmail：
+                     <div v-if="studentinfo.length > 0" class="pop_content_contact">Contacts: <br>📞0{{ studentinfo[0].PhoneNum }}<br>✉️{{ studentinfo[0].Gmail }}
                      </div>
                   </div>
 
                   <div class="personal_div_comment">
                      <img src="../assets/images/comment.png" alt="備註" class="personal_png_comment">
                      <div class="personal_div_textl_comment">備註</div>
-                     <div class="personal_div_textr_comment">我是勞倫斯
+                     <div class="personal_div_textr_comment">
                      </div>
                      <div class="personal_div_comment_line"></div>
                   </div>
@@ -162,10 +158,33 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'StudentProfile',
   props: {
     username: String
+  },
+  data(){
+   return {
+      studentinfo: []
+   }
+  },
+  mounted() {
+    this.getStudentInfo();
+  },
+  methods: {
+    getStudentInfo() {
+      axios.post('http://localhost:8000/getstudentinfo', {
+        username: this.username
+      })
+        .then(response => {
+          this.studentinfo = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   }
 };
 

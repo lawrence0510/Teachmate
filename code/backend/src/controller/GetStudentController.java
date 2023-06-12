@@ -50,6 +50,7 @@ public class GetStudentController implements HttpHandler {
                 if (StudentInfo != null) {
                     // Convert the filtered posts to JSON and send as the response
                     String jsonResponse = gson.toJson(StudentInfo);
+                    System.out.println(jsonResponse);
                     sendResponse(exchange, 200, jsonResponse);
                 } else {
                     String responseMessage = "Error occurred during getting student's information.";

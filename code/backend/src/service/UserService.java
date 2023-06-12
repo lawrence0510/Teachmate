@@ -475,7 +475,7 @@ public class UserService {
         List<Map<String, Object>> StudentInfo = new ArrayList<>();
         // 我不知道你新加的usertype attribute是不是這樣拼，你在自己改！
         //School + Major 應該會對應到前端的“學歷”
-        String sql = "SELECT UserType, Gender, Age, School, Major, MBTI, Gmail FROM User WHERE Username = ?";
+        String sql = "SELECT UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM User WHERE Username = ?";
         try (Connection connection = repo.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
@@ -491,6 +491,7 @@ public class UserService {
                     student.put("Major", resultSet.getString("Major"));
                     student.put("MBTI", resultSet.getString("MBTI"));
                     student.put("Gmail", resultSet.getString("Gmail"));
+                    student.put("PhoneNum", resultSet.getString("PhoneNum"));
 
                     // Add the student map to the studentInfo list
                     StudentInfo.add(student);
