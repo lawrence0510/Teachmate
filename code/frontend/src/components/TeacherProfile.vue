@@ -53,7 +53,7 @@
       <div class="whole">
          <div class="contact_section layout_padding margin_bottom90">
             <div class="container teacherprofile">
-               <h1 class="contact_taital teacherprofile">{{ username }}<!--改start-->
+               <h1 class="contact_taital">{{ username }}<!--改start-->
                   <hr size="10" align="center" noshade width="50%" color="000000">
 
                   <a href="personal.html" class="teacherprofile"><button class="teacherprofilebutton_set button_set2 button_fixed teacherprofile">關於</button></a>
@@ -70,7 +70,7 @@
                   <div class="teacherprofilepersonal_div">
                      <img src="../assets/images/identity.png" alt="身分" class="personal_png">
                      <div class="teacherprofilepersonal_div_textl">身分</div>
-                     <div class="teacherprofilepersonal_div_textr">老師
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr">{{ teacherinfo[0].UserType }}
                      </div>
 
                   </div>
@@ -78,7 +78,7 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/sex.png" alt="性別" class="personal_png_sex">
                      <div class="teacherprofilepersonal_div_textl_sex">性別</div>
-                     <div class="teacherprofilepersonal_div_textr_sex">男生
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_sex">{{ teacherinfo[0].Gender }}
                      </div>
 
                   </div>
@@ -86,7 +86,7 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/age.png" alt="年齡" class="personal_png_old">
                      <div class="personal_div_textl_old">年齡</div>
-                     <div class="teacherprofilepersonal_div_textr_old">20
+                     <div v-if="teacherinfo.length > 0"  class="teacherprofilepersonal_div_textr_old">{{ teacherinfo[0].Age }}
                      </div>
 
                   </div>
@@ -94,10 +94,7 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/school.png" alt="學歷" class="personal_png_school">
                      <div class="personal_div_textl_school">學歷</div>
-                     <div class="teacherprofilepersonal_div_textr_school stop_here_school">國小、國中、高中
-                     </div>
-                     <div class="teacherprofilepop_content_school">• 國小：麗湖國小<br>• 國中：介壽國中<br>• 高中：建國中學<br>• 大學：(無)<br>•
-                        研究所：(無)
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_school stop_here_school">{{ teacherinfo[0].School }}/{{ teacherinfo[0].Major }}
                      </div>
 
                   </div>
@@ -105,44 +102,31 @@
                   <div class="personal_div_n2">
                      <img src="../assets/images/MBTI.png" alt="MBTI" class="personal_png_MBTI">
                      <div class="teacherprofilepersonal_div_textl_MBTI">MBTI</div>
-                     <div class="teacherprofilepersonal_div_textr_MBTI">ENFP
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_MBTI">{{ teacherinfo[0].MBTI }}
                      </div>
 
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/cert.png" alt="cert" class="personal_png_cert">
-                     <div class="personal_div_textl_cert">證照</div>
-                     <select class="select_cert">
-                        <option value="option1">More</option>
-                        <option value="option2">• 英文：</option>
-                        <option value="option3">• 數學：</option>
-                        <option value="option4">• 中文：</option>
-                        <option value="option5">• 其餘外語：</option>
-                        <option value="option6">• 執照：</option>
-                     </select>
+                     <div class="personal_div_textl_cert">專長</div>
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_cer">{{ teacherinfo[0].Profession }}</div>
 
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/exper.png" alt="教學經驗" class="personal_png_exper">
                      <div class="teacherprofilepersonal_div_textl_exper">教學經驗</div>
-                     <select class="select_exper">
-                        <option value="option1">All</option>
-                        <option value="option2">• 國小：齁</option>
-                        <option value="option3">• 國中：這裡</option>
-                        <option value="option4">• 高中：我不知道</option>
-                        <option value="option5">• 大學：要打什麼啦!!!</option>
-                     </select>
+                     <div v-if="teacherinfo.length > 0" class="teacherprofilepersonal_div_textr_exper">{{teacherinfo[0].WorkExperience}}</div>
 
                   </div>
 
                   <div class="personal_div_n2">
                      <img src="../assets/images/contact.png" alt="聯絡方式" class="personal_png_contact">
                      <div class="teacherprofilepersonal_div_textl_contact">聯絡方式</div>
-                     <div class="teacherprofilepersonal_div_textr_contact stop_here_contact">Phone、Email
+                     <div class="teacherprofilepersonal_div_textr_contact stop_here_contact">Click me for contacts
                      </div>
-                     <div class="pop_content_contact">• Phone：<br>• Email：
+                     <div v-if="teacherinfo.length > 0" class="pop_content_contact">Contacts: <br>📞0{{ teacherinfo[0].PhoneNum }}<br>✉️{{ teacherinfo[0].Gmail }}
                      </div>
                   </div>
 
@@ -152,16 +136,11 @@
 
                      <div class="teacherprofilepersonal_div_textr_score stop_here_score">4.5/5(10)
                      </div>
-
-                     <div class="pop_content_score">• 表一(網頁連結)<br>• 表二(網頁連結)
-                     </div>
                   </div>
 
                   <div class="personal_div_comment">
                      <img src="../assets/images/comment.png" alt="備註" class="teacherprofilepersonal_png_comment">
                      <div class="teacherprofilepersonal_div_textl_comment">備註</div>
-                     <div class="teacherprofilepersonal_div_textr_comment">我是勞倫斯
-                     </div>
                      <div class="teacherprofilepersonal_div_comment_line"></div>
                   </div>
 
@@ -192,10 +171,35 @@
 </template>
 
 <script>
-export default {
-  name: 'TeacherProfile',
-  props: ['username'],
-};
+import axios from 'axios'
+
+export default{
+   name: 'TeacherProfile',
+   props: {
+      username: String
+   },
+   data(){
+      return{
+         teacherinfo: []
+      }
+   },
+   mounted(){
+      this.getTeacherInfo();
+   },
+   methods:{
+      getTeacherInfo() {
+      axios.post('http://localhost:8000/getteacherinfo', {
+        username: this.username
+      })
+        .then(response => {
+          this.teacherinfo = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }  
+   }
+}
 </script>
 
 <style>

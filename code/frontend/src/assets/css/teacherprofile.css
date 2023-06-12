@@ -398,6 +398,16 @@ button {
 
 /* about section start */
 
+.teacherprofilepersonal_div_textr_cer{
+    font-weight: bold;
+    position: absolute;
+    top: 42%;
+    right:-37%;
+    font-size: 25px;
+    text-align: right;
+}
+
+
 .about_section {
 	width: 100%;
 	float: left;
@@ -1059,13 +1069,21 @@ textarea#comment::placeholder {
     font-size: 25px;
     text-align: right;
 }
+.teacherprofilepersonal_div_textr_exper{
+    font-weight: bold;
+    position: absolute;
+    top: 50.5%;
+    right:-37%;
+    font-size: 25px;
+    text-align: right;
+}
 
 .personal_png_cert{
     width: 30px;
     height: 30px;
     position: relative;
     top:0%;
-    right: 30%;
+    right: 36%;
     font-size: 25px;
 }
 
@@ -1088,7 +1106,7 @@ textarea#comment::placeholder {
     height: 30px;
     position: relative;
     top:0%;
-    right: 27%;
+    right: 36%;
     font-size: 25px;
 }
 

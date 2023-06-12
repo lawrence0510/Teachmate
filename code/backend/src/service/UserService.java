@@ -471,13 +471,11 @@ public class UserService {
         return null;
     }
 
-    public List<Map<String, Object>> getStudentInfo(String username, MySQLRepository repo){
+    public List<Map<String, Object>> getStudentInfo(String username, MySQLRepository repo) {
         List<Map<String, Object>> StudentInfo = new ArrayList<>();
-        // 我不知道你新加的usertype attribute是不是這樣拼，你在自己改！
-        //School + Major 應該會對應到前端的“學歷”
-        String sql = "SELECT UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM User WHERE Username = ?";
+        String sql = "SELECT UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM Teachmate.User WHERE Username = ?";
         try (Connection connection = repo.getConnection();
-            PreparedStatement statement = connection.prepareStatement(sql)) {
+                PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
 
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -497,7 +495,7 @@ public class UserService {
                     StudentInfo.add(student);
                 }
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -507,6 +505,47 @@ public class UserService {
             }
         }
         return StudentInfo;
+    }
+
+    public List<Map<String, Object>> getTeacherInfo(String username, MySQLRepository repo) {
+        List<Map<String, Object>> TeacherInfo = new ArrayList<>();
+        String sql = "SELECT u.UserType, u.Gender, u.Age, u.School, u.Major, u.MBTI, u.Gmail, u.PhoneNum, t.Profession, t.Exp_Wage, t.WorkExperience, t.Certification, t.TeachingRating FROM Teachmate.User as u INNER JOIN Teachmate.Teacher as t ON u.UserID = t.T_ID WHERE u.Username = ?";
+        try (Connection connection = repo.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, username);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Map<String, Object> teacher = new HashMap<>();
+                    // Retrieve the values from the ResultSet and put them into the student map
+                    teacher.put("UserType", resultSet.getString("UserType"));
+                    teacher.put("Gender", resultSet.getString("Gender"));
+                    teacher.put("Age", resultSet.getString("Age"));
+                    teacher.put("School", resultSet.getString("School"));
+                    teacher.put("Major", resultSet.getString("Major"));
+                    teacher.put("MBTI", resultSet.getString("MBTI"));
+                    teacher.put("Gmail", resultSet.getString("Gmail"));
+                    teacher.put("PhoneNum", resultSet.getString("PhoneNum"));
+                    teacher.put("Profession", resultSet.getString("Profession"));
+                    teacher.put("Exp_Wage", resultSet.getString("Exp_Wage"));
+                    teacher.put("WorkExperience", resultSet.getString("WorkExperience"));
+                    teacher.put("Certification", resultSet.getString("Certification"));
+                    teacher.put("TeachingRating", resultSet.getString("TeachingRating"));
+                    TeacherInfo.add(teacher);
+                }
+            }
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                repo.closeConnection(); // Close the connection
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return TeacherInfo;
     }
 
 }
