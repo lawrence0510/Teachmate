@@ -14,30 +14,37 @@
                               <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
+                           <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <router-link to="/studentaddpost" class="button_set_head button_set2_head nav-link">
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
                                  ADD
                               </router-link>
                            </li>
-                           <li class="nav-item">
-                              <router-link to="/studentprofile" class="button_set_head button_set2_head nav-link">
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
                                  ABOUT
                               </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link button_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="#"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
                            </li>
 
                         </ul>
@@ -128,13 +135,15 @@
 
                   </div>
 
-                  <router-link to="/" class="button_set1 button_set1-2" style="border: 2px solid black;">
+                  <router-link :to="{ name: 'Signin', params: { username: this.username } }" class="button_set1 button_set1-2" style="border: 2px solid black;">
                      be a teacher
                   </router-link>
 
 
-                  <router-link to="/studentsheetongoing" class="studentsheetbutton_set button_set2 "
-                     style="border: 2px solid black;">my evaluation</router-link>
+                  <router-link :to="{ name: 'StudentSheetOngoing', params: { username: this.username } }"
+                     class="teachersheetbutton_set button_set2" style="border: 2px solid black;">
+                     my evaluation
+                  </router-link>
 
                </div>
             </div>
@@ -162,7 +171,12 @@
 </template>
 
 <script>
-
+export default{
+   name: 'StudentSheet',
+  props: {
+    username: String
+  },
+}
 </script>
 
 <style>

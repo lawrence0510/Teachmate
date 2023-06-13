@@ -1,13 +1,6 @@
 import com.sun.net.httpserver.HttpServer;
 
-import controller.BuildContractController;
-import controller.BuildStudentPostController;
-import controller.BuildTeacherPostController;
-import controller.ContractGradeCommentController;
-import controller.GetStudentController;
-import controller.GetTeacherController;
-import controller.LoginController;
-import controller.RegisterController;
+import controller.*;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -24,6 +17,8 @@ public class Main {
         server.createContext("/buildstudentpost", new BuildStudentPostController());
         server.createContext("/getstudentinfo", new GetStudentController());
         server.createContext("/getteacherinfo", new GetTeacherController());
+        server.createContext("/submitprofession", new TeacherInputProfessionController());
+        server.createContext("/submitworkingexperience", new TeacherInputWorkExperienceController());
         server.start();
 
         System.out.println("Server started on port 8000");

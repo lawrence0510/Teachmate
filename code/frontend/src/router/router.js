@@ -38,84 +38,100 @@ const routes = [
     props: true
   },
   {
-    path: '/studentsheetover',
+    path: '/studentsheetover/:username',
     name: 'StudentSheetOver',
-    component: StudentSheetOver
+    component: StudentSheetOver,
+    props: true
   },
   {
-    path: '/studentprofilepost',
+    path: '/studentprofilepost/:username',
     name: 'StudentProfilePost',
-    component: StudentProfilePost
+    component: StudentProfilePost,
+    props: true
   },
   {
-    path: '/teacherprofilepost',
+    path: '/teacherprofilepost/:username',
     name: 'TeacherProfilePost',
-    component: TeacherProfilePost
+    component: TeacherProfilePost,
+    props: true
   },
   {
-    path: '/studentaddpost',
-    name: 'studentaddpost',
-    component: StudentAddPost
+    path: '/studentaddpost/:username',
+    name: 'StudentAddPost',
+    component: StudentAddPost,
+    props: true
   },
   {
-    path: '/studentsheet',
+    path: '/studentsheet/:username',
     name: 'StudentSheet',
-    component: StudentSheet
+    component: StudentSheet,
+    props: true
   },
   {
-    path: '/teachersheet',
+    path: '/teachersheet/:username',
     name: 'TeacherSheet',
-    component: TeacherSheet
+    component: TeacherSheet,
+    props: true
   },
   {
-    path: '/teachersheetover',
-    name: '/TeacherSheetOver',
-    component: TeacherSheetOver
+    path: '/teachersheetover/:username',
+    name: 'TeacherSheetOver',
+    component: TeacherSheetOver,
+    props: true
   },
   {
-    path: '/studentsheetcomment',
+    path: '/studentsheetcomment/:username',
     name: 'StudentSheetComment',
-    component: StudentSheetComment
+    component: StudentSheetComment,
+    props: true
   },
   {
-    path: '/teachersheetbuild',
+    path: '/teachersheetbuild/:username',
     name: 'TeacherSheetBuild',
-    component: TeacherSheetBuild
+    component: TeacherSheetBuild,
+    props: true
   },
   {
-    path: '/studentsheetmine',
+    path: '/studentsheetmine/:username',
     name: 'StudentSheetMine',
-    component: StudentSheetMine
+    component: StudentSheetMine,
+    props: true
   },
   {
-    path: '/teachersheetmine',
+    path: '/teachersheetmine/:username',
     name: 'TeacherSheetMine',
-    component: TeacherSheetMine
+    component: TeacherSheetMine,
+    props: true
   },
   {
-    path: '/studentsheetongoing',
+    path: '/studentsheetongoing/:username',
     name: 'StudentSheetOngoing',
-    component: StudentSheetOngoing
+    component: StudentSheetOngoing,
+    props: true
   },
   {
-    path: '/teachersheetongoing',
+    path: '/teachersheetongoing/:username',
     name: 'TeacherSheetOngoing',
-    component: TeacherSheetOngoing
+    component: TeacherSheetOngoing,
+    props: true
   },
   {
-    path: '/studentpostpage',
+    path: '/studentpostpage/:username',
     name: 'StudentPostPage',
-    component: StudentPostPage
+    component: StudentPostPage,
+    props: true
   },
   {
-    path: '/teacherpostpage',
+    path: '/teacherpostpage/:username',
     name: 'TeacherPostPage',
-    component: TeacherPostPage
+    component: TeacherPostPage,
+    props: true
   },
   {
-    path: '/teacheraddpost',
+    path: '/teacheraddpost/:username',
     name: 'TeacherAddPost',
-    component: TeacherAddPost
+    component: TeacherAddPost,
+    props:true
   }
 ];
 

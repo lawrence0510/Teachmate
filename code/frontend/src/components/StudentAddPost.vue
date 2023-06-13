@@ -18,22 +18,31 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-                              <router-link to="/studentpostpage" class="button_set_head button_set2_head nav-link">Post</router-link>
+                           <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <router-link to="/studentaddpage" class="button_set_head button_set2_head nav-link">ADD</router-link>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <router-link to="/studentprofile" class="button_set_head button_set2_head nav-link">
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
                                  ABOUT
                               </router-link>
                            </li>
-                           <li class="nav-item">
-                              <router-link to="/studentsheet" class="button_set_head button_set2_head nav-link">SHEET</router-link>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-
-                           <li class="nav-item">
+                           <li class="nav-item studentprofile">
                               <a class="button_set_head button_set2_head nav-link"
                                  href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
@@ -50,11 +59,6 @@
       </div>
       <!-- header section end -->
       <!-- contact section start -->
-      <div class="whole">
-         <div class="contact_section layout_padding margin_bottom90">
-
-
-            <div class="contact_section_2 layout_padding">
                <div class="sheet_div_title">
                   <div class="sheet_div_title2">
                   </div>
@@ -123,13 +127,6 @@
 
 
 
-
-
-
-            </div>
-         </div>
-      </div>
-
       <!-- 新增的code -->
       <div id="posts" class="text_l">
          <!-- Posts will be dynamically added here -->
@@ -160,6 +157,10 @@ import backend from '@/api/backend.js';
 //跟後端溝通
 
 export default {
+   name: 'StudentAddPost',
+  props: {
+    username: String
+  },
    data() {
       return {
          subject: '',
@@ -167,24 +168,6 @@ export default {
          region: '',
          note: '',
       };
-   },
-   mounted() {
-      let btn = document.querySelector("#show");
-      let infoModal = document.querySelector("#infoModal");
-      let close = document.querySelector("#close");
-
-      // 初始隐藏 dialog 元素
-      infoModal.style.display = "none";
-
-      btn.addEventListener("click", function () {
-         infoModal.style.display = "block"; // 显示 dialog 元素
-         infoModal.showModal(); // 打开模态对话框
-      });
-
-      close.addEventListener("click", function () {
-         infoModal.close();
-         infoModal.style.display = "none"; // 隐藏 dialog 元素
-      });
    },
 
    methods: {

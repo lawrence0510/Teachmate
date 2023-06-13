@@ -9,8 +9,8 @@ public class Teacher extends User{
     private Float TeachingRating;
 
     public Teacher(int UserID, String Username, String Password, int Age, String Gender, String School, String Region, String Major,
-    String PhoneNum, String Email, String MBTI,int T_ID,String Profession, int Exp_Wage, String WorkExperience, String Certification, Float TeachingRating){
-        super(UserID,Username,Password,Age,Gender,School,Region,Major,PhoneNum,Email,MBTI);
+    String PhoneNum, String Email, String MBTI, String UserType,int T_ID,String Profession, int Exp_Wage, String WorkExperience, String Certification, Float TeachingRating){
+        super(UserID, Username, Password, Age, Gender, School, Region, Major,PhoneNum, Email, MBTI, UserType);
         this.T_ID = T_ID;
         this.Profession = Profession;
         this.Exp_Wage = Exp_Wage;
@@ -18,6 +18,12 @@ public class Teacher extends User{
         this.Certification = Certification;
         this.TeachingRating = TeachingRating;
     }
+
+    public Teacher(){
+
+
+    }
+    
     public int getT_ID() {
         return T_ID;
     }
@@ -25,7 +31,7 @@ public class Teacher extends User{
     public void setT_ID(int T_ID) {
         this.T_ID = T_ID;
     }
-    public String Profession() {
+    public String getProfession() {
         return Profession;
     }
 
@@ -39,7 +45,7 @@ public class Teacher extends User{
     public void setExp_Wage(int Exp_Wage) {
         this.Exp_Wage = Exp_Wage;
     }
-    public String WorkExperience() {
+    public String getWorkExperience() {
         return WorkExperience;
     }
 

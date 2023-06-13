@@ -16,28 +16,37 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link studentsheetminebutton_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
                            </li>
 
                         </ul>
@@ -60,8 +69,9 @@
                </div>
 
                <div class="button-container">
-                  <router-link to="/studentsheetongoing">
-                     <button class="studentsheetongoingbutton_set1 button_set1-2">Ongoing</button>
+                  <router-link :to="{ name: 'StudentSheetOngoing', params: { username: this.username } }"
+                     class="studentsheetongoingbutton_set1 button_set1-2" style="margin-left: 2px;">
+                     Ongoing
                   </router-link>
 
                   <a href="post.html">
@@ -75,7 +85,10 @@
                <div class="col-md-6">
                   <div class="personal_div">
                      <div class="personal_div_textl ">① 吳堃豪/多益</div>
-                     <router-link to="/studentsheetover" class="personal_div_textr">已建立</router-link>
+                     <router-link :to="{ name: 'StudentSheetOver', params: { username: this.username } }"
+                     class="personal_div_textr">
+                     已建立
+                  </router-link>
                   </div>
 
                   <div class="personal_div2">
@@ -149,7 +162,12 @@
 </template>
 
 <script>
-
+export default{
+   name: 'StudentSheetMine',
+  props: {
+    username: String
+  },
+}
 </script>
 
 <style scoped>

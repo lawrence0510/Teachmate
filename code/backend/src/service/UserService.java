@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Post;
+import model.Teacher;
 import model.User;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -546,6 +547,48 @@ public class UserService {
             }
         }
         return TeacherInfo;
+    }
+
+    public boolean teacherinputprofession(Teacher teacher, MySQLRepository repo) {
+        int temp_TID = 2;
+        String sql = "UPDATE Teacher SET Profession = ? WHERE T_ID = ?";
+        try (Connection connection = repo.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, teacher.getProfession());
+            statement.setInt(2, temp_TID);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected >0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                repo.closeConnection(); // 關閉連接
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean teacherinputworkingexperience(Teacher teacher, MySQLRepository repo) {
+        int temp_TID = 2;
+        String sql = "UPDATE Teacher SET WorkExperience = ? WHERE T_ID = ?";
+        try (Connection connection = repo.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, teacher.getWorkExperience());
+            statement.setInt(2, temp_TID);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected >0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                repo.closeConnection(); // 關閉連接
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

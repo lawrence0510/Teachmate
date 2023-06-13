@@ -16,28 +16,37 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link button_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
                            </li>
 
                         </ul>
@@ -114,9 +123,10 @@
                      <button id="show" class="studentsheetcommentbutton_set" @click= "Contractgradecomment">Build</button>
                      <dialog id="infoModal">
                         <p>Successfully created.<br>The sheet has been sent to the student.</p>
-                        <button id="close" class="studentsheetcommentbutton_ok">
-                        <router-link to="/studentprofile">OK</router-link>
-                     </button>
+                        <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }">
+                           <button id="close" class="studentsheetcommentbutton_ok">ok</button>
+
+                        </router-link>
                      </dialog>
 
 
@@ -149,6 +159,10 @@
 /* eslint-disable */
 import backend from '@/api/backend.js';
 export default {
+   name: 'StudentSheetComment',
+  props: {
+    username: String
+  },
    data() {
         return {
             teacherscore: '',

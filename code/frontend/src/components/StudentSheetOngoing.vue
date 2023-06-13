@@ -16,28 +16,37 @@
                                     src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link button_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
                            </li>
 
                         </ul>
@@ -63,10 +72,10 @@
                   <a href="personal.html">
                      <button class="studentsheetongoingbutton_set1 button_set1-2 button_fixed">Ongoing</button>
                   </a>
-                  <router-link to="/studentsheetmine" class="studentsheetongoingbutton_set1 button_set1-2"
-                        style="margin-left: 2px;">
-                        Established
-                     </router-link>
+                  <router-link :to="{ name: 'StudentSheetMine', params: { username: this.username } }"
+                     class="studentsheetongoingbutton_set1 button_set1-2" style="margin-left: 2px;">
+                     Established
+                  </router-link>
                </div>
 
                <hr size="8" align="center" noshade width="40%" color="000000">
@@ -75,8 +84,9 @@
                <div class="col-md-6">
                   <div class="personal_div">
                      <div class="personal_div_textl ">① 邱郁宸/研究所</div>
-                     <button onclick="window.location.href = 'https://www.example.com';" class="button_check">評分</button>
-                     <!--跳轉到老師建立的契約頁面StudentSheetComment-->
+                     <router-link :to="{name: 'StudentSheetComment', params:{username: this.username}}">
+                        <button class="studentsheetongoingbutton_check1">評分</button>
+                     </router-link>
 
                   </div>
 
@@ -86,9 +96,10 @@
                   </div>
 
                   <div class="personal_div2">
-                     <div class="personal_div_textl">③ 010/程式設計</div>
-                     <button onclick="window.location.href = 'https://www.example.com';" class="button_check">評分</button>
-                     <!--跳轉到老師建立的契約頁面StudentSheetComment-->
+                     <div class="personal_div_textl">③ 林怡伶/程式設計</div>
+                     <router-link :to="{name: 'StudentSheetComment', params:{username: this.username}}">
+                        <button class="studentsheetongoingbutton_check">評分</button>
+                     </router-link>
                   </div>
 
                   <div class="personal_div2">
@@ -152,7 +163,12 @@
 </template>
 
 <script>
-
+export default {
+   name: 'StudentSheetOngoing',
+   props: {
+      username: String
+   },
+}
 </script>
 
 <style>

@@ -28,5 +28,12 @@ export default {
   buildStudentPost(formData){
     return backendApi.post('/buildstudentpost', formData);
   },
+  submitProfession(formData){
+    return backendApi.post('/submitprofession', formData);
+  },
+
+  submitWorkingExperience(formData){
+    return backendApi.post('/submitworkingexperience', formData);
+  },
 
 };

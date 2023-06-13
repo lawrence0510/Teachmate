@@ -749,7 +749,7 @@ textarea#comment::placeholder {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.button_ok{
+.teachersheetbuildbutton_ok{
 	width: 30px;
 	border: 1px solid black;
 }

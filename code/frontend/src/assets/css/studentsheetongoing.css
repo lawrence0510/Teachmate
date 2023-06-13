@@ -950,17 +950,31 @@ textarea#comment::placeholder {
 
 }
 
-.button_check {
+.studentsheetongoingbutton_check {
 	background: none;
 	padding: 0;
 	color: blue;
 	text-decoration: underline;
 	position: absolute;
-	margin-left: 44.5%;
+	margin-left: 19%;
 	width: 9%;
 	font-size: 20px;
 	text-align: left;
 	white-space: nowrap;
+	top: 22.5%
+}
+.studentsheetongoingbutton_check1 {
+	background: none;
+	padding: 0;
+	color: blue;
+	text-decoration: underline;
+	position: absolute;
+	margin-left: 19%;
+	width: 9%;
+	font-size: 20px;
+	text-align: left;
+	white-space: nowrap;
+	top: 1.5%
 }
 
 .button_ok {

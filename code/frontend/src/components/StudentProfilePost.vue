@@ -17,27 +17,38 @@
                            <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
 
                         </li>
-                        <li class="nav-item active">
-
-                           <a href="post.html"><button
-                                 class="button_set_head button_set2_head nav-link button_fixed_head ">Post</button></a>
-
-                        </li>
-                        <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="sheetAbout.html">SHEET</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35" height="35"></a>
-                        </li>
+                        <li class="nav-item studentprofile">
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
+                           </li>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
+                           </li>
+                           <li class="nav-item active studentprofile">
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
+                           </li>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
+                           </li>
+                           <li class="nav-item studentprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
+                           </li>
+                           <li class="nav-item teacherprofile">
+                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
+                           </li>
 
                      </ul>
                   </div>
@@ -54,7 +65,9 @@
             <h1 class="spp_contact_taital">Lawrence<!--改start-->
              <hr size="10" align="center" noshade width="50%" color="000000">
                 
-                <a href="personal.html"><button class="spp_button_set spp_button_set2 " >關於</button></a>
+             <router-link :to="{name: 'StudentProfile', params: { username: this.username }}" class="teacherprofilepost">
+                <button class="spp_button_set spp_button_set2 " >關於</button>
+              </router-link>
                 <a href="post.html"><button class="spp_button_set spp_button_set2 spp_button_fixed">貼文</button></a>
                 </h1>
          </div>
@@ -163,6 +176,10 @@
 
 <script>
 export default {
+  name: 'StudentProfilePost',
+  props: {
+    username: String
+  },
   data() {
     return {
       postsData: [

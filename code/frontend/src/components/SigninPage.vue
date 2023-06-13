@@ -122,10 +122,12 @@ export default {
             backend.signUp(formData)
                 .then(response => {
                     // 處理成功回應
+                    alert('註冊完成！')
                     console.log('Signed up successfully!')
                 })
                 .catch(error => {
                     // 處理錯誤
+                    alert('註冊失敗！')
                     console.log('Sign up Error Occured...')
                     console.error(error)
                 });

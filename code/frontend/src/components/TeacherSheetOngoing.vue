@@ -16,28 +16,33 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active teacherprofile">
+                              <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link button_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
 
                         </ul>
@@ -63,13 +68,10 @@
                   <a href="personal.html">
                      <button class="teachersheetongoingbutton_set1 button_set1-2 button_fixed">Ongoing</button>
                   </a>
-                  <a href="post.html">
-                     <router-link to="/teachersheetmine" class="teachersheetongoingbutton_set1 button_set1-2"
-                        style="margin-left: 2px;">
-                        Established
-                     </router-link>
-
-                  </a>
+                  <router-link :to="{ name: 'TeacherSheetMine', params: { username: this.username } }"
+                     class="teachersheetongoingbutton_set1 button_set1-2" style="margin-left: 2px;">
+                     Established
+                  </router-link>
                </div>
                <hr size="8" align="center" noshade width="40%" color="000000">
 
@@ -83,10 +85,9 @@
 
                   <div class="personal_div2">
                      <div class="personal_div_textl">② 供應鏈：李曉慧</div>
-                     <router-link to="/teachersheetover" class="teachersheetongoingbutton_check">
-                        確認評論
+                     <router-link :to="{ name: 'TeacherSheetOver', params: { username: this.username } }" class="teachersheetongoingbutton_check">
+                           確認評論
                      </router-link>
-
                      <!--跳轉到老師確認契約的頁面-->
 
                   </div>
@@ -97,7 +98,9 @@
                      <dialog class="button_window" v-if="showDialog">
                         <p>若您已完成繳費，請輸入匯款帳號後五碼以利後續確認：</p>
                         <input type="text" v-model="accountNumber" placeholder="請輸入後五碼" />
-                        <button @click="submitDialog">提交</button>
+                        <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }">
+                           <button @click = submitDialog()>提交</button>
+                        </router-link>
                      </dialog>
                   </div>
 
@@ -163,6 +166,10 @@
 
 <script>
 export default {
+   name: 'TeacherSheetOngoing',
+   props: {
+      username: String
+   },
    data() {
       return {
          showDialog: false,
@@ -175,9 +182,7 @@ export default {
       },
       submitDialog() {
          this.showDialog = false;
-         setTimeout(() => {
-            this.$router.push('/teachersheetongoing');
-         }, 2000);
+         alert('匯款帳號已記錄！')
       }
    }
 };

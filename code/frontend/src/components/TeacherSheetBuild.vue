@@ -16,28 +16,33 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active teacherprofile">
+                              <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link button_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
 
                         </ul>
@@ -74,27 +79,30 @@
                         Teacher：
                      </div>
                      <div class="teachersheetbuildsheet_content_tname">
-                        吳堃豪
+                        {{ this.username }}
                      </div>
                      <div class="teachersheetbuildsheet_content_s">
                         Student：
                      </div>
-                     <input type="text" placeholder="請輸入學生ID" class="teachersheetbuildsheet_content_sid" v-model="studentID">
+                     <input type="text" placeholder="請輸入學生ID" class="teachersheetbuildsheet_content_sid"
+                        v-model="studentID">
                      <div class="teachersheetbuildsheet_content_sub">
                         Subject：
                      </div>
 
-                     <input type="text" placeholder="請輸入教學科目" class="teachersheetbuildsheet_content_subname" v-model="subject">
+                     <input type="text" placeholder="請輸入教學科目" class="teachersheetbuildsheet_content_subname"
+                        v-model="subject">
                      <div class="teachersheetbuildsheet_content_time">
                         Time：
                      </div>
-                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s" v-memo="time1" >
+                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s" v-memo="time1">
                      <div class="teachersheetbuildsheet_content_time_to">~</div>
-                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_e" v-model="time2">
+                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_e"
+                        v-model="time2">
                      <button id="show" class="teachersheetbuildbutton_set" @click="buildContract">Build</button>
                      <dialog id="infoModal">
                         <p>Successfully created.<br>The sheet has been sent to the student.</p>
-                        <a href="https://www.nccu.edu.tw/"><button id="close" class="button_ok">OK</button></a>
+                        <router-link :to="{name: 'TeacherProfile', params:{username: this.username}}" class="teachersheetbuildbutton_ok" id="close">OK</router-link>
                      </dialog>
 
 
@@ -127,6 +135,10 @@
 /* eslint-disable */
 import backend from '@/api/backend.js';
 export default {
+   name: 'TeacherSheetBuild',
+   props: {
+      username: String
+   },
    data() {
       return {
          time1: '',
@@ -136,7 +148,6 @@ export default {
       };
    },
    mounted() {
-
       let btn = document.querySelector("#show");
       let infoModal = document.querySelector("#infoModal");
       let close = document.querySelector("#close");

@@ -16,28 +16,33 @@
                                     width="35" height="35"></a>
 
                            </li>
-                           <li class="nav-item active">
-
-                              <a href="post.html"><button
-                                    class="button_set_head button_set2_head nav-link ">Post</button></a>
-
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <li class="nav-item active teacherprofile">
+                              <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link teachersheetminebutton_fixed_head"
-                                 href="sheetAbout.html">SHEET</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'TeacherSheet', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 SHEET
+                              </router-link>
                            </li>
-                           <li class="nav-item">
-                              <a class="button_set_head button_set2_head nav-link" href="more.html">MORE</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png"
-                                    width="35" height="35"></a>
+                           <li class="nav-item teacherprofile">
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
 
                         </ul>
@@ -59,8 +64,9 @@
                   </div>
                </div>
                <div class="button-container">
-                  <router-link to="/teachersheetongoing">
-                     <button class="teachersheetongoingbutton_set1 button_set1-2">Ongoing</button>
+                  <router-link :to="{ name: 'TeacherSheetOngoing', params: { username: this.username } }"
+                     class="teachersheetongoingbutton_set1 button_set1-2">
+                     Ongoing
                   </router-link>
 
                   <a href="post.html">
@@ -149,7 +155,12 @@
 </template>
 
 <script>
-
+export default {
+   name: 'TeacherSheetMine',
+   props: {
+      username: String
+   },
+}
 </script>
 
 <style>

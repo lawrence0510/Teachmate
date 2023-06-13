@@ -20,14 +20,14 @@
                         <li class="nav-item active">
 
                            <a href="post.html"><button
-                                 class="button_set_head button_set2_head nav-link button_fixed_head ">Post</button></a>
+                                 class="button_set_head button_set2_head nav-link ">Post</button></a>
 
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="add.html">ADD</a>
                         </li>
                         <li class="nav-item">
-                           <a class="button_set_head button_set2_head nav-link" href="personal.html">ABOUT</a>
+                           <a class="button_set_head button_set2_head nav-link button_fixed_head" href="personal.html">ABOUT</a>
                         </li>
                         <li class="nav-item">
                            <a class="button_set_head button_set2_head nav-link" href="sheetAbout.html">SHEET</a>
@@ -51,10 +51,12 @@
    <div class="whole">
       <div class="contact_section layout_padding margin_bottom90">
         <div class="container">
-            <h1 class="spp_contact_taital">Lawrence<!--改start-->
+            <h1 class="spp_contact_taital">{{username}}<!--改start-->
              <hr size="10" align="center" noshade width="50%" color="000000">
                 
-                <a href="personal.html"><button class="spp_button_set spp_button_set2 " >關於</button></a>
+              <router-link :to="{name: 'TeacherProfile', params: { username: this.username }}" class="teacherprofilepost">
+                <button class="spp_button_set spp_button_set2 " >關於</button>
+              </router-link>
                 <a href="post.html"><button class="spp_button_set spp_button_set2 spp_button_fixed">貼文</button></a>
                 </h1>
          </div>
@@ -163,6 +165,10 @@
 
 <script>
 export default {
+  name: 'TeacherProfilePost',
+  props:{
+    username: String
+  },
   data() {
     return {
       postsData: [

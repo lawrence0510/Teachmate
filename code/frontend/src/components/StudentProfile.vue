@@ -21,27 +21,32 @@
 
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link studentprofile"
-                                 href="personal.html">POST</a>
+                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 POST
+                              </router-link>
                            </li>
-                           <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link studentprofile" href="add.html">ADD</a>
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ADD
+                              </router-link>
                            </li>
                            <li class="nav-item active studentprofile">
-                              <a class="studentprofile" href="post.html">
-                                 <button
-                                    class="button_set_head button_set2_head nav-link button_fixed_head studentprofile">ABOUT</button>
-                              </a>
+                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                                 class="button_set_head button_set2_head nav-link studentprofile">
+                                 ABOUT
+                              </router-link>
                            </li>
-                           <li class="nav-item studentprofile">
-                              <router-link to="/studentsheet"
+                           <li class="nav-item teacherprofile">
+                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
                                  class="button_set_head button_set2_head nav-link studentprofile">
                                  SHEET
                               </router-link>
-
                            </li>
                            <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link studentprofile" href="more.html">MORE</a>
+                              <a class="button_set_head button_set2_head nav-link"
+                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                            </li>
                            <li class="nav-item studentprofile">
                               <a class="nav-link studentprofile" href="https://www.nccu.edu.tw/"><img
@@ -67,7 +72,9 @@
 
                   <a href="personal.html"><button
                         class="studentprofilebutton_set studentprofilebutton_set2 button_fixed">關於</button></a>
-                  <a href="post.html"><button class="studentprofilebutton_set studentprofilebutton_set2">貼文</button></a>
+                  <router-link :to="{ name: 'StudentProfilePost', params: { username: this.username } }">
+                     <button class="teacherprofilebutton_set button_set2 teacherprofile">貼文</button>
+                  </router-link>
                </h1>
             </div>
 
