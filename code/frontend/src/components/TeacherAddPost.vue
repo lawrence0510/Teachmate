@@ -74,46 +74,46 @@
 
             <div class="pp_post_item">
                <div class="pp_label">Name:</div>
-               <div class="pp_data">Ian</div>
+               {{ username }}
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">Email:</div>
-               <div class="pp_data">xxx@gmail.com</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].Gmail }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">Phone:</div>
-               <div class="pp_data">0909123456</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].PhoneNum }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">Gender:</div>
-               <div class="pp_data">female</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].Gender }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">Age:</div>
-               <div class="pp_data">22</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].Age }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">MBTI:</div>
-               <div class="pp_data">ENFP</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].MBTI }}</div>
             </div>
             <div class="pp_post_item">
                <div class="pp_label">Region:</div>
-               <input type="text" placeholder="region" class="pp_data" style="width: 100px;" v-model="region">
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].Region }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">School:</div>
-               <div class="pp_data">NCCU</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].School }}</div>
             </div>
 
             <div class="pp_post_item">
                <div class="pp_label">Major:</div>
-               <input type="text" placeholder="major" class="pp_data" style="width: 100px;" v-model="major">
+               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].Major }}</div>
             </div>
 
             <div class="pp_post_item">
@@ -158,6 +158,7 @@
 <script>
 /* eslint-disable */
 import backend from '@/api/backend.js';
+import axios from 'axios';
 //跟後端溝通
 
 export default {
@@ -167,14 +168,28 @@ export default {
    },
    data() {
       return {
+         teacherinfo: [],
          subject: '',
          major: '',
          region: '',
          note: '',
       };
    },
-
+   mounted() {
+      this.getTeacherInfo();
+   },
    methods: {
+      getTeacherInfo() {
+         axios.post('http://localhost:8000/getteacherinfo', {
+            username: this.username
+         })
+            .then(response => {
+               this.teacherinfo = response.data;
+            })
+            .catch(error => {
+               console.error(error);
+            });
+      },
       buildTeacherPost() {
          //these properties correspond to user-entered data
          const formData = {
