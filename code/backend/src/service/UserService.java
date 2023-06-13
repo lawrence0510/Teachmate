@@ -474,7 +474,7 @@ public class UserService {
 
     public List<Map<String, Object>> getStudentInfo(String username, MySQLRepository repo) {
         List<Map<String, Object>> StudentInfo = new ArrayList<>();
-        String sql = "SELECT UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM Teachmate.User WHERE Username = ?";
+        String sql = "SELECT Region, UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM Teachmate.User WHERE Username = ?";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
@@ -491,6 +491,7 @@ public class UserService {
                     student.put("MBTI", resultSet.getString("MBTI"));
                     student.put("Gmail", resultSet.getString("Gmail"));
                     student.put("PhoneNum", resultSet.getString("PhoneNum"));
+                    student.put("Region", resultSet.getString("Region"));
 
                     // Add the student map to the studentInfo list
                     StudentInfo.add(student);
@@ -510,7 +511,7 @@ public class UserService {
 
     public List<Map<String, Object>> getTeacherInfo(String username, MySQLRepository repo) {
         List<Map<String, Object>> TeacherInfo = new ArrayList<>();
-        String sql = "SELECT u.UserType, u.Gender, u.Age, u.School, u.Major, u.MBTI, u.Gmail, u.PhoneNum, t.Profession, t.Exp_Wage, t.WorkExperience, t.Certification, t.TeachingRating FROM Teachmate.User as u INNER JOIN Teachmate.Teacher as t ON u.UserID = t.T_ID WHERE u.Username = ?";
+        String sql = "SELECT u.Region, u.UserType, u.Gender, u.Age, u.School, u.Major, u.MBTI, u.Gmail, u.PhoneNum, t.Profession, t.Exp_Wage, t.WorkExperience, t.Certification, t.TeachingRating FROM Teachmate.User as u INNER JOIN Teachmate.Teacher as t ON u.UserID = t.T_ID WHERE u.Username = ?";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
@@ -532,6 +533,7 @@ public class UserService {
                     teacher.put("WorkExperience", resultSet.getString("WorkExperience"));
                     teacher.put("Certification", resultSet.getString("Certification"));
                     teacher.put("TeachingRating", resultSet.getString("TeachingRating"));
+                    teacher.put("Region", resultSet.getString("Region"));
                     TeacherInfo.add(teacher);
                 }
             }

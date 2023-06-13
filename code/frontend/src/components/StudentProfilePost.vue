@@ -62,7 +62,7 @@
    <div class="whole">
       <div class="contact_section layout_padding margin_bottom90">
         <div class="container">
-            <h1 class="spp_contact_taital">Lawrence<!--改start-->
+            <h1 class="spp_contact_taital">{{ this.username }}<!--改start-->
              <hr size="10" align="center" noshade width="50%" color="000000">
                 
              <router-link :to="{name: 'StudentProfile', params: { username: this.username }}" class="teacherprofilepost">

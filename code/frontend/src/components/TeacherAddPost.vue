@@ -84,7 +84,7 @@
 
             <div class="pp_post_item">
                <div class="pp_label">Phone:</div>
-               <div v-if="teacherinfo.length > 0" class="pp_data">{{teacherinfo[0].PhoneNum }}</div>
+               <div v-if="teacherinfo.length > 0" class="pp_data">0{{teacherinfo[0].PhoneNum }}</div>
             </div>
 
             <div class="pp_post_item">
@@ -123,7 +123,8 @@
          </div>
       </div>
 
-      <button class="sap_addbutton" @click="buildTeacherPost">add</button>
+      <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }">
+      <button class="sap_addbutton" @click="buildTeacherPost">add</button></router-link>
 
 
 
@@ -198,11 +199,11 @@ export default {
             region: this.region,
             note: this.note,
          }
-         console.log(formData)
          //making a HTTP request to the backend
          backend.buildTeacherPost(formData)
             .then(response => {
                // 處理成功回應
+               alert('成功發送文章！')
                console.log('Build Teacher Post successfully!')
             })
             .catch(error => {

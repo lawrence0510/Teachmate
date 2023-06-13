@@ -65,65 +65,65 @@
                </div>
 
                <div class="pp_post_column">
-                  <div class="pp_post">
-                     <div class="pp_post_item">
-                        <div class="pp_label">Subject:</div>
-                        <input type="text" placeholder="subject" class="pp_data" style="width: 100px;" v-model="subject">
-                     </div>
+         <div class="pp_post">
+            <div class="pp_post_item">
+               <div class="pp_label">Subject:</div>
+               <input type="text" placeholder="subject" class="pp_data" style="width: 100px;" v-model="subject">
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Name:</div>
-                        <div class="pp_data">Ian</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Name:</div>
+               {{ username }}
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Email:</div>
-                        <div class="pp_data">xxx@gmail.com</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Email:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].Gmail }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Phone:</div>
-                        <div class="pp_data">0909123456</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Phone:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">0{{studentinfo[0].PhoneNum }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Gender:</div>
-                        <div class="pp_data">female</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Gender:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].Gender }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Age:</div>
-                        <div class="pp_data">22</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Age:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].Age }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">MBTI:</div>
-                        <div class="pp_data">ENFP</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">MBTI:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].MBTI }}</div>
+            </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Region:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].Region }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Region:</div>
-                        <input type="text" placeholder="region" class="pp_data" style="width: 100px;" v-model="region">
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">School:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].School }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">School:</div>
-                        <div class="pp_data">NCCU</div>
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Major:</div>
+               <div v-if="studentinfo.length > 0" class="pp_data">{{studentinfo[0].Major }}</div>
+            </div>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Major:</div>
-                        <input type="text" placeholder="major" class="pp_data" style="width: 100px;" v-model="major">
-                     </div>
+            <div class="pp_post_item">
+               <div class="pp_label">Note:</div>
+               <input type="text" placeholder="note" class="pp_data" style="width: 100px;" v-model="note">
+            </div>
+         </div>
+      </div>
+      <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }">
+         <button class="sap_addbutton" @click="buildStudentPost">add</button></router-link>
 
-                     <div class="pp_post_item">
-                        <div class="pp_label">Note:</div>
-                        <input type="text" placeholder="note" class="pp_data" style="width: 100px;" v-model="note">
-                     </div>
-                  </div>
-               </div>
-
-               <button class="sap_addbutton" @click="buildStudentPost">add</button>
 
 
 
@@ -154,23 +154,40 @@
 <script>
 /* eslint-disable */
 import backend from '@/api/backend.js';
+import axios from 'axios';
 //跟後端溝通
 
 export default {
    name: 'StudentAddPost',
-  props: {
+   props: {
     username: String
   },
    data() {
       return {
+         studentinfo: [],
          subject: '',
          major: '',
          region: '',
          note: '',
       };
    },
-
+   mounted(){
+      this.getStudentInfo();
+   },
    methods: {
+      getStudentInfo() {
+         axios.post('http://localhost:8000/getstudentinfo', {
+            username: this.username
+         })
+            .then(response => {
+               this.studentinfo = response.data;
+               console.log(response);
+
+            })
+            .catch(error => {
+               console.error(error);
+            });
+      },
       buildStudentPost() {
          //these properties correspond to user-entered data
          const formData = {
@@ -179,11 +196,11 @@ export default {
             region: this.region,
             note: this.note,
          }
-         console.log(formData)
          //making a HTTP request to the backend
          backend.buildStudentPost(formData)
             .then(response => {
                // 處理成功回應
+               alert('成功發送文章！')
                console.log('Build Student Post successfully!')
             })
             .catch(error => {
