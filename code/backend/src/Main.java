@@ -21,6 +21,7 @@ public class Main {
         server.createContext("/submitworkingexperience", new TeacherInputWorkExperienceController());
         server.createContext("/studentrequest", new GetStudentRequestController());
         server.createContext("/teacherrequest", new GetTeacherRequestController());
+        server.createContext("/getpost", new GetPostController());
         server.start();
 
         System.out.println("Server started on port 8000");

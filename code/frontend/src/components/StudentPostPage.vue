@@ -161,6 +161,7 @@
   </template>
   
   <script>
+  import axios from 'axios';
   import backend from '@/api/backend.js';
   
   export default {
@@ -170,123 +171,29 @@
     },
     data() {
       return {
-        postsData: [
-          {
-            subject: "Math",
-            name: "John",
-            email: "john@example.com",
-            phone: "1234567890",
-            gender: "Male",
-            age: "25",
-            mbti: "INTJ",
-            region: "Daan",
-            school: "ABC University",
-            major: "Computer Science",
-            note: "I'm so handsome."
-          },
-          {
-            subject: "Science",
-            name: "Jane",
-            email: "jane@example.com",
-            phone: "9876543210",
-            gender: "Female",
-            age: "30",
-            mbti: "INFJ",
-            region: "Xinyi",
-            school: "XYZ College",
-            major: "Biology",
-            note: "I'm so sexy"
-          },
-          {
-            subject: "Science",
-            name: "Jack",
-            email: "jack@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "INFJ",
-            region: "Daan",
-            school: "XYZ College",
-            major: "Biology",
-            note: "Jane isn't sexy at all"
-          },
-          {
-            subject: "English",
-            name: "Jacky",
-            email: "jacky@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "ENFJ",
-            region: "Wenshan",
-            school: "XYZ College",
-            major: "Biology",
-            note: "Hey I'm Jacky"
-          },
-          {
-            subject: "Science",
-            name: "Roger",
-            email: "roger@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "INTJ",
-            region: "Daan",
-            school: "XYZ College",
-            major: "Biology",
-            note: ""
-          },
-          {
-            subject: "Science",
-            name: "Jack",
-            email: "jack@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "INFJ",
-            region: "Daan",
-            school: "XYZ College",
-            major: "Biology",
-            note: "Jane isn't sexy at all"
-          },
-          {
-            subject: "Science",
-            name: "Lucy",
-            email: "lucy@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "INFJ",
-            region: "Xinyi",
-            school: "XYZ College",
-            major: "Biology",
-            note: ""
-          },
-          {
-            subject: "Math",
-            name: "Lisa",
-            email: "lisa@example.com",
-            phone: "98765323210",
-            gender: "Male",
-            age: "30",
-            mbti: "ENFJ",
-            region: "Daan",
-            school: "XYZ College",
-            major: "Biology",
-            note: "hehehe"
-          }
-  
-          // Add more post objects as needed
-        ]
+        postsData: []
       };
     },
   
     mounted() {
       this.displayPosts(this.postsData);
       this.attachRequestButtonListeners();
+      this.getPost();
     },
   
     methods: {
+      getPost(){
+        axios.post('http://localhost:8000/getpost', {
+         })
+            .then(response => {
+               this.postsData = response.data;
+               console.log(this.postsData)
+
+            })
+            .catch(error => {
+               console.error(error);
+            });
+      },
       // Function to generate the post HTML based on data
       generatePostHTML(post) {
     var postHTML = `

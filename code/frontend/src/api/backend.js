@@ -41,5 +41,8 @@ export default {
 
   sendTeacherRequestToBackend(formData){
     return backendApi.post('/teacherrequest', formData);
+  },
+  getPost(formData){
+    return backendApi.post('/getPost', formData);
   }
 };

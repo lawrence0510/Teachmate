@@ -699,4 +699,37 @@ public class UserService {
         }
     }
 
+    public List<Map<String, Object>> getPostsData(MySQLRepository repo) {
+        List<Map<String, Object>> PostsData = new ArrayList<>();
+        String sql = "select PostSubject, PostName, PostEmail, PostPhoneNum, PostGender, PostAge, PostMBTI, PostRegion, PostSchool, PostMajor, PostContent from Teachmate.Post";
+        try (Connection connection = repo.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Map<String, Object> posts = new HashMap<>();
+                    posts.put("PostSubject", resultSet.getString("PostSubject"));
+                    posts.put("PostName", resultSet.getString("PostName"));
+                    posts.put("PostEmail", resultSet.getString("PostEmail"));
+                    posts.put("PostAge", resultSet.getString("PostAge"));
+                    posts.put("PostMBTI", resultSet.getString("PostMBTI"));
+                    posts.put("PostRegion", resultSet.getString("PostRegion"));
+                    posts.put("PostSchool", resultSet.getString("PostSchool"));
+                    posts.put("PostMajor", resultSet.getString("PostMajor"));
+                    posts.put("PostContent", resultSet.getString("PostContent"));
+
+                    PostsData.add(posts);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                repo.closeConnection(); // Close the connection
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return PostsData;
+    }
+
 }
