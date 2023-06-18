@@ -716,6 +716,8 @@ public class UserService {
                     posts.put("PostSchool", resultSet.getString("PostSchool"));
                     posts.put("PostMajor", resultSet.getString("PostMajor"));
                     posts.put("PostContent", resultSet.getString("PostContent"));
+                    posts.put("PostPhoneNum", resultSet.getString("PostPhoneNum"));
+                    posts.put("PostGender", resultSet.getString("PostGender"));
 
                     PostsData.add(posts);
                 }
