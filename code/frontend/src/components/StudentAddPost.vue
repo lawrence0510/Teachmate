@@ -192,10 +192,12 @@ export default {
          //these properties correspond to user-entered data
          const formData = {
             subject: this.subject,
-            major: this.major,
-            region: this.region,
+            major: this.studentinfo[0].Major,
+            region: this.studentinfo[0].Region,
             note: this.note,
+            userID: this.studentinfo[0].UserID
          }
+         console.log(formData)
          //making a HTTP request to the backend
          backend.buildStudentPost(formData)
             .then(response => {

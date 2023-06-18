@@ -47,11 +47,13 @@ public class BuildTeacherPostController implements HttpHandler {
                 String region = jsonObject.get("region").getAsString();
                 String major = jsonObject.get("major").getAsString();
                 String note = jsonObject.get("note").getAsString();
+                int userID = jsonObject.get("userID").getAsInt();
                 Post post = new Post();
                 post.setPostSubject(subject);
                 post.setPostRegion(region);
                 post.setPostMajor(major);
                 post.setPostContent(note);
+                post.setP_UserID(userID);
                 int postID = generatePostID();
                 post.setP_ID(postID);
 

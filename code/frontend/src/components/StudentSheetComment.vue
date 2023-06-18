@@ -78,19 +78,19 @@
                         Teacher：
                      </div>
                      <div class="studentsheetcommentsheet_content_tname">
-                        吳堃豪
+                        邱郁宸
                      </div>
                      <div class="studentsheetcommentsheet_content_s">
                         Student：
                      </div>
                      <div class="studentsheetcommentsheet_content_sid">
-                        李筱貞
+                        {{ username }}
                      </div>
                      <div class="studentsheetcommentsheet_content_sub">
                         Subject：
                      </div>
                      <div class="studentsheetcommentsheet_content_subname">
-                        多益
+                        研究所
                      </div>
                      <div class="studentsheetcommentsheet_content_time">
                         Time：

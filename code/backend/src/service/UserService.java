@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+
 import model.Post;
 import model.Teacher;
 import model.User;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -184,7 +187,7 @@ public class UserService {
 
     public boolean buildTeacherPost(Post post, MySQLRepository repo) {
         // 這裡假設是teacherID=2的老師要建立post，該老師到addpost的頁面
-        int temp_TID = 2;
+        int temp_TID = post.getP_UserID();
         post.setP_UserID(temp_TID);
         // get User's basic information to print on the post
         String sql1 = "SELECT Username, Gmail, PhoneNum, Gender, Age, MBTI, School FROM User WHERE UserID=" + temp_TID;
@@ -218,7 +221,7 @@ public class UserService {
             }
         }
         // insert into the post the atributes teacher types manually on the post
-        String sql2 = "INSERT INTO Post (P_ID, P_UserID, PostContent, PostSubject, PostRegion, PostMajor, PostName, PostEmail, PostPhoneNum, PostGender, PostAge, PostMBTI, PostSchool) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql2 = "INSERT INTO Post (P_ID, P_UserID, PostContent, PostSubject, PostRegion, PostMajor, PostName, PostEmail, PostPhoneNum, PostGender, PostAge, PostMBTI, PostSchool, P_time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql2)) {
             statement.setInt(1, post.getP_ID());
@@ -234,6 +237,10 @@ public class UserService {
             statement.setInt(11, post.getPostAge());
             statement.setString(12, post.getPostMBTI());
             statement.setString(13, post.getPostSchool());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date currentTime = new Date();
+            String formattedTime = formatter.format(currentTime);
+            statement.setString(14, formattedTime);
             int rowsAffected = statement.executeUpdate();
             // If at least one row was affected, the contract was successfully built
             return rowsAffected > 0;
@@ -251,10 +258,11 @@ public class UserService {
 
     public boolean buildStudentPost(Post post, MySQLRepository repo) {
         // 這裡假設是teacherID=2的老師要建立post，該老師到addpost的頁面
-        int temp_SID = 1;
-        post.setP_UserID(temp_SID);
+        int temp_TID = post.getP_UserID();
+        System.out.println(temp_TID);
+        post.setP_UserID(temp_TID);
         // get User's basic information to print on the post
-        String sql1 = "SELECT Username, Gmail, PhoneNum, Gender, Age, MBTI, School FROM User WHERE UserID=" + temp_SID;
+        String sql1 = "SELECT Username, Gmail, PhoneNum, Gender, Age, MBTI, School FROM User WHERE UserID=" + temp_TID;
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql1);
                 ResultSet resultSet = statement.executeQuery()) {
@@ -276,6 +284,7 @@ public class UserService {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         } finally {
             try {
                 repo.closeConnection(); // Close the connection
@@ -284,7 +293,7 @@ public class UserService {
             }
         }
         // insert into the post the atributes teacher types manually on the post
-        String sql2 = "INSERT INTO Post (P_ID, P_UserID, PostContent, PostSubject, PostRegion, PostMajor, PostName, PostEmail, PostPhoneNum, PostGender, PostAge, PostMBTI, PostSchool) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql2 = "INSERT INTO Post (P_ID, P_UserID, PostContent, PostSubject, PostRegion, PostMajor, PostName, PostEmail, PostPhoneNum, PostGender, PostAge, PostMBTI, PostSchool, P_time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql2)) {
             statement.setInt(1, post.getP_ID());
@@ -300,6 +309,10 @@ public class UserService {
             statement.setInt(11, post.getPostAge());
             statement.setString(12, post.getPostMBTI());
             statement.setString(13, post.getPostSchool());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date currentTime = new Date();
+            String formattedTime = formatter.format(currentTime);
+            statement.setString(14, formattedTime);
             int rowsAffected = statement.executeUpdate();
             // If at least one row was affected, the contract was successfully built
             return rowsAffected > 0;
@@ -312,23 +325,6 @@ public class UserService {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public boolean isContractIDExists(int contractID, MySQLRepository repo) {
-        try (Connection connection = repo.getConnection()) {
-            String query = "SELECT COUNT(*) FROM Contract WHERE C_ID = ?";
-            try (PreparedStatement statement = connection.prepareStatement(query)) {
-                statement.setInt(1, contractID);
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    resultSet.next();
-                    int count = resultSet.getInt(1);
-                    return count > 0;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
         }
     }
 
@@ -483,7 +479,7 @@ public class UserService {
 
     public List<Map<String, Object>> getStudentInfo(String username, MySQLRepository repo) {
         List<Map<String, Object>> StudentInfo = new ArrayList<>();
-        String sql = "SELECT Region, UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM Teachmate.User WHERE Username = ?";
+        String sql = "SELECT UserID, Region, UserType, Gender, Age, School, Major, MBTI, Gmail, PhoneNum FROM Teachmate.User WHERE Username = ?";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
@@ -492,6 +488,7 @@ public class UserService {
                 while (resultSet.next()) {
                     Map<String, Object> student = new HashMap<>();
                     // Retrieve the values from the ResultSet and put them into the student map
+                    student.put("UserID", resultSet.getInt("UserID"));
                     student.put("UserType", resultSet.getString("UserType"));
                     student.put("Gender", resultSet.getString("Gender"));
                     student.put("Age", resultSet.getString("Age"));
