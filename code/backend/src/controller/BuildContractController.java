@@ -47,6 +47,7 @@ public class BuildContractController implements HttpHandler {
                 String time1 = jsonObject.get("time1").getAsString();
                 String time2 = jsonObject.get("time2").getAsString();
                 int c_studentID = jsonObject.get("studentID").getAsInt();
+                int userID = jsonObject.get("userID").getAsInt();
                 String subject = jsonObject.get("subject").getAsString();
                 int contractID = generateContractID();
 
@@ -56,6 +57,7 @@ public class BuildContractController implements HttpHandler {
                 contract.setC_StudentID(c_studentID);
                 contract.setSubject(subject);
                 contract.setC_ID(contractID);
+                contract.setC_TeacherID(userID);
 
                 // Attempt to build the contract
                 boolean buildSuccess = userService.buildContract(contract, repository);

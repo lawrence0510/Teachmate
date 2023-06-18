@@ -95,7 +95,7 @@
                      <div class="teachersheetbuildsheet_content_time">
                         Time：
                      </div>
-                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s" v-memo="time1">
+                     <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_s" v-model="time1">
                      <div class="teachersheetbuildsheet_content_time_to">~</div>
                      <input name="date" type="date" id="date" class="teachersheetbuildsheet_content_time_e"
                         v-model="time2">
@@ -133,6 +133,7 @@
 
 <script>
 /* eslint-disable */
+import axios from 'axios'
 import backend from '@/api/backend.js';
 export default {
    name: 'TeacherSheetBuild',
@@ -141,6 +142,7 @@ export default {
    },
    data() {
       return {
+         teacherinfo: [],
          time1: '',
          time2: '',
          studentID: '',
@@ -148,6 +150,7 @@ export default {
       };
    },
    mounted() {
+      this.getTeacherInfo();
       let btn = document.querySelector("#show");
       let infoModal = document.querySelector("#infoModal");
       let close = document.querySelector("#close");
@@ -162,11 +165,22 @@ export default {
 
       close.addEventListener("click", function () {
          infoModal.close();
-         infoModal.style.display = "none"; // 隐藏 dialog 元素
+         infoModal.style.display = "none"; 
       });
 
    },
    methods: {
+      getTeacherInfo(){
+         axios.post('http://localhost:8000/getteacherinfo', {
+            username: this.username
+         })
+            .then(response => {
+               this.teacherinfo = response.data;
+            })
+            .catch(error => {
+               console.error(error);
+            });
+      },
       buildContract() {
          //these properties correspond to user-entered data
          const formData = {
@@ -174,6 +188,7 @@ export default {
             time2: this.time2,
             studentID: this.studentID,
             subject: this.subject,
+            userID: this.teacherinfo[0].UserID
          }
          console.log(formData)
          //making a HTTP request to the backend

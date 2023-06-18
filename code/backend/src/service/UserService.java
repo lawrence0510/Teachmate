@@ -120,13 +120,12 @@ public class UserService {
     }
 
     public boolean buildContract(Contract contract, MySQLRepository repo) {
-        int temp_C_TeacherID = 2; // Set the teacher ID (temporarily hardcoded)
         String sql = "INSERT INTO Contract (C_ID, C_TeacherID, Time1, Time2, C_StudentID, Subject) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = repo.getConnection();
-                PreparedStatement statement = connection.prepareStatement(sql)) {
+            PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, contract.getC_ID());
-            statement.setInt(2, temp_C_TeacherID);
+            statement.setInt(2, contract.getC_TeacherID());
             statement.setString(3, contract.getTime1());
             statement.setString(4, contract.getTime2());
             statement.setInt(5, contract.getC_StudentID());
@@ -521,7 +520,7 @@ public class UserService {
 
     public List<Map<String, Object>> getTeacherInfo(String username, MySQLRepository repo) {
         List<Map<String, Object>> TeacherInfo = new ArrayList<>();
-        String sql = "SELECT u.Region, u.UserType, u.Gender, u.Age, u.School, u.Major, u.MBTI, u.Gmail, u.PhoneNum, t.Profession, t.Exp_Wage, t.WorkExperience, t.Certification, t.TeachingRating FROM Teachmate.User as u INNER JOIN Teachmate.Teacher as t ON u.UserID = t.T_ID WHERE u.Username = ?";
+        String sql = "SELECT u.UserID, u.Region, u.UserType, u.Gender, u.Age, u.School, u.Major, u.MBTI, u.Gmail, u.PhoneNum, t.Profession, t.Exp_Wage, t.WorkExperience, t.Certification, t.TeachingRating FROM Teachmate.User as u INNER JOIN Teachmate.Teacher as t ON u.UserID = t.T_ID WHERE u.Username = ?";
         try (Connection connection = repo.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
@@ -544,6 +543,7 @@ public class UserService {
                     teacher.put("Certification", resultSet.getString("Certification"));
                     teacher.put("TeachingRating", resultSet.getString("TeachingRating"));
                     teacher.put("Region", resultSet.getString("Region"));
+                    teacher.put("UserID", resultSet.getInt("UserID"));
                     TeacherInfo.add(teacher);
                 }
             }
