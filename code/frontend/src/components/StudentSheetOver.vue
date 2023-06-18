@@ -16,37 +16,37 @@
 
                         </li>
                         <li class="nav-item studentprofile">
-                              <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
-                                 class="button_set_head button_set2_head nav-link studentprofile">
-                                 POST
-                              </router-link>
-                           </li>
-                           <li class="nav-item teacherprofile">
-                              <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
-                                 class="button_set_head button_set2_head nav-link studentprofile">
-                                 ADD
-                              </router-link>
-                           </li>
-                           <li class="nav-item active studentprofile">
-                              <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
-                                 class="button_set_head button_set2_head nav-link studentprofile">
-                                 ABOUT
-                              </router-link>
-                           </li>
-                           <li class="nav-item teacherprofile">
-                              <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
-                                 class="button_set_head button_set2_head nav-link studentprofile">
-                                 SHEET
-                              </router-link>
-                           </li>
-                           <li class="nav-item studentprofile">
-                              <a class="button_set_head button_set2_head nav-link"
-                                 href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
-                           </li>
-                           <li class="nav-item teacherprofile">
-                              <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
-                                    src="../assets/images/NCCU.png" width="35" height="35"></a>
-                           </li>
+                           <router-link :to="{ name: 'StudentPostPage', params: { username: this.username } }"
+                              class="button_set_head button_set2_head nav-link studentprofile">
+                              POST
+                           </router-link>
+                        </li>
+                        <li class="nav-item teacherprofile">
+                           <router-link :to="{ name: 'StudentAddPost', params: { username: this.username } }"
+                              class="button_set_head button_set2_head nav-link studentprofile">
+                              ADD
+                           </router-link>
+                        </li>
+                        <li class="nav-item active studentprofile">
+                           <router-link :to="{ name: 'StudentProfile', params: { username: this.username } }"
+                              class="button_set_head button_set2_head nav-link studentprofile">
+                              ABOUT
+                           </router-link>
+                        </li>
+                        <li class="nav-item teacherprofile">
+                           <router-link :to="{ name: 'StudentSheet', params: { username: this.username } }"
+                              class="button_set_head button_set2_head nav-link studentprofile">
+                              SHEET
+                           </router-link>
+                        </li>
+                        <li class="nav-item studentprofile">
+                           <a class="button_set_head button_set2_head nav-link"
+                              href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
+                        </li>
+                        <li class="nav-item teacherprofile">
+                           <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                                 src="../assets/images/NCCU.png" width="35" height="35"></a>
+                        </li>
 
                      </ul>
                   </div>
@@ -114,8 +114,11 @@
 
                   <div class="sheet_content_div ">教學用心！</div>
                   <div>
-                  <router-link to="/studentsheetongoing" class="studentsheetoverbutton_set">Back</router-link>
-               </div>
+                     <router-link :to="{ name: 'StudentSheetMine', params: { username: this.username } }"
+                        class="studentsheetoverbutton_set">
+                        Back
+                     </router-link>
+                  </div>
                </div>
             </div>
          </div>
@@ -144,9 +147,9 @@
 
 export default {
    name: 'StudentSheetOver',
-  props: {
-    username: String
-  },
+   props: {
+      username: String
+   },
 };
 </script>
 

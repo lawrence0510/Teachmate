@@ -65,31 +65,41 @@ public class UserService {
     }
 
     public void saveUser(User user, MySQLRepository repo) {
-        String sql = "INSERT INTO User (UserID, Username, Password, Age, Gender, School, Region, Major, PhoneNum, Gmail, MBTI, UserType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String userSql = "INSERT INTO User (UserID, Username, Password, Age, Gender, School, Region, Major, PhoneNum, Gmail, MBTI, UserType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String teacherSql = "INSERT INTO Teacher (T_ID) VALUES (?)";
         try (Connection connection = repo.getConnection();
-                PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setLong(1, user.getUserID());
-            statement.setString(2, user.getUsername());
-            statement.setString(3, user.getPassword());
-            statement.setInt(4, user.getAge());
-            statement.setString(5, user.getGender());
-            statement.setString(6, user.getSchool());
-            statement.setString(7, user.getRegion());
-            statement.setString(8, user.getMajor());
-            statement.setString(9, user.getPhoneNum());
-            statement.setString(10, user.getEmail());
-            statement.setString(11, user.getMBTI());
-            statement.setString(12, user.getUserType());
-            statement.executeUpdate();
+                PreparedStatement userStatement = connection.prepareStatement(userSql);
+                PreparedStatement teacherStatement = connection.prepareStatement(teacherSql)) {
+                connection.setAutoCommit(false);
+
+            // 設置 User 表的插入數據
+            userStatement.setLong(1, user.getUserID());
+            userStatement.setString(2, user.getUsername());
+            userStatement.setString(3, user.getPassword());
+            userStatement.setInt(4, user.getAge());
+            userStatement.setString(5, user.getGender());
+            userStatement.setString(6, user.getSchool());
+            userStatement.setString(7, user.getRegion());
+            userStatement.setString(8, user.getMajor());
+            userStatement.setString(9, user.getPhoneNum());
+            userStatement.setString(10, user.getEmail());
+            userStatement.setString(11, user.getMBTI());
+            userStatement.setString(12, user.getUserType());
+
+            // 設置 Teacher 表的插入數據
+            teacherStatement.setLong(1, user.getUserID());
+
+            // 執行 User 表的插入
+            userStatement.executeUpdate();
+
+            // 執行 Teacher 表的插入
+            teacherStatement.executeUpdate();
+
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                repo.closeConnection(); // 關閉連接
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
+
     }
 
     public boolean isUserIDExists(int userID, MySQLRepository repo) {
@@ -559,7 +569,7 @@ public class UserService {
             statement.setString(1, teacher.getProfession());
             statement.setInt(2, temp_TID);
             int rowsAffected = statement.executeUpdate();
-            return rowsAffected >0;
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -580,13 +590,112 @@ public class UserService {
             statement.setString(1, teacher.getWorkExperience());
             statement.setInt(2, temp_TID);
             int rowsAffected = statement.executeUpdate();
-            return rowsAffected >0;
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         } finally {
             try {
                 repo.closeConnection(); // 關閉連接
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+     public boolean saveStudentRequestInfo(String teachername, String studentname, MySQLRepository repo) {
+        int userid1 = 0;
+        int userid2 = 0;
+
+        String sql1 = "SELECT UserID FROM User WHERE Username=?";
+        String sql2 = "SELECT UserID FROM User WHERE Username=?";
+        String sql = "INSERT INTO Request (Sender_ID, Receiver_ID, Sender_Name, Receiver_Name) VALUES(?,?,?,?)";
+
+        try (Connection connection = repo.getConnection();
+            PreparedStatement statement1 = connection.prepareStatement(sql1);
+            PreparedStatement statement2 = connection.prepareStatement(sql2);
+            PreparedStatement statement3 = connection.prepareStatement(sql)) {
+
+            // Execute the first query
+            statement1.setString(1, studentname);
+            try (ResultSet resultSet = statement1.executeQuery()) {
+                if (resultSet.next()) {
+                    userid1 = resultSet.getInt("UserID");
+                }
+            }
+
+            // Execute the second query
+            statement2.setString(1, teachername);
+            try (ResultSet resultSet = statement2.executeQuery()) {
+                if (resultSet.next()) {
+                    userid2 = resultSet.getInt("UserID");
+                }
+            }
+
+            // Execute the third query
+            statement3.setInt(1, userid1);
+            statement3.setInt(2, userid2);
+            statement3.setString(3, studentname);
+            statement3.setString(4, teachername);
+
+            int rowsAffected = statement3.executeUpdate();
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                repo.closeConnection(); // Close the connection
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean saveTeacherRequestInfo(String teachername, String studentname, MySQLRepository repo) {
+        int userid1 = 0;
+        int userid2 = 0;
+
+        String sql1 = "SELECT UserID FROM User WHERE Username=?";
+        String sql2 = "SELECT UserID FROM User WHERE Username=?";
+        String sql = "INSERT INTO Request (Sender_ID, Receiver_ID, Sender_Name, Receiver_Name) VALUES(?,?,?,?)";
+
+        try (Connection connection = repo.getConnection();
+            PreparedStatement statement1 = connection.prepareStatement(sql1);
+            PreparedStatement statement2 = connection.prepareStatement(sql2);
+            PreparedStatement statement3 = connection.prepareStatement(sql)) {
+
+            // Execute the first query
+            statement1.setString(1, teachername);
+            try (ResultSet resultSet = statement1.executeQuery()) {
+                if (resultSet.next()) {
+                    userid1 = resultSet.getInt("UserID");
+                }
+            }
+
+            // Execute the second query
+            statement2.setString(1, studentname);
+            try (ResultSet resultSet = statement2.executeQuery()) {
+                if (resultSet.next()) {
+                    userid2 = resultSet.getInt("UserID");
+                }
+            }
+
+            // Execute the third query
+            statement3.setInt(1, userid1);
+            statement3.setInt(2, userid2);
+            statement3.setString(3, teachername);
+            statement3.setString(4, studentname);
+
+            int rowsAffected = statement3.executeUpdate();
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                repo.closeConnection(); // Close the connection
             } catch (SQLException e) {
                 e.printStackTrace();
             }

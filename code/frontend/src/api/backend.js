@@ -35,5 +35,11 @@ export default {
   submitWorkingExperience(formData){
     return backendApi.post('/submitworkingexperience', formData);
   },
+  sendStudentRequestToBackend(formData){
+    return backendApi.post('/studentrequest', formData);
+  },
 
+  sendTeacherRequestToBackend(formData){
+    return backendApi.post('/teacherrequest', formData);
+  }
 };

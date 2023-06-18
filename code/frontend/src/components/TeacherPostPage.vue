@@ -166,7 +166,12 @@
 </template>
 
 <script>
+import backend from '@/api/backend.js';
 export default {
+  name: 'TeacherPostPage',
+  props: {
+    username: String
+  },
   data() {
     return {
       postsData: [
@@ -282,6 +287,7 @@ export default {
 
   mounted() {
     this.displayPosts(this.postsData);
+    this.attachRequestButtonListeners();
   },
 
   methods: {
@@ -344,6 +350,9 @@ export default {
           <div class="pp_label">Note:</div>
           <div class="pp_data">${post.note}</div>
         </div>
+
+        <button class="request-button" data-student-name="${post.name}">REQUEST</button>
+
     </div>
     </div>
   `;
@@ -384,7 +393,43 @@ export default {
         var postHTML = this.generatePostHTML(post);
         postsContainer.innerHTML += postHTML;
       }, this); // Pass `this` as the second argument to maintain the correct context
+      this.attachRequestButtonListeners();
     },
+
+    handleRequestButtonClick(event) {
+      var studentName = event.target.getAttribute("data-student-name");
+      this.sendRequest(studentName);
+      //modify
+      this.sendTeacherRequestToBackend(studentName);
+    },
+
+    sendRequest(studentName) {
+      alert(`Your request has been sent to student ${studentName} through gmail !`);
+    },
+    
+    //Function to send request
+    attachRequestButtonListeners() {
+      var requestButtons = document.getElementsByClassName("request-button");
+      Array.from(requestButtons).forEach(button => {
+        button.addEventListener("click", this.handleRequestButtonClick);
+      });
+    },
+
+    sendTeacherRequestToBackend(studentName) {
+      const formData = {
+        studentname: studentName,
+        props: this.$props
+      };
+      backend.sendTeacherRequestToBackend(formData)
+        .then(() => {
+          // Handle the successful request if needed
+          console.log("Request sent successfully.");
+        })
+        .catch(error => {
+          // Handle the error if the request fails
+          console.error(error);
+        });
+    }
   },
 }
 </script>

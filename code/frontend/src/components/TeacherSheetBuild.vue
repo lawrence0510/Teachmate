@@ -156,8 +156,8 @@ export default {
       infoModal.style.display = "none";
 
       btn.addEventListener("click", function () {
-         infoModal.style.display = "block"; // 显示 dialog 元素
-         infoModal.showModal(); // 打开模态对话框
+         infoModal.style.display = "block"; 
+         infoModal.showModal(); 
       });
 
       close.addEventListener("click", function () {

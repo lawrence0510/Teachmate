@@ -150,13 +150,13 @@ export default {
                     console.log('Logged in successfully!')
                     if(response.data.userType == 'Student'){
                         this.$router.push({
-                            name: 'StudentProfile',
+                            name: 'StudentPostPage',
                             params: {username: this.username}
                         });
                     }
                     else if(response.data.userType == 'Teacher'){
                         this.$router.push({
-                            name: 'TeacherProfile',
+                            name: 'TeacherPostPage',
                             params: {username: this.username}
                         });
                     }
