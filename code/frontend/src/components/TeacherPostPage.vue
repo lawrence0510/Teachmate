@@ -18,7 +18,7 @@
                         height="35"></a>
 
                   </li>
-                  <li class="nav-item teacherprofile">
+                  <li class="nav-item studentprofile">
                     <router-link :to="{ name: 'TeacherPostPage', params: { username: this.username } }"
                       class="button_set_head button_set2_head nav-link studentprofile">
                       POST
@@ -30,7 +30,7 @@
                       ADD
                     </router-link>
                   </li>
-                  <li class="nav-item active teacherprofile">
+                  <li class="nav-item active studentprofile">
                     <router-link :to="{ name: 'TeacherProfile', params: { username: this.username } }"
                       class="button_set_head button_set2_head nav-link studentprofile">
                       ABOUT
@@ -42,13 +42,13 @@
                       SHEET
                     </router-link>
                   </li>
-                  <li class="nav-item teacherprofile">
+                  <li class="nav-item studentprofile">
                     <a class="button_set_head button_set2_head nav-link"
                       href="https://www.youtube.com/watch?v=VV0PxIV5V-Y" target="_blank">MORE</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.nccu.edu.tw/"><img src="../assets/images/NCCU.png" width="35"
-                        height="35"></a>
+                  <li class="nav-item teacherprofile">
+                    <a class="nav-link teacherprofile" href="https://www.nccu.edu.tw/"><img
+                        src="../assets/images/NCCU.png" width="35" height="35"></a>
                   </li>
 
                 </ul>
@@ -133,10 +133,6 @@
             <button @click="filterPosts()" class="filter_button">Filter</button>
           </div>
 
-
-
-
-
         </div>
       </div>
     </div>
@@ -164,201 +160,103 @@
 
   </div>
 </template>
-
+  
 <script>
+import axios from 'axios';
 import backend from '@/api/backend.js';
+
 export default {
-  name: 'TeacherPostPage',
+  name: 'StudentPostPage',
   props: {
     username: String
   },
   data() {
     return {
-      postsData: [
-        {
-          subject: "Math",
-          name: "John",
-          email: "john@example.com",
-          phone: "1234567890",
-          gender: "Male",
-          age: "25",
-          mbti: "INTJ",
-          region: "Daan",
-          school: "ABC University",
-          major: "Computer Science",
-          note: "I'm so handsome."
-        },
-        {
-          subject: "Science",
-          name: "Jane",
-          email: "jane@example.com",
-          phone: "9876543210",
-          gender: "Female",
-          age: "30",
-          mbti: "INFJ",
-          region: "Xinyi",
-          school: "XYZ College",
-          major: "Biology",
-          note: "I'm so sexy"
-        },
-        {
-          subject: "Science",
-          name: "Jack",
-          email: "jack@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Jane isn't sexy at all"
-        },
-        {
-          subject: "English",
-          name: "Jacky",
-          email: "jacky@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "ENFJ",
-          region: "Wenshan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Hey I'm Jacky"
-        },
-        {
-          subject: "Science",
-          name: "Roger",
-          email: "roger@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INTJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: ""
-        },
-        {
-          subject: "Science",
-          name: "Jack",
-          email: "jack@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Jane isn't sexy at all"
-        },
-        {
-          subject: "Science",
-          name: "Lucy",
-          email: "lucy@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Xinyi",
-          school: "XYZ College",
-          major: "Biology",
-          note: ""
-        },
-        {
-          subject: "Math",
-          name: "Lisa",
-          email: "lisa@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "ENFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "hehehe"
-        }
-
-        // Add more post objects as needed
-      ]
+      postsData: []
     };
   },
 
   mounted() {
-    this.displayPosts(this.postsData);
-    this.attachRequestButtonListeners();
+    this.getPost();
   },
 
   methods: {
-    // Function to generate the post HTML based on data
-    generatePostHTML(post) {
-      var postHTML = `
+    getPost() {
+  axios.post('http://localhost:8000/getpost', {})
+    .then(response => {
+      this.postsData = response.data.map(post => ({
+        region: post.PostRegion,
+        subject: post.PostSubject,
+        major: post.PostMajor,
+        age: post.PostAge,
+        school: post.PostSchool,
+        name: post.PostName,
+        email: post.PostEmail,
+        phone: post.PostPhoneNum,
+        gender: post.PostGender,
+        MBTI: post.PostMBTI
+      }));
+      console.log(response)
+      this.displayPosts(this.postsData);
+      this.attachRequestButtonListeners();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+},
+
+generatePostHTML(post) {
+  var postHTML = `
     <div class="pp_post_column">
-    <div class="pp_post" >
-        <div class="pp_post_item" >
+      <div class="studentpostpagepp_post">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Subject:</div>
           <div class="pp_data">${post.subject}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Name:</div>
           <div class="pp_data">${post.name}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Email:</div>
           <div class="pp_data">${post.email}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Phone:</div>
           <div class="pp_data">${post.phone}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Gender:</div>
           <div class="pp_data">${post.gender}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">Age:</div>
-          <div class="pp_data">${post.age}</div>
-        </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">MBTI:</div>
-          <div class="pp_data">${post.mbti}</div>
-        </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Region:</div>
           <div class="pp_data">${post.region}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">School:</div>
-          <div class="pp_data">${post.school}</div>
-        </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Major:</div>
           <div class="pp_data">${post.major}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">Note:</div>
-          <div class="pp_data">${post.note}</div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">Age:</div>
+          <div class="pp_data">${post.age}</div>
         </div>
-
-        <button class="request-button" data-student-name="${post.name}">REQUEST</button>
-
-    </div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">Age:</div>
+          <div class="pp_data">${post.MBTI}</div>
+        </div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">School:</div>
+          <div class="pp_data">${post.school}</div>
+        </div>
+        <!-- Add more properties as needed -->
+        <button class="request-button" data-teacher-name="${post.name}">REQUEST</button>
+      </div>
     </div>
   `;
-      return postHTML;
-    }
-    ,
+  return postHTML;
+},
+
 
     // Function to display the posts based on filter selection
     filterPosts() {
@@ -385,28 +283,32 @@ export default {
     },
 
     // Function to display the filtered posts
+    // Function to display the filtered posts
     displayPosts(posts) {
       var postsContainer = document.getElementById("posts");
       postsContainer.innerHTML = "";
 
+      var self = this;
+
       posts.forEach(function (post) {
-        var postHTML = this.generatePostHTML(post);
+        var postHTML = self.generatePostHTML(post);
         postsContainer.innerHTML += postHTML;
-      }, this); // Pass `this` as the second argument to maintain the correct context
+      });
       this.attachRequestButtonListeners();
     },
 
+
     handleRequestButtonClick(event) {
-      var studentName = event.target.getAttribute("data-student-name");
-      this.sendRequest(studentName);
+      var teacherName = event.target.getAttribute("data-teacher-name");
+      this.sendRequest(teacherName);
       //modify
-      this.sendTeacherRequestToBackend(studentName);
+      this.sendStudentRequestToBackend(teacherName);
     },
 
-    sendRequest(studentName) {
-      alert(`Your request has been sent to student ${studentName} through gmail !`);
+    sendRequest(teacherName) {
+      alert(`Your request has been sent to teacher ${teacherName} through gmail !`);
     },
-    
+
     //Function to send request
     attachRequestButtonListeners() {
       var requestButtons = document.getElementsByClassName("request-button");
@@ -415,12 +317,12 @@ export default {
       });
     },
 
-    sendTeacherRequestToBackend(studentName) {
+    sendStudentRequestToBackend(teacherName) {
       const formData = {
-        studentname: studentName,
+        teachername: teacherName,
         props: this.$props
       };
-      backend.sendTeacherRequestToBackend(formData)
+      backend.sendStudentRequestToBackend(formData)
         .then(() => {
           // Handle the successful request if needed
           console.log("Request sent successfully.");
@@ -430,15 +332,16 @@ export default {
           console.error(error);
         });
     }
+
   },
 }
 </script>
-
-
-
-
+  
+  
+  
+  
 <style>
-@import url("../assets/css/teacherpostpage.css");
+@import url("../assets/css/studentpostpage.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/responsive.css");
 @import url("../assets/css/jquery.mCustomScrollbar.min.css");

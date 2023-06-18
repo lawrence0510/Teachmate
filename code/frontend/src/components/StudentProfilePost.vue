@@ -175,194 +175,100 @@
 </template>
 
 <script>
+import axios from 'axios';
+import backend from '@/api/backend.js';
+
 export default {
-  name: 'StudentProfilePost',
+  name: 'StudentPostPage',
   props: {
     username: String
   },
   data() {
     return {
-      postsData: [
-        {
-          subject: "Math",
-          name: "John",
-          email: "john@example.com",
-          phone: "1234567890",
-          gender: "Male",
-          age: "25",
-          mbti: "INTJ",
-          region: "Daan",
-          school: "ABC University",
-          major: "Computer Science",
-          note: "I'm so handsome."
-        },
-        {
-          subject: "Science",
-          name: "Jane",
-          email: "jane@example.com",
-          phone: "9876543210",
-          gender: "Female",
-          age: "30",
-          mbti: "INFJ",
-          region: "Xinyi",
-          school: "XYZ College",
-          major: "Biology",
-          note: "I'm so sexy"
-        },
-        {
-          subject: "Science",
-          name: "Jack",
-          email: "jack@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Jane isn't sexy at all"
-        },
-        {
-          subject: "English",
-          name: "Jacky",
-          email: "jacky@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "ENFJ",
-          region: "Wenshan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Hey I'm Jacky"
-        },
-        {
-          subject: "Science",
-          name: "Roger",
-          email: "roger@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INTJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: ""
-        },
-        {
-          subject: "Science",
-          name: "Jack",
-          email: "jack@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "Jane isn't sexy at all"
-        },
-        {
-          subject: "Science",
-          name: "Lucy",
-          email: "lucy@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "INFJ",
-          region: "Xinyi",
-          school: "XYZ College",
-          major: "Biology",
-          note: ""
-        },
-        {
-          subject: "Math",
-          name: "Lisa",
-          email: "lisa@example.com",
-          phone: "98765323210",
-          gender: "Male",
-          age: "30",
-          mbti: "ENFJ",
-          region: "Daan",
-          school: "XYZ College",
-          major: "Biology",
-          note: "hehehe"
-        }
-
-        // Add more post objects as needed
-      ]
+      postsData: []
     };
   },
 
   mounted() {
-    this.displayPosts(this.postsData);
+    this.getPost();
   },
 
   methods: {
-    // Function to generate the post HTML based on data
+    getPost() {
+      axios.post('http://localhost:8000/getpost', {})
+        .then(response => {
+          this.postsData = response.data.map(post => ({
+            region: post.PostRegion,
+            subject: post.PostSubject,
+            major: post.PostMajor,
+            age: post.PostAge,
+            school: post.PostSchool,
+            name: post.PostName,
+            email: post.PostEmail,
+            phone: post.PostPhoneNum,
+            gender: post.PostGender,
+            MBTI: post.PostMBTI
+          }));
+          this.displayPosts(this.postsData);
+          this.attachRequestButtonListeners();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+
     generatePostHTML(post) {
-  var postHTML = `
+      var postHTML = `
     <div class="pp_post_column">
-    <div class="pp_post" >
-        <div class="pp_post_item" >
+      <div class="studentpostpagepp_post">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Subject:</div>
           <div class="pp_data">${post.subject}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Name:</div>
           <div class="pp_data">${post.name}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Email:</div>
           <div class="pp_data">${post.email}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Phone:</div>
           <div class="pp_data">${post.phone}</div>
         </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Gender:</div>
           <div class="pp_data">${post.gender}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">Age:</div>
-          <div class="pp_data">${post.age}</div>
-        </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">MBTI:</div>
-          <div class="pp_data">${post.mbti}</div>
-        </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Region:</div>
           <div class="pp_data">${post.region}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">School:</div>
-          <div class="pp_data">${post.school}</div>
-        </div>
-
-        <div class="pp_post_item">
+        <div class="studentpostpagepp_post_item">
           <div class="pp_label">Major:</div>
           <div class="pp_data">${post.major}</div>
         </div>
-
-        <div class="pp_post_item">
-          <div class="pp_label">Note:</div>
-          <div class="pp_data">${post.note}</div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">Age:</div>
+          <div class="pp_data">${post.age}</div>
         </div>
-    </div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">Age:</div>
+          <div class="pp_data">${post.MBTI}</div>
+        </div>
+        <div class="studentpostpagepp_post_item">
+          <div class="pp_label">School:</div>
+          <div class="pp_data">${post.school}</div>
+        </div>
+        <!-- Add more properties as needed -->
+        <button class="request-button" data-teacher-name="${post.name}">REQUEST</button>
+      </div>
     </div>
   `;
-  return postHTML;
-}
-,
+      return postHTML;
+    },
+
 
     // Function to display the posts based on filter selection
     filterPosts() {
@@ -373,7 +279,7 @@ export default {
       var filteredPosts = [];
 
       if (subjectFilter || genderFilter || mbtiFilter || regionFilter) {
-        filteredPosts = this.postsData.filter(function(post) {
+        filteredPosts = this.postsData.filter(function (post) {
           return (
             (subjectFilter === "" || post.subject === subjectFilter) &&
             (genderFilter === "" || post.gender === genderFilter) &&
@@ -389,15 +295,58 @@ export default {
     },
 
     // Function to display the filtered posts
+    // Function to display the filtered posts
     displayPosts(posts) {
       var postsContainer = document.getElementById("posts");
       postsContainer.innerHTML = "";
 
-      posts.forEach(function(post) {
-        var postHTML = this.generatePostHTML(post);
-        postsContainer.innerHTML += postHTML;
-      }, this); // Pass `this` as the second argument to maintain the correct context
+      var self = this;
+
+      posts.forEach(function (post) {
+        if (post.name === self.username) {
+          var postHTML = self.generatePostHTML(post);
+          postsContainer.innerHTML += postHTML;
+        }
+      });
+      this.attachRequestButtonListeners();
     },
+
+
+    handleRequestButtonClick(event) {
+      var teacherName = event.target.getAttribute("data-teacher-name");
+      this.sendRequest(teacherName);
+      //modify
+      this.sendStudentRequestToBackend(teacherName);
+    },
+
+    sendRequest(teacherName) {
+      alert(`Your request has been sent to teacher ${teacherName} through gmail !`);
+    },
+
+    //Function to send request
+    attachRequestButtonListeners() {
+      var requestButtons = document.getElementsByClassName("request-button");
+      Array.from(requestButtons).forEach(button => {
+        button.addEventListener("click", this.handleRequestButtonClick);
+      });
+    },
+
+    sendStudentRequestToBackend(teacherName) {
+      const formData = {
+        teachername: teacherName,
+        props: this.$props
+      };
+      backend.sendStudentRequestToBackend(formData)
+        .then(() => {
+          // Handle the successful request if needed
+          console.log("Request sent successfully.");
+        })
+        .catch(error => {
+          // Handle the error if the request fails
+          console.error(error);
+        });
+    }
+
   },
 }
 </script>
